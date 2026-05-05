@@ -38,25 +38,20 @@
             text-transform: uppercase;
         }
 
-        /* Aangepaste Navigatie voor Swipen op mobiel */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem;
             background-color: var(--hout);
-            /* Zorgt dat je kunt swipen als het menu te breed is */
             overflow-x: auto;
             white-space: nowrap;
-            -webkit-overflow-scrolling: touch; /* Voor soepel swipen op iPhone */
+            -webkit-overflow-scrolling: touch;
         }
 
-        /* Verbergt de lelijke scrollbalk maar laat swipen wel toe */
-        nav::-webkit-scrollbar {
-            display: none;
-        }
+        nav::-webkit-scrollbar { display: none; }
 
         nav ul { 
             list-style: none; 
-            padding: 0 20px; /* Wat extra ruimte aan de zijkanten bij het swipen */
+            padding: 0 20px; 
             margin: 0; 
             display: inline-flex; 
             gap: 40px; 
@@ -95,6 +90,51 @@
             padding-bottom: 5px;
         }
 
+        /* Ticker / Slinger Slideshow Styles */
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            background-color: var(--papier);
+            padding: 30px 0;
+            margin-top: 4rem;
+            border-top: 2px solid var(--hout);
+            border-bottom: 2px solid var(--hout);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .ticker {
+            display: flex;
+            width: fit-content;
+            animation: ticker-scroll 40s linear infinite;
+        }
+
+        .ticker:hover {
+            animation-play-state: paused;
+        }
+
+        .ticker-item {
+            flex-shrink: 0;
+            margin: 0 20px;
+            height: 200px;
+            border: 8px solid var(--hout);
+            outline: 1px solid var(--goud);
+            outline-offset: -5px;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+            background-color: white;
+        }
+
+        .ticker-item img {
+            height: 100%;
+            width: auto;
+            display: block;
+        }
+
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Galerij Styles */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -224,6 +264,28 @@
         <p style="text-align: center; margin-top: 2rem;">
             <a href="https://www.marktplaats.nl/u/mk-kunst-antiek/22516301/" target="_blank" class="mp-link">Bekijk actueel aanbod op Marktplaats</a>
         </p>
+
+        <!-- DE SLINGER / TICKER -->
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <!-- Eerste set afbeeldingen -->
+                <div class="ticker-item"><img src="foto/Hageman.jpg" alt="Hageman"></div>
+                <div class="ticker-item"><img src="foto/Epcarim.jpg" alt="Epcarim"></div>
+                <div class="ticker-item"><img src="foto/waltervaes.jpg" alt="Walter Vaes"></div>
+                <div class="ticker-item"><img src="foto/HendrikHulk.jpg" alt="H. Hulk"></div>
+                <div class="ticker-item"><img src="foto/mschwarz.jpg" alt="M. Schwarz"></div>
+                <div class="ticker-item"><img src="foto/va.jpg" alt="VA"></div>
+                <div class="ticker-item"><img src="foto/joopkoopman.jpg" alt="Joop Koopman"></div>
+                <!-- Tweede identieke set voor naadloze loop -->
+                <div class="ticker-item"><img src="foto/Hageman.jpg" alt="Hageman"></div>
+                <div class="ticker-item"><img src="foto/Epcarim.jpg" alt="Epcarim"></div>
+                <div class="ticker-item"><img src="foto/waltervaes.jpg" alt="Walter Vaes"></div>
+                <div class="ticker-item"><img src="foto/HendrikHulk.jpg" alt="H. Hulk"></div>
+                <div class="ticker-item"><img src="foto/mschwarz.jpg" alt="M. Schwarz"></div>
+                <div class="ticker-item"><img src="foto/va.jpg" alt="VA"></div>
+                <div class="ticker-item"><img src="foto/joopkoopman.jpg" alt="Joop Koopman"></div>
+            </div>
+        </div>
     </section>
 
     <!-- VERZAMELING SECTIE -->
@@ -271,7 +333,7 @@
                 <a href="#vavezelay">
                     <img src="foto/va.jpg" alt="Basilique Vezelay">
                 </a>
-                <p class="item-info">VA. Basiliek Sainte-Marie-Madeleine, Vézelay (Ca. 1940).</p>
+                <p class="item-info">VA, Hollandse meester. Basilique Vezelay (Ca. 1940).</p>
             </div>
 
             <div class="gallery-item">
@@ -287,7 +349,6 @@
     <section id="over">
         <h2>Historie & Visie</h2>
         <p>MK kunst & antiek is ontstaan vanuit een fascinatie voor de verhalen achter historische objecten. Het vormt een brug tussen het verleden en het heden.</p>
-        
         <p>De overtuiging is dat antiek een interieur verrijkt met een gevoel van continuïteit en ziel.</p>
     </section>
 
