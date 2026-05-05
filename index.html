@@ -4,135 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MK kunst & antiek</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --goud: #b08d57;
+            --hout: #3d2b1f; 
+            --donker: #242424;
+            --creme: #f4f1ea;
+            --papier: #e9e4d9;
+        }
+
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Libre Baskerville', serif;
             margin: 0;
             padding: 0;
-            background-color: #FFFFFF;
-            color: #4A5553;
+            background-color: var(--creme);
+            color: var(--donker);
             text-align: center;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            border-top: 10px solid var(--hout);
         }
 
         header { padding: 4rem 1rem 2rem; }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-weight: 400;
-            font-size: 3.5rem;
-            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 3.8rem;
+            letter-spacing: 1px;
             margin: 0;
-            color: #4A5553;
+            color: var(--donker);
+            text-transform: uppercase;
         }
 
-        nav { padding: 1rem 0; margin-bottom: 2rem; }
-        nav ul { list-style: none; padding: 0; margin: 0; display: inline-flex; gap: 15px; }
+        nav { 
+            padding: 1rem 0; 
+            margin-bottom: 3rem;
+            background-color: var(--hout);
+        }
+        nav ul { list-style: none; padding: 0; margin: 0; display: inline-flex; gap: 40px; }
         nav a {
             text-decoration: none;
-            color: #4A5553;
-            font-weight: 500;
-            font-size: 1rem;
-            padding: 10px 20px;
-            border-radius: 4px;
-            border: 1px solid white;
+            color: #dcd0c0;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             transition: all 0.3s ease;
         }
-        nav a.active { background-color: #4A5553; color: #FFFFFF; border: 1px solid #4A5553; }
-        nav a:not(.active):hover { background-color: #f1f1f1; border: 1px solid #e1e1e1; }
+        nav a:hover, nav a.active { color: white; }
 
         .main-content {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 1.5rem;
-            margin-bottom: 4rem;
+            padding: 0 2rem;
+            margin-bottom: 5rem;
             text-align: left;
         }
 
-        section { display: none; margin-top: 2rem; }
+        section { display: none; }
         section.visible { display: block; }
 
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #e1e1e1;
-            padding-bottom: 10px;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--hout);
+            border-bottom: 3px solid var(--hout);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
-        /* De Fotogalerij Raster */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 60px;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 600px) {
+            .gallery { grid-template-columns: 1fr; }
         }
 
         .gallery-item {
-            background-color: white;
-            padding: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border-radius: 4px;
+            background-color: #fff;
+            padding: 20px;
+            border: 15px solid var(--hout);
+            outline: 1px solid var(--goud);
+            outline-offset: -8px;
+            box-shadow: 15px 15px 35px rgba(0,0,0,0.3);
             text-align: center;
-            margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
 
+        .gold-frame {
+            border: 15px solid var(--goud) !important;
+            outline: 1px solid var(--hout) !important;
+            outline-offset: -8px;
+        }
+
+        .gallery-item:hover { transform: translateY(-5px); }
+
         .gallery-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 2px;
+            width: 100%;
+            height: auto; 
+            display: block;
             cursor: pointer;
         }
 
-        /* Homepage featured image */
+        .item-info {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--donker);
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .homepage-featured {
             margin: 3rem 0;
             text-align: center;
-            border: 1px solid #f1f1f1;
-            padding: 30px;
-            background-color: #fafafa;
+            border: 2px solid var(--hout);
+            padding: 40px;
+            background-color: var(--papier);
         }
 
-        .featured-img { max-width: 100%; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .featured-img { 
+            max-width: 40%;
+            height: auto; 
+            border: 10px solid var(--hout);
+            outline: 1px solid var(--goud);
+            outline-offset: -6px;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+        }
 
-        /* MODAL (POP-UP) SYSTEEM */
         .modal {
             display: none;
             position: fixed;
             z-index: 2000;
             left: 0; top: 0;
             width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgba(0,0,0,0.95);
             justify-content: center;
             align-items: center;
         }
         .modal:target { display: flex; }
-        .modal img { max-width: 90%; max-height: 85%; border: 3px solid white; }
+        .modal img { max-width: 95%; max-height: 90%; border: 5px solid #333; }
         .close {
             position: absolute;
-            top: 20px; right: 30px;
+            top: 20px; right: 40px;
             color: white;
-            font-size: 40px;
+            font-size: 50px;
             text-decoration: none;
-            font-weight: bold;
         }
 
         footer {
             text-align: center;
-            padding: 3rem 1rem;
-            font-size: 0.85rem;
-            color: #999;
-            border-top: 1px solid #f1f1f1;
+            padding: 4rem 1rem;
+            font-size: 0.9rem;
+            background-color: var(--donker);
+            color: #888;
         }
 
-        p { margin-bottom: 1.5rem; }
-
-        /* Stijl voor de Marktplaats link */
         .mp-link {
-            color: #4A5553;
-            text-decoration: underline;
-            font-weight: bold;
+            color: var(--hout);
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 2px solid var(--hout);
         }
     </style>
 </head>
@@ -145,163 +184,119 @@
 <nav>
     <ul>
         <li><a href="#" class="active" onclick="showSection('home')">Home</a></li>
-        <li><a href="#" onclick="showSection('over')">Over MK kunst & antiek</a></li>
-        <li><a href="#" onclick="showSection('collectie')">Collectie</a></li>
+        <li><a href="#" onclick="showSection('verzameling')">Verzameling</a></li>
+        <li><a href="#" onclick="showSection('over')">Historie</a></li>
     </ul>
 </nav>
 
 <div class="main-content">
     
+    <!-- NIEUWE HOMEPAGE SECTIE -->
     <section id="home" class="visible">
-        <h2>Welkom in de wereld van historie</h2>
-        <p>Welkom op de website van MK kunst & antiek. Wij geloven dat elk object een verhaal vertelt dat generaties overstijgt. Onze passie ligt in het ontdekken en conserveren van unieke kunstwerken en historische objecten die de tand des tijds hebben doorstaan.</p>
+        <h2>Welkom</h2>
+        <p>Welkom op de website van MK kunst & antiek. Een plek waar historie, vakmanschap en esthetiek samenkomen. Wij richten ons op de conservatie en verkoop van authentieke kunstwerken en historische objecten met een eigen karakter.</p>
         
-        <p>In een wereld die steeds sneller beweegt, bieden wij een rustpunt van blijvende waarde. Onze selectie is niet zomaar een verzameling; het is een zorgvuldig samengestelde collectie van vakmanschap, esthetiek en authenticiteit. Of u nu een doorgewinterde verzamelaar bent of op zoek bent naar dat ene karakteristieke stuk voor uw interieur, bij ons vindt u objecten met een verhaal.</p>
-
         <div class="homepage-featured">
-    <img src="foto/awydeveld.jpg" alt="A. Wijdeveld" class="featured-img" style="max-width: 50%;">
-    
-    <p style="font-size: 0.9rem; color: #777; margin-top: 15px;">Arnoud Wijdeveld (1823-1888), een symbool van rust en technisch meesterschap. Bron: Sotheby's, 2026. </p>
-</div>
+            <img src="foto/awydeveld.jpg" alt="A. Wijdeveld" class="featured-img">
+            <p class="item-info" style="margin-top: 25px;">A. Wijdeveld (1823-1888). Olieverf op paneel. Bron: Sotheby's</p>
+        </div>
 
-        <p>Wij nodigen u uit om op uw gemak door onze online etalage te dwalen. Elke aanwinst in onze collectie is door ons persoonlijk beoordeeld. Wij delen onze expertise en liefde voor het vak graag met u. Op ons Marktplaats account vindt u de werken die te koop wordt aangeboden: <a href="https://www.marktplaats.nl/u/mk-kunst-antiek/22516301/" target="_blank" class="mp-link">Klik hier voor onze Marktplaats.</a></p>
+        <p>Onze volledige verzameling is via deze website te bewonderen. Voor objecten die momenteel beschikbaar zijn voor overname, verwijzen wij u graag naar ons Marktplaats-kanaal.</p>
+        <p style="text-align: center; margin-top: 2rem;">
+            <a href="https://www.marktplaats.nl/u/mk-kunst-antiek/22516301/" target="_blank" class="mp-link">Bekijk actueel aanbod op Marktplaats</a>
+        </p>
     </section>
 
-    <section id="over">
-        <h2>Onze Geschiedenis & Visie</h2>
-        <p>MK kunst & antiek is voortgekomen uit een fascinatie voor de geschiedenis. Wat begon als een persoonlijke zoektocht naar zeldzame curiosa, groeide uit tot een mooie collectie en bovendien een passie gedreven door kennis, integriteit en een scherp oog voor detail.</p>
+    <!-- VERZAMELING SECTIE -->
+    <section id="verzameling">
+        <h2>De Verzameling</h2>
+        <p>Een selectie van klassieke werken en historische stukken. Elk object in deze verzameling vertegenwoordigt een eigen tijdperk en uniek vakmanschap.</p>
         
-        <p>Voor ons is antiek meer dan alleen 'oud'. Het is de belichaming van menselijk vernuft uit voorbije eeuwen. Het vakmanschap dat nodig was om een meubelstuk handmatig te vervaardigen, of de precisie waarmee een meesterschilder het licht ving op het doek, verdient het om ook vandaag de dag nog bewonderd te worden. Wij zien onszelf dan ook niet alleen als gepassioneerde hobbyisten, maar als tijdelijke hoeders van dit culturele erfgoed.</p>
-        
-        <p>In de loop der jaren hebben wij een uitgebreid netwerk opgebouwd, waardoor wij in staat zijn om bijzondere stukken te bemachtigen voordat ze op de openbare markt verschijnen. Authenticiteit staat bij ons onherroepelijk op de eerste plaats; we doen uitgebreid onderzoek naar de herkomst (provenance) en de staat van elk object.</p>
-
-        <p>Wij hopen met MK kunst & antiek een brug te slaan tussen het rijke verleden en het eigentijdse leven. Een antiek object brengt karakter en een gevoel van continuïteit in elke ruimte. Dank u voor uw interesse in onze passie, we kijken ernaar uit om u te helpen bij het vinden van uw volgende erfstuk.</p>
-    </section>
-
-    <section id="collectie">
-        <h2>Onze Collectie</h2>
-        <p>Hieronder vindt u een selectie van onze huidige werken. Klik op een afbeelding om het object beter te bekijken.</p>
-        <div class="gallery-item">
-            
-    <a href="#hageman">
-        <img src="foto/Hageman.jpg" alt="Hageman">
-    </a>
-    <p style="font-size: 0.9rem; color: #777; margin-top:10px;">
-        Hageman. Boerderij met pluimvee (1890 - 1920). 40,6 x 50,5 cm.
-    </p>
-</div>
-<div class="gallery-item">
-    <a href="#epcarim">
-        <img src="foto/Epcarim.jpg" alt="Epcarim">
-    </a>
-    <p style="font-size: 0.9rem; color: #777; margin-top:10px;">
-        EFCARIM. Stilleven met druiven en herfstbladeren. 40 x 58,5 cm. 
-    </p>
-</div>
-        <div class="gallery-item">
-    <a href="#hendrikhulk">
-        <img src="foto/HendrikHulk.jpg" alt="Hendrik Hulk">
-    </a>
-    <p style="font-size: 0.9rem; color: #777; margin-top:10px;">
-        Hendrik Hulk, 1894. Zeegezicht met zeilschepen. Olieverf op paneel.
-    </p>
-</div>
         <div class="gallery">
+            <div class="gallery-item gold-frame">
+                <a href="#hageman">
+                    <img src="foto/Hageman.jpg" alt="Hageman">
+                </a>
+                <p class="item-info">Hageman. Boerderij met pluimvee (ca. 1900).</p>
+            </div>
+            
+            <div class="gallery-item gold-frame">
+                <a href="#epcarim">
+                    <img src="foto/Epcarim.jpg" alt="Epcarim">
+                </a>
+                <p class="item-info">EFCARIM. Stilleven met druiven.</p>
+            </div>
+
+            <!-- Walter Vaes nu op de 3e plek -->
+            <div class="gallery-item">
+                <a href="#waltervaes">
+                    <img src="foto/waltervaes.jpg" alt="Walter Vaes">
+                </a>
+                <p class="item-info">Walter Vaes (1904). De Klok van Veurne.</p>
+            </div>
+            
+            <div class="gallery-item">
+                <a href="#hendrikhulk">
+                    <img src="foto/HendrikHulk.jpg" alt="H. Hulk">
+                </a>
+                <p class="item-info">H. Hulk (1894). Zeegezicht.</p>
+            </div>
+            
             <div class="gallery-item">
                 <a href="#mschwarz">
                     <img src="foto/mschwarz.jpg" alt="M. Schwarz">
                 </a>
-                <p style="font-size: 0.9rem; color: #777; margin-top:10px;">
-                     M. Schwarz. Antiek Larens Interieur (ca. 1900-1920) Moeder en kind, 35,5 x 46 cm. Paneel.
-                </p>
+                <p class="item-info">M. Schwarz. Larens Interieur (ca. 1910).</p>
             </div>
 
             <div class="gallery-item">
                 <a href="#vavezelay">
-                    <img src="foto/va.jpg" alt="VA Vezelay">
+                    <img src="foto/va.jpg" alt="Basilique Vezelay">
                 </a>
-                <p style="font-size: 0.9rem; color: #777; margin-top:10px;">
-                    VA, Hollandse meester. (ca. 1930-1950) Basilique Sainte-Marie-Madeleine, Vezelay. 27 x 38 cm. Aquarel.
-                </p>
+                <p class="item-info">VA, Hollandse meester. Basilique Vezelay.</p>
             </div>
 
             <div class="gallery-item">
                 <a href="#joopkoopman">
                     <img src="foto/joopkoopman.jpg" alt="Joop Koopman">
                 </a>
-                <p style="font-size: 0.9rem; color: #777; margin-top:10px;">
-                     Johannes Marinus Koopman (1914-1987). Spaarne Haarlem. Pentekening met aquarel.
-                </p>
-            </div>
-
-            <div class="gallery-item">
-                <a href="#waltervaes">
-                    <img src="foto/waltervaes.jpg" alt="Walter Vaes">
-                </a>
-                <p style="font-size: 0.9rem; color: #777; margin-top:10px;">
-                     Walter Vaes (1904). De Klok van Veurne. Ets. 20 x 23,5 cm 
-                </p>
+                <p class="item-info">J.M. Koopman (1914-1987). Spaarne Haarlem.</p>
             </div>
         </div>
+    </section>
+
+    <!-- HISTORIE SECTIE -->
+    <section id="over">
+        <h2>Historie & Visie</h2>
+        <p>MK kunst & antiek is ontstaan vanuit een fascinatie voor de verhalen achter historische objecten. Het vormt een brug tussen het verleden en het heden.</p>
+        
+        <p>De overtuiging is dat antiek een interieur verrijkt met een gevoel van continuïteit en ziel. </p>
     </section>
 
 </div>
 
 <footer>
-    &copy; 2026 MK kunst & antiek | www.mkkunstantiek.nl | Curated by M. Koopmans
+    &copy; 2026 MK kunst & antiek | www.mkkunstantiek.nl | Merijn Koopmans
 </footer>
     
-    <div id="hageman" class="modal">
-    <a href="#collectie" class="close">&times;</a>
-    <img src="foto/Hageman.jpg" alt="Vergroting Hageman">
-</div>
-<div id="epcarim" class="modal">
-    <a href="#collectie" class="close">&times;</a>
-    <img src="foto/Epcarim.jpg" alt="Vergroting Epcarim">
-</div>
-<div id="hendrikhulk" class="modal">
-    <a href="#collectie" class="close">&times;</a>
-    <img src="foto/HendrikHulk.jpg" alt="Vergroting Hendrik Hulk">
-</div>
-<div id="mschwarz" class="modal">
-    <a href="#collectie" class="close">&times;</a>
-    <img src="foto/mschwarz.jpg" alt="Vergroting">
-</div>
-
-<div id="vavezelay" class="modal">
-    <a href="#collectie" class="close">&times;</a>
-    <img src="foto/va.jpg" alt="Vergroting">
-</div>
-
-<div id="joopkoopman" class="modal">
-    <a href="#collectie" class="close">&times;</a>
-    <img src="foto/joopkoopman.jpg" alt="Vergroting">
-</div>
-
-<div id="waltervaes" class="modal">
-    <a href="#collectie" class="close">&times;</a>
-    <img src="foto/waltervaes.jpg" alt="Vergroting">
-</div>
+<div id="hageman" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/Hageman.jpg"></div>
+<div id="epcarim" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/Epcarim.jpg"></div>
+<div id="hendrikhulk" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/HendrikHulk.jpg"></div>
+<div id="mschwarz" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/mschwarz.jpg"></div>
+<div id="vavezelay" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/va.jpg"></div>
+<div id="joopkoopman" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/joopkoopman.jpg"></div>
+<div id="waltervaes" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/waltervaes.jpg"></div>
 
 <script>
     function showSection(sectionId) {
         const sections = document.querySelectorAll('section');
         sections.forEach(sec => sec.classList.remove('visible'));
-
         const activeSection = document.getElementById(sectionId);
-        if (activeSection) {
-            activeSection.classList.add('visible');
-        }
-
+        if (activeSection) { activeSection.classList.add('visible'); }
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => link.classList.remove('active'));
-
-        const currentLink = Array.from(navLinks).find(link => {
-            return link.getAttribute('onclick').includes(`('${sectionId}')`);
-        });
-        if (currentLink) {
-            currentLink.classList.add('active');
-        }
+        const currentLink = Array.from(navLinks).find(link => link.getAttribute('onclick').includes(`('${sectionId}')`));
+        if (currentLink) { currentLink.classList.add('active'); }
         window.scrollTo(0, 0);
     }
 </script>
