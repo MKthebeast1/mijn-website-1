@@ -4,338 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MK Fine Art</title>
-    <!-- Favicon / Logo -->
     <link rel="icon" type="image/png" href="logo.png">
-    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --goud: #b08d57;
-            --hout: #3d2b1f; 
-            --donker: #242424;
-            --creme: #f4f1ea;
-            --papier: #e9e4d9;
-        }
-
-        body {
-            font-family: 'Libre Baskerville', serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--creme);
-            color: var(--donker);
-            text-align: center;
-            line-height: 1.7;
-            font-size: 1rem;
-            border-top: 10px solid var(--hout);
-        }
-
+        :root { --goud: #b08d57; --hout: #3d2b1f; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
+        body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--hout); }
         header { padding: 3.5rem 1rem 2rem; }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 3.2rem;
-            letter-spacing: 1px;
-            margin: 0;
-            color: var(--donker);
-            text-transform: uppercase;
-        }
-
-        nav { 
-            padding: 0.9rem 0; 
-            margin-bottom: 2.5rem;
-            background-color: var(--hout);
-            overflow-x: auto;
-            white-space: nowrap;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav::-webkit-scrollbar { display: none; }
-
-        nav ul { 
-            list-style: none; 
-            padding: 0 20px; 
-            margin: 0; 
-            display: inline-flex; 
-            gap: 40px; 
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #dcd0c0;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            cursor: pointer;
-        }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; text-transform: uppercase; margin: 0; }
+        nav { padding: 0.9rem 0; margin-bottom: 2.5rem; background-color: var(--hout); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; }
+        nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
         nav a:hover, nav a.active { color: white; }
-
-        .main-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            margin-bottom: 5rem;
-            text-align: left;
-        }
-
-        section { display: none; }
-        section.visible { display: block; }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 1.8rem;
-            color: var(--hout);
-            border-bottom: 3px solid var(--hout);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        /* Ticker / Slinger Slideshow Styles */
-        .ticker-wrap {
-            width: 100%;
-            overflow: hidden;
-            background-color: var(--papier);
-            padding: 30px 0;
-            margin-top: 4rem;
-            border-top: 2px solid var(--hout);
-            border-bottom: 2px solid var(--hout);
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
-        }
-
-        .ticker {
-            display: flex;
-            width: fit-content;
-            animation: ticker-scroll 40s linear infinite;
-        }
-
-        .ticker:hover {
-            animation-play-state: paused;
-        }
-
-        .ticker-item {
-            flex-shrink: 0;
-            margin: 0 20px;
-            height: 200px;
-            border: 8px solid var(--hout);
-            outline: 1px solid var(--goud);
-            outline-offset: -5px;
-            box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
-            background-color: white;
-        }
-
-        .ticker-item img {
-            height: 100%;
-            width: auto;
-            display: block;
-        }
-
-        @keyframes ticker-scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Galerij Styles */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 60px;
-            margin-top: 3rem;
-        }
-
-        @media (max-width: 600px) {
-            .gallery { grid-template-columns: 1fr; }
-        }
-
-        .gallery-item {
-            background-color: #fff;
-            padding: 20px;
-            border: 15px solid var(--hout);
-            outline: 1px solid var(--goud);
-            outline-offset: -8px;
-            box-shadow: 15px 15px 35px rgba(0,0,0,0.3);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .gold-frame {
-            border: 15px solid var(--goud) !important;
-            outline: 1px solid var(--hout) !important;
-            outline-offset: -8px;
-        }
-
-        .gallery-item:hover { transform: translateY(-5px); }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto; 
-            display: block;
-        }
-
-        .item-info {
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--donker);
-            margin-top: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 4rem 1rem;
-            font-size: 0.85rem;
-            background-color: var(--donker);
-            color: #888;
-        }
-
-        .mp-link {
-            color: var(--hout);
-            text-decoration: none;
-            font-weight: 700;
-            border-bottom: 2px solid var(--hout);
-        }
+        .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--hout); border-bottom: 3px solid var(--hout); display: inline-block; padding-bottom: 5px; margin-bottom: 2rem; }
+        .ticker-wrap { width: 100%; overflow: hidden; background-color: var(--papier); padding: 30px 0; margin: 3rem 0; border-top: 2px solid var(--hout); border-bottom: 2px solid var(--hout); }
+        .ticker { display: flex; width: fit-content; animation: ticker-scroll 40s linear infinite; }
+        .ticker-item { flex-shrink: 0; margin: 0 20px; height: 200px; border: 8px solid var(--hout); outline: 1px solid var(--goud); outline-offset: -5px; box-shadow: 10px 10px 20px rgba(0,0,0,0.2); background-color: white; }
+        .ticker-item img { height: 100%; display: block; }
+        @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>MK Fine Art</h1>
-</header>
-
+<header><h1>MK Fine Art</h1></header>
 <nav>
     <ul>
-        <li><a id="nav-home" onclick="showSection('home')">Home</a></li>
-        <li><a id="nav-verzameling" onclick="showSection('verzameling')">Verzameling</a></li>
-        <li><a id="nav-over" onclick="showSection('over')">Historie</a></li>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/verzameling/">Verzameling</a></li>
+        <li><a href="/historie/">Historie</a></li>
     </ul>
 </nav>
-
 <div class="main-content">
-    
-    <!-- HOME SECTIE -->
-    <section id="home" class="visible">
-        <h2>Welkom</h2>
-        <p>Welkom op de website van MK Fine Art. Een plek waar historie, vakmanschap en esthetiek samenkomen.</p>
-        
-        <p>Voor objecten die momenteel beschikbaar zijn voor overname, verwijzen wij u graag naar ons Marktplaats-kanaal.</p>
-        <p style="text-align: center; margin-top: 2rem;">
-            <a href="https://www.marktplaats.nl/u/mk-kunst-antiek/22516301/" target="_blank" class="mp-link">Bekijk actueel aanbod op Marktplaats</a>
-        </p>
-
-        <!-- DE SLINGER / TICKER -->
-        <div class="ticker-wrap">
-            <div class="ticker">
-                <div class="ticker-item"><img src="foto/Hageman.jpg"></div>
-                <div class="ticker-item"><img src="foto/Epcarim.jpg"></div>
-                <div class="ticker-item"><img src="foto/waltervaes.jpg"></div>
-                <div class="ticker-item"><img src="foto/HendrikHulk.jpg"></div>
-                <div class="ticker-item"><img src="foto/va.jpg"></div>
-                <div class="ticker-item"><img src="foto/joopkoopman.jpg"></div>
-                <!-- Loop set -->
-                <div class="ticker-item"><img src="foto/Hageman.jpg"></div>
-                <div class="ticker-item"><img src="foto/Epcarim.jpg"></div>
-                <div class="ticker-item"><img src="foto/waltervaes.jpg"></div>
-                <div class="ticker-item"><img src="foto/HendrikHulk.jpg"></div>
-                <div class="ticker-item"><img src="foto/va.jpg"></div>
-                <div class="ticker-item"><img src="foto/joopkoopman.jpg"></div>
-            </div>
+    <h2>Welkom</h2>
+    <p>Welkom op de website van MK Fine Art. Wij richten ons op de conservatie en verkoop van authentieke kunstwerken en historische objecten met een eigen karakter.</p>
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker-item"><img src="foto/Hageman.jpg"></div>
+            <div class="ticker-item"><img src="foto/Epcarim.jpg"></div>
+            <div class="ticker-item"><img src="foto/waltervaes.jpg"></div>
+            <div class="ticker-item"><img src="foto/HendrikHulk.jpg"></div>
+            <div class="ticker-item"><img src="foto/va.jpg"></div>
+            <div class="ticker-item"><img src="foto/joopkoopman.jpg"></div>
+            <div class="ticker-item"><img src="foto/helder.jpg"></div>
+            <div class="ticker-item"><img src="foto/Hageman.jpg"></div>
+            <div class="ticker-item"><img src="foto/Epcarim.jpg"></div>
         </div>
-    </section>
-
-    <!-- VERZAMELING SECTIE -->
-    <section id="verzameling">
-        <h2>De Verzameling</h2>
-        <div class="gallery">
-            <div class="gallery-item gold-frame">
-                <a href="items/hageman.html"><img src="foto/Hageman.jpg"></a>
-                <p class="item-info">Hageman - Boerderij</p>
-            </div>
-            <div class="gallery-item gold-frame">
-                <a href="items/epcarim.html"><img src="foto/Epcarim.jpg"></a>
-                <p class="item-info">EFCARIM - Stilleven</p>
-            </div>
-            <div class="gallery-item gold-frame">
-                <a href="items/waltervaes.html"><img src="foto/waltervaes.jpg"></a>
-                <p class="item-info">Walter Vaes - Veurne</p>
-            </div>
-            <div class="gallery-item gold-frame">
-                <a href="items/hendrikhulk.html"><img src="foto/HendrikHulk.jpg"></a>
-                <p class="item-info">Hendrik Hulk - Riviergezicht</p>
-            </div>
-            <div class="gallery-item">
-                <a href="items/vavezelay.html"><img src="foto/va.jpg"></a>
-                <p class="item-info">Basilique Vezelay</p>
-            </div>
-            <div class="gallery-item">
-                <a href="items/joopkoopman.html"><img src="foto/joopkoopman.jpg"></a>
-                <p class="item-info">J.M. Koopman - Spaarne</p>
-            </div>
-            <div class="gallery-item">
-                <a href="items/helder.html"><img src="foto/helder.jpg"></a>
-                <p class="item-info">Johannes Helder</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- HISTORIE SECTIE -->
-    <section id="over">
-        <h2>Historie & Visie</h2>
-        <p>MK Fine Art is ontstaan vanuit een fascinatie voor de verhalen achter historische objecten.</p>
-    </section>
-
+    </div>
+    <p>Verken onze verzameling of ontdek onze historie via het bovenstaande menu.</p>
 </div>
-
-<footer>
-    &copy; 2026 MK Fine Art | M. Koopmans
-</footer>
-
-<script>
-    function showSection(sectionId) {
-        // Verberg alle secties
-        const sections = document.querySelectorAll('section');
-        sections.forEach(sec => sec.classList.remove('visible'));
-        
-        // Toon de gevraagde sectie
-        const activeSection = document.getElementById(sectionId);
-        if (activeSection) { 
-            activeSection.classList.add('visible'); 
-        }
-
-        // Update de menu-links
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => link.classList.remove('active'));
-        
-        const currentLink = document.getElementById('nav-' + sectionId);
-        if (currentLink) { 
-            currentLink.classList.add('active'); 
-        }
-
-        // Scroll naar boven
-        window.scrollTo(0, 0);
-    }
-
-    // Luister naar het laden van de pagina en check de hash (#) in de URL
-    window.addEventListener('DOMContentLoaded', () => {
-        const hash = window.location.hash.replace('#', '');
-        if (hash === 'verzameling' || hash === 'over' || hash === 'home') {
-            showSection(hash);
-        } else {
-            showSection('home');
-        }
-    });
-
-    // Zorg dat het menu ook werkt als je op de 'Terug' knop van de browser klikt
-    window.addEventListener('hashchange', () => {
-        const hash = window.location.hash.replace('#', '');
-        if (hash) showSection(hash);
-    });
-</script>
-
+<footer>&copy; 2026 MK Fine Art | Merijn Koopmans</footer>
 </body>
 </html>
