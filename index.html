@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koopmans Fine Art</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="1..png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --goud: #b08d57; --hout: #3d2b1f; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
-        body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--hout); }
-        header { padding: 3.5rem 1rem 2rem; }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; text-transform: uppercase; margin: 0; }
-        nav { padding: 0.9rem 0; margin-bottom: 2.5rem; background-color: var(--hout); }
+        :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
+        body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
+        header { padding: 2rem 1rem 1rem; }
+        header img { max-height: 120px; display: block; margin: 0 auto; }
+        nav { padding: 0.9rem 0; margin-bottom: 2.5rem; background-color: var(--blauw); }
         nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; }
-        nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
+        nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; transition: 0.3s; }
         nav a:hover, nav a.active { color: white; }
         .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--hout); border-bottom: 3px solid var(--hout); display: inline-block; padding-bottom: 5px; margin-bottom: 2rem; }
-        .ticker-wrap { width: 100%; overflow: hidden; background-color: var(--papier); padding: 30px 0; margin: 3rem 0; border-top: 2px solid var(--hout); border-bottom: 2px solid var(--hout); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--blauw); border-bottom: 3px solid var(--blauw); display: inline-block; padding-bottom: 5px; margin-bottom: 2rem; }
+        .ticker-wrap { width: 100%; overflow: hidden; background-color: var(--papier); padding: 30px 0; margin: 3rem 0; border-top: 2px solid var(--blauw); border-bottom: 2px solid var(--blauw); box-shadow: inset 0 0 20px rgba(0,0,0,0.05); }
         .ticker { display: flex; width: fit-content; animation: ticker-scroll 40s linear infinite; }
-        .ticker-item { flex-shrink: 0; margin: 0 20px; height: 200px; border: 8px solid var(--hout); outline: 1px solid var(--goud); outline-offset: -5px; box-shadow: 10px 10px 20px rgba(0,0,0,0.2); background-color: white; }
+        .ticker:hover { animation-play-state: paused; }
+        .ticker-item { flex-shrink: 0; margin: 0 20px; height: 200px; border: 8px solid var(--blauw); outline: 1px solid var(--goud); outline-offset: -5px; box-shadow: 10px 10px 20px rgba(0,0,0,0.2); background-color: white; }
         .ticker-item img { height: 100%; display: block; }
         @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
     </style>
 </head>
 <body>
-<header><h1>Koopmans Fine Art</h1></header>
+<header><img src="1..png" alt="Koopmans Fine Art"></header>
 <nav>
     <ul>
         <li><a href="/" class="active">Home</a></li>
@@ -48,9 +49,10 @@
             <div class="ticker-item"><img src="foto/helder.jpg"></div>
             <div class="ticker-item"><img src="foto/Hageman.jpg"></div>
             <div class="ticker-item"><img src="foto/Epcarim.jpg"></div>
+            <div class="ticker-item"><img src="foto/waltervaes.jpg"></div>
         </div>
     </div>
-    <p>Verken onze verzameling of ontdek onze historie via het bovenstaande menu.</p>
+    <p>Onze collectie is met zorg samengesteld en biedt een blik op meesterlijk vakmanschap uit vervlogen tijden. Verken onze volledige verzameling of ontdek onze historie via het menu.</p>
 </div>
 <footer>&copy; 2026 Koopmans Fine Art | M. Koopmans</footer>
 </body>
