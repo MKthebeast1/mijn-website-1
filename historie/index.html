@@ -12,7 +12,11 @@
         header { padding: 2rem 1rem 1rem; }
         header img { max-height: 120px; display: block; margin: 0 auto; }
         nav { padding: 0.9rem 0; margin-bottom: 2.5rem; background-color: var(--blauw); }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+@media (max-width: 600px) { 
+    nav ul { gap: 15px; } 
+    header img { max-height: 80px; } 
+}
         nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
         nav a:hover, nav a.active { color: white; }
         .main-content { max-width: 900px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
