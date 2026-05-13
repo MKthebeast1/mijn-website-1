@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK kunst & antiek</title>
-    <!-- Favicon / Logo toevoeging -->
+    <title>MK Fine Art</title>
     <link rel="icon" type="image/png" href="logo.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -108,7 +107,7 @@
         .ticker {
             display: flex;
             width: fit-content;
-            animation: ticker-scroll 40s linear infinite;
+            animation: ticker-scroll 35s linear infinite;
         }
 
         .ticker:hover {
@@ -201,26 +200,6 @@
             box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.95);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal:target { display: flex; }
-        .modal img { max-width: 95%; max-height: 90%; border: 5px solid #333; }
-        .close {
-            position: absolute;
-            top: 20px; right: 40px;
-            color: white;
-            font-size: 50px;
-            text-decoration: none;
-        }
-
         footer {
             text-align: center;
             padding: 4rem 1rem;
@@ -240,7 +219,7 @@
 <body>
 
 <header>
-    <h1>MK kunst & antiek</h1>
+    <h1>MK Fine Art</h1>
 </header>
 
 <nav>
@@ -253,14 +232,13 @@
 
 <div class="main-content">
     
-    <!-- HOME SECTIE -->
     <section id="home" class="visible">
         <h2>Welkom</h2>
-        <p>Welkom op de website van MK kunst & antiek. Een plek waar historie, vakmanschap en esthetiek samenkomen. Wij richten ons op de conservatie en verkoop van authentieke kunstwerken en historische objecten met een eigen karakter.</p>
+        <p>Welkom op de website van MK Fine Art. Een plek waar historie, vakmanschap en esthetiek samenkomen. Wij richten ons op de conservatie en verkoop van authentieke kunstwerken en historische objecten met een eigen karakter.</p>
         
         <div class="homepage-featured">
             <img src="foto/awydeveld.jpg" alt="A. Wijdeveld" class="featured-img">
-            <p class="item-info" style="margin-top: 25px;">A. Wijdeveld (1823-1888). Olieverf op paneel. Bron: Sotheby's.</p>
+            <p class="item-info" style="margin-top: 25px;">A. Wijdeveld (1823-1888). Olieverf op paneel.</p>
         </div>
 
         <p>Onze volledige verzameling is via deze website te bewonderen. Voor objecten die momenteel beschikbaar zijn voor overname, verwijzen wij u graag naar ons Marktplaats-kanaal.</p>
@@ -268,17 +246,14 @@
             <a href="https://www.marktplaats.nl/u/mk-kunst-antiek/22516301/" target="_blank" class="mp-link">Bekijk actueel aanbod op Marktplaats</a>
         </p>
 
-        <!-- DE SLINGER / TICKER -->
         <div class="ticker-wrap">
             <div class="ticker">
-                <!-- Eerste set afbeeldingen -->
                 <div class="ticker-item"><img src="foto/Hageman.jpg" alt="Hageman"></div>
                 <div class="ticker-item"><img src="foto/Epcarim.jpg" alt="Epcarim"></div>
                 <div class="ticker-item"><img src="foto/waltervaes.jpg" alt="Walter Vaes"></div>
                 <div class="ticker-item"><img src="foto/HendrikHulk.jpg" alt="H. Hulk"></div>
                 <div class="ticker-item"><img src="foto/va.jpg" alt="VA"></div>
                 <div class="ticker-item"><img src="foto/joopkoopman.jpg" alt="Joop Koopman"></div>
-                <!-- Tweede identieke set voor naadloze loop -->
                 <div class="ticker-item"><img src="foto/Hageman.jpg" alt="Hageman"></div>
                 <div class="ticker-item"><img src="foto/Epcarim.jpg" alt="Epcarim"></div>
                 <div class="ticker-item"><img src="foto/waltervaes.jpg" alt="Walter Vaes"></div>
@@ -289,49 +264,48 @@
         </div>
     </section>
 
-    <!-- VERZAMELING SECTIE -->
     <section id="verzameling">
         <h2>De Verzameling</h2>
-        <p>Een selectie van klassieke werken en historische stukken. Elk object in deze verzameling vertegenwoordigt een eigen tijdperk en uniek vakmanschap.</p>
+        <p>Een selectie van klassieke werken en historische stukken. Klik op een werk voor de volledige details en historie.</p>
         
         <div class="gallery">
             <div class="gallery-item gold-frame">
-                <a href="#hageman">
+                <a href="items/hageman.html">
                     <img src="foto/Hageman.jpg" alt="Hageman">
                 </a>
                 <p class="item-info">Hageman. Boerderij met pluimvee (ca. 1900).</p>
             </div>
             
             <div class="gallery-item gold-frame">
-                <a href="#epcarim">
+                <a href="items/epcarim.html">
                     <img src="foto/Epcarim.jpg" alt="Epcarim">
                 </a>
                 <p class="item-info">EFCARIM. Stilleven met druiven (ca. 1880).</p>
             </div>
 
             <div class="gallery-item gold-frame">
-                <a href="#waltervaes">
+                <a href="items/waltervaes.html">
                     <img src="foto/waltervaes.jpg" alt="Walter Vaes">
                 </a>
                 <p class="item-info">Walter Vaes (1904). De Klok van Veurne.</p>
             </div>
             
             <div class="gallery-item gold-frame">
-                <a href="#hendrikhulk">
+                <a href="items/hendrikhulk.html">
                     <img src="foto/HendrikHulk.jpg" alt="H. Hulk">
                 </a>
                 <p class="item-info">H. Hulk ('94). Riviergezicht.</p>
             </div>
 
             <div class="gallery-item">
-                <a href="#vavezelay">
+                <a href="items/vavezelay.html">
                     <img src="foto/va.jpg" alt="Basilique Vezelay">
                 </a>
                 <p class="item-info">VA, Hollandse meester. Basilique Vezelay (Ca. 1940).</p>
             </div>
 
             <div class="gallery-item">
-                <a href="#joopkoopman">
+                <a href="items/joopkoopman.html">
                     <img src="foto/joopkoopman.jpg" alt="Joop Koopman">
                 </a>
                 <p class="item-info">J.M. Koopman (1914-1987). Spaarne Haarlem.</p>
@@ -339,25 +313,17 @@
         </div>
     </section>
 
-    <!-- HISTORIE SECTIE -->
     <section id="over">
         <h2>Historie & Visie</h2>
-        <p>MK kunst & antiek is ontstaan vanuit de fascinatie van Merijn Koopmans voor de verhalen achter historische objecten. Het vormt een brug tussen het verleden en het heden.</p>
+        <p>MK Fine Art is ontstaan vanuit de fascinatie van Merijn Koopmans voor de verhalen achter historische objecten. Het vormt een brug tussen het verleden en het heden.</p>
         <p>De overtuiging is dat antiek een interieur verrijkt met een gevoel van continuïteit en ziel.</p>
     </section>
 
 </div>
 
 <footer>
-    &copy; 2026 MK kunst & antiek | www.mkkunstantiek.nl | Merijn Koopmans
+    &copy; 2026 MK Fine Art | www.mkkunstantiek.nl | Merijn Koopmans
 </footer>
-    
-<div id="hageman" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/Hageman.jpg"></div>
-<div id="epcarim" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/Epcarim.jpg"></div>
-<div id="hendrikhulk" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/HendrikHulk.jpg"></div>
-<div id="vavezelay" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/va.jpg"></div>
-<div id="joopkoopman" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/joopkoopman.jpg"></div>
-<div id="waltervaes" class="modal"><a href="#verzameling" class="close">&times;</a><img src="foto/waltervaes.jpg"></div>
 
 <script>
     function showSection(sectionId) {
