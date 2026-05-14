@@ -10,7 +10,7 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         header { padding: 2rem 1rem 1rem; }
-        header img { max-height: 120px; display: block; margin: 0 auto; width: auto; }
+        header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
         nav { padding: 0.9rem 0; margin-bottom: 2.5rem; background-color: var(--blauw); }
         nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
         nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
@@ -23,10 +23,10 @@
         .gallery-item img { width: 100%; display: block; }
         .item-info { font-weight: 700; font-size: 0.9rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; }
         @media (max-width: 600px) { 
-            nav ul { gap: 15px; padding: 0 10px; } 
-            header img { max-height: 80px; }
-            .gallery { grid-template-columns: 1fr; }
-        }
+    nav ul { gap: 15px; padding: 0 10px; } 
+    header { padding: 1.5rem 1rem 1rem; }
+    header img { max-height: 65px; max-width: 85%; } 
+}
         footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
     </style>
 </head>
