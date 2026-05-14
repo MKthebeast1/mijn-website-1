@@ -38,12 +38,21 @@
 
         .price { margin-top: 2.5rem; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blauw); font-weight: 700; font-style: italic; }
 
-        @media (max-width: 900px) { 
-            .item-layout { flex-direction: column; } 
-            .image-side, .text-side { flex: none; width: 100%; }
-            nav ul { gap: 15px; padding: 0 10px; }
-            header img { max-height: 80px; }
-        }
+       @media (max-width: 600px) { 
+    nav ul { gap: 15px; padding: 0 10px; } 
+    header { padding: 1.5rem 1rem 1rem; }
+    header img { 
+        max-height: 65px; 
+        max-width: 85%; 
+    } 
+}
+            header img { 
+    max-height: 120px; 
+    max-width: 90%; 
+    display: block; 
+    margin: 0 auto; 
+    object-fit: contain; 
+}
         
         footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.8rem; margin-top: 5rem; }
     </style>
