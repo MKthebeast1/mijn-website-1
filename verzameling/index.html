@@ -4,56 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verzameling - Koopmans Fine Art</title>
-    <link rel="icon" type="image/png" href="../Koopmansfine.png">
+    <link rel="icon" type="image/png" href="/Koopmansfine.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
+        
+        /* Header padding gelijkgetrokken met de rest van de website */
         header { padding: 2rem 1rem 1rem; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
-        nav { padding: 0.9rem 0; margin-bottom: 2.5rem; background-color: var(--blauw); }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
+        
+        /* BEWEEGBARE MENUBALK STYLING */
+        nav { 
+            padding: 0.9rem 0; 
+            margin-bottom: 2.5rem; 
+            background-color: var(--blauw); 
+            overflow-x: auto; /* Swipebaar maken op mobiel */
+            white-space: nowrap;
+            scrollbar-width: none; /* Verbergt scrollbalk in Firefox */
+            -ms-overflow-style: none; /* Verbergt scrollbalk in Edge */
+            -webkit-overflow-scrolling: touch; /* Vloeiende swipe op iOS */
+        }
+        nav::-webkit-scrollbar {
+            display: none; /* Verbergt scrollbalk in Chrome/Safari */
+        }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; /* Gecentreerd op desktop */
+            gap: 40px; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #dcd0c0; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+            display: inline-block;
+        }
         nav a:hover, nav a.active { color: white; }
+        
         .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--blauw); border-bottom: 3px solid var(--blauw); display: inline-block; padding-bottom: 5px; margin-bottom: 2rem; }
+        
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 2rem; }
         .gallery-item { background-color: #fff; padding: 15px; border: 12px solid var(--blauw); outline: 1px solid var(--goud); outline-offset: -8px; box-shadow: 15px 15px 35px rgba(0,0,0,0.3); text-align: center; transition: 0.3s; }
         .gallery-item:hover { transform: translateY(-5px); }
         .gallery-item img { width: 100%; display: block; }
         .item-info { font-weight: 700; font-size: 0.9rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        
         @media (max-width: 600px) { 
-    nav ul { gap: 15px; padding: 0 10px; } 
-    header { padding: 1.5rem 1rem 1rem; }
-    header img { max-height: 65px; max-width: 85%; } 
-}
+            nav ul { 
+                justify-content: flex-start; /* Start altijd links bij 'Home' op mobiel */
+                padding: 0 25px; 
+                gap: 30px; 
+            } 
+            header { padding: 1.5rem 1rem 1rem; }
+            header img { max-height: 65px; max-width: 85%; } 
+        }
+        
         footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
+        footer a { color: #888; text-decoration: none; }
     </style>
 </head>
 <body>
-<header><img src="../11.png" alt="Koopmans Fine Art"></header>
+
+<header><img src="/11.png" alt="Koopmans Fine Art"></header>
+
 <nav>
     <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/verzameling/" class="active">Verzameling</a></li>
+        <li><a href="/veilingen/">Veilingen</a></li>
         <li><a href="/historie/">Historie</a></li>
     </ul>
 </nav>
+
 <div class="main-content">
     <h2>De Verzameling</h2>
     <div class="gallery">
-        <div class="gallery-item"><a href="/items/johanneshelder/"><img src="../foto/helder2.jpeg"></a><p class="item-info">Johannes Helder</p></div>
-        <div class="gallery-item"><a href="/items/hectorthys/"><img src="../foto/thys1.jpeg"></a><p class="item-info">Hector Thys</p></div>
-        <div class="gallery-item"><a href="/items/hendrikhulk/"><img src="../foto/HendrikHulk.jpg"></a><p class="item-info">Hendrik Hulk</p></div>
-        <div class="gallery-item"><a href="/items/arnoudwydeveld/"><img src="../foto/wydeveldnieuw.png"></a><p class="item-info">Arnoud Wydeveld</p></div>
-        <div class="gallery-item"><a href="/items/hermanusvantankeren/"><img src="../foto/hermanusvantankeren.jpg"></a><p class="item-info">H. van Tankeren</p></div>
-        <div class="gallery-item"><a href="/items/hageman/"><img src="../foto/Hageman.jpg"></a><p class="item-info">Gerard Hageman</p></div>
-        <div class="gallery-item"><a href="/items/waltervaes/"><img src="../foto/waltervaes.jpg"></a><p class="item-info">Walter Vaes</p></div>
-        </div>
+        <div class="gallery-item"><a href="/items/johanneshelder/"><img src="/foto/helder2.jpeg"></a><p class="item-info">Johannes Helder</p></div>
+        <div class="gallery-item"><a href="/items/hectorthys/"><img src="/foto/thys1.jpeg"></a><p class="item-info">Hector Thys</p></div>
+        <div class="gallery-item"><a href="/items/hendrikhulk/"><img src="/foto/HendrikHulk.jpg"></a><p class="item-info">Hendrik Hulk</p></div>
+        <div class="gallery-item"><a href="/items/arnoudwydeveld/"><img src="/foto/wydeveldnieuw.png"></a><p class="item-info">Arnoud Wydeveld</p></div>
+        <div class="gallery-item"><a href="/items/hermanusvantankeren/"><img src="/foto/hermanusvantankeren.jpg"></a><p class="item-info">H. van Tankeren</p></div>
+        <div class="gallery-item"><a href="/items/hageman/"><img src="/foto/Hageman.jpg"></a><p class="item-info">Gerard Hageman</p></div>
+        <div class="gallery-item"><a href="/items/waltervaes/"><img src="/foto/waltervaes.jpg"></a><p class="item-info">Walter Vaes</p></div>
+    </div>
 </div>
+
 <footer>
     &copy; 2026 Koopmans Fine Art | M. Koopmans | 
-    <a href="/disclaimer/" style="color:#888; text-decoration:none;">Disclaimer</a>
+    <a href="/disclaimer/">Disclaimer</a>
 </footer>
+
 </body>
 </html>
