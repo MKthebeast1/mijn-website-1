@@ -37,6 +37,12 @@
         
         .price { margin-top: 2.5rem; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blauw); font-weight: 700; font-style: italic; }
         
+        /* Modal (grote weergave) styling */
+        .modal { display: none; position: fixed; z-index: 1000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(31, 42, 53, 0.95); }
+        .modal-content { margin: auto; display: block; max-width: 90%; max-height: 85vh; object-fit: contain; }
+        .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .close:hover { color: var(--goud); }
+        
         footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.8rem; margin-top: 4rem; }
         footer a { color: #888; text-decoration: none; }
         
@@ -65,7 +71,7 @@
         <div class="item-layout">
             <div class="image-side">
                 <div class="frame">
-                    <img src="../../foto/wydeveldnieuw.png" alt="Arnoud Wydeveld - Stilleven met hangende tros druiven">
+                    <img src="../../foto/wydeveldnieuw.png" alt="Arnoud Wydeveld - Stilleven met hangende tros druiven" id="zoomImg">
                 </div>
             </div>
             
@@ -87,6 +93,38 @@
         </div>
     </div>
     
-    <footer>&copy; 2026 koopmansfineart.com | M. Koopmans | <a href="/disclaimer/">Disclaimer</a></footer>
+    <!-- Het grote vergrotingsscherm (Modal) -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01" alt="Grote weergave van Arnoud Wydeveld">
+    </div>
+    
+    <footer>&copy; 2026 <a href="/">koopmansfineart.com</a> | M. Koopmans | <a href="/disclaimer/">Disclaimer</a></footer>
+
+    <!-- Script om de klikfunctionaliteit te activeren -->
+    <script>
+        var modal = document.getElementById("myModal");
+        var img = document.getElementById("zoomImg");
+        var modalImg = document.getElementById("img01");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Open de modal bij een klik op de foto
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+
+        // Sluit de modal bij klik op het kruisje (x)
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // Sluit de modal bij een klik buiten de foto
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
