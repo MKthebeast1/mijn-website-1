@@ -17,21 +17,21 @@
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
             background-color: var(--blauw); 
-            overflow-x: auto; /* Swipebaar maken op mobiel */
+            overflow-x: auto; 
             white-space: nowrap;
-            scrollbar-width: none; /* Verbergt scrollbalk in Firefox */
-            -ms-overflow-style: none; /* Verbergt scrollbalk in Edge */
-            -webkit-overflow-scrolling: touch; /* Vloeiende swipe op iOS */
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+            -webkit-overflow-scrolling: touch; 
         }
         nav::-webkit-scrollbar {
-            display: none; /* Verbergt scrollbalk in Chrome/Safari */
+            display: none; 
         }
         nav ul { 
             list-style: none; 
             padding: 0; 
             margin: 0; 
             display: flex; 
-            justify-content: center; /* Gecentreerd op desktop */
+            justify-content: center; 
             gap: 40px; 
         }
         nav a { 
@@ -46,8 +46,21 @@
         }
         nav a:hover, nav a.active { color: white; }
         
-        .main-content { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; text-align: left; }
-        h1 { font-family: 'Playfair Display', serif; color: var(--blauw); margin-bottom: 2rem; }
+        /* padding-top verlaagd van 4rem naar 0.5rem */
+        .main-content { max-width: 800px; margin: 0 auto; padding: 0.5rem 2rem 5rem; text-align: left; }
+        
+        /* H1 styling nu identiek aan H2 op de homepage */
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.2rem;
+            color: var(--blauw); 
+            border-bottom: 3px solid var(--blauw); 
+            display: inline-block; 
+            padding-bottom: 5px; 
+            margin-top: 0.5rem;
+            margin-bottom: 2rem; 
+        }
+        
         h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--blauw); margin-top: 3rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--blauw); padding-bottom: 8px; }
         
         /* De profielfoto met inkeping (text wrap) */
@@ -73,7 +86,7 @@
         
         @media (max-width: 600px) { 
             nav ul { 
-                justify-content: flex-start; /* Start altijd links bij 'Home' op mobiel */
+                justify-content: flex-start; 
                 padding: 0 25px; 
                 gap: 30px; 
             } 
@@ -112,7 +125,7 @@
     <p>Het conserveren en onderzoeken van deze werken is voor mij een vorm van historisch respect. Met <strong>koopmansfineart.com</strong> hoop ik deze passie en de tastbare schoonheid van het klassieke ambacht te delen met andere verzamelaars en liefhebbers.</p>
 </div>
 
-<footer>&copy; 2026 koopmansfineart.com | M. Koopmans | <a href="/disclaimer/">Disclaimer</a></footer>
+<footer>&copy; 2026 <a href="/">koopmansfineart.com</a> | M. Koopmans | <a href="/disclaimer/">Disclaimer</a></footer>
 
 </body>
 </html>
