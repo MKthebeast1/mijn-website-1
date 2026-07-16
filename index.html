@@ -10,7 +10,18 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         header { padding: 2rem 1rem 1rem; }
-        header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
+        
+        /* can-change toegevoegd voor buttery smooth prestaties op mobiel */
+        header img { 
+            max-height: 120px; 
+            max-width: 90%; 
+            display: block; 
+            margin: 0 auto; 
+            object-fit: contain; 
+            will-change: opacity; 
+            transition: opacity 0.05s linear; 
+        }
+        
         nav { padding: 0.9rem 0; margin-bottom: 2.5rem; background-color: var(--blauw); }
         nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
         nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; transition: 0.3s; }
@@ -18,7 +29,6 @@
         
         .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
         
-        /* Welkom-titel dichter bij de slideshow gehaald */
         h2 { 
             font-family: 'Playfair Display', serif; 
             font-size: 2.2rem; 
@@ -26,7 +36,7 @@
             border-bottom: 3px solid var(--blauw); 
             display: inline-block; 
             padding-bottom: 5px; 
-            margin-top: 0.5rem; /* Zorgt dat de titel strak onder het balkje aansluit */
+            margin-top: 0.5rem; 
             margin-bottom: 2rem; 
         }
         
@@ -35,21 +45,20 @@
             overflow: hidden; 
             background-color: var(--papier); 
             padding: 30px 0; 
-            margin: 1.5rem 0 1rem 0; /* Ruimte aan de onderkant verkleind naar 1rem */
+            margin: 1.5rem 0 1rem 0; 
             border-top: 2px solid var(--blauw); 
             border-bottom: 2px solid var(--blauw); 
         }
         
         .ticker { display: flex; width: fit-content; animation: ticker-scroll 55s linear infinite; }
         
-        /* Randen van de items in de slideshow verdund */
         .ticker-item { 
             flex-shrink: 0; 
             margin: 0 20px; 
             height: 120px; 
-            border: 4px solid var(--blauw); /* Dunner gemaakt (was 8px) */
+            border: 4px solid var(--blauw); 
             outline: 1px solid var(--goud); 
-            outline-offset: -3px; /* Aangepast aan de dunnere rand */
+            outline-offset: -3px; 
             box-shadow: 10px 10px 20px rgba(0,0,0,0.2); 
             background-color: white; 
         }
@@ -69,7 +78,8 @@
 </head>
 <body>
 
-<header><img src="11.png" alt="Koopmans Fine Art"></header>
+<!-- ID toegevoegd aan de img om deze via Javascript aan te sturen -->
+<header><img src="11.png" alt="Koopmans Fine Art" id="header-logo"></header>
 
 <nav>
     <ul>
@@ -120,6 +130,27 @@
     &copy; 2026 Koopmans Fine Art | M. Koopmans | 
     <a href="/disclaimer/" style="color:#888; text-decoration:none;">Disclaimer</a>
 </footer>
+
+<!-- Javascript om het logo te vervagen bij scrollen -->
+<script>
+    window.addEventListener('scroll', function() {
+        var logo = document.getElementById('header-logo');
+        var scrollPosition = window.scrollY;
+        
+        // De afstand (in pixels) vanaf de top tot waar het logo volledig onzichtbaar is.
+        // Staat nu op 180px, pas dit getal aan als het logo sneller of langzamer moet uitfaden.
+        var maxScroll = 180; 
+        
+        // Bereken de helderheid (opacity) tussen 1 (zichtbaar) en 0 (onzichtbaar)
+        var opacity = 1 - (scrollPosition / maxScroll);
+        
+        // Voorkom dat de waarde buiten de grenzen (0 en 1) schiet
+        if (opacity < 0) opacity = 0;
+        if (opacity > 1) opacity = 1;
+        
+        logo.style.opacity = opacity;
+    });
+</script>
 
 </body>
 </html>
