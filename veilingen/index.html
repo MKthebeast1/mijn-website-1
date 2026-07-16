@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veilingen - koopmansfineart.com</title>
-    <!-- Absolute root-paden opgelost voor gegarandeerd laden -->
     <link rel="icon" type="image/png" href="/Koopmansfine.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
-        header { padding: 2.5rem 1rem 1.5rem; }
+        
+        /* Witruimte exact gelijkgetrokken met de homepage */
+        header { padding: 2rem 1rem 1rem; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
         
         /* BEWEEGBARE MENUBALK STYLING */
@@ -88,13 +89,14 @@
                 padding: 0 25px; 
                 gap: 30px; 
             } 
-            header img { max-height: 65px; } 
+            /* Mobiele headerruimte hersteld */
+            header { padding: 1.5rem 1rem 1rem; }
+            header img { max-height: 65px; max-width: 85%; } 
         }
     </style>
 </head>
 <body>
 
-<!-- Logo gecorrigeerd met absolute path vanaf root -->
 <header><img src="/11.png" alt="koopmansfineart.com"></header>
 
 <nav>
