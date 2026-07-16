@@ -11,28 +11,48 @@
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         header { padding: 2rem 1rem 1rem; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
-        nav { padding: 0.9rem 0; margin-bottom: 2.5rem; background-color: var(--blauw); }
+        
+        /* 1. Navigatie-afstand naar beneden gehalveerd */
+        nav { padding: 0.9rem 0; margin-bottom: 1.25rem; background-color: var(--blauw); }
         nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
         nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; transition: 0.3s; }
         nav a:hover, nav a.active { color: white; }
+        
         .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--blauw); border-bottom: 3px solid var(--blauw); display: inline-block; padding-bottom: 5px; margin-bottom: 2rem; }
-        .ticker-wrap { width: 100%; overflow: hidden; background-color: var(--papier); padding: 30px 0; margin: 3rem 0; border-top: 2px solid var(--blauw); border-bottom: 2px solid var(--blauw); }
+        
+        /* 2. Ticker-wrap gecorrigeerd en hersteld */
+        .ticker-wrap { 
+            width: 100%; 
+            overflow: hidden; 
+            background-color: var(--papier); 
+            padding: 30px 0; 
+            /* Ruimte boven gehalveerd naar 1.5rem, ruimte onder behouden op 3rem */
+            margin: 1.5rem 0 3rem 0; 
+            /* Zowel boven als onder nu strak gekaderd met de blauwe lijn */
+            border-top: 2px solid var(--blauw); 
+            border-bottom: 2px solid var(--blauw); 
+        }
+        
         .ticker { display: flex; width: fit-content; animation: ticker-scroll 55s linear infinite; }
         .ticker-item { flex-shrink: 0; margin: 0 20px; height: 120px; border: 8px solid var(--blauw); outline: 1px solid var(--goud); outline-offset: -5px; box-shadow: 10px 10px 20px rgba(0,0,0,0.2); background-color: white; }
         .ticker-item img { height: 100%; display: block; }
+        
         @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        
         @media (max-width: 600px) { 
-    nav ul { gap: 15px; padding: 0 10px; } 
-    header { padding: 1.5rem 1rem 1rem; }
-    header img { max-height: 65px; max-width: 85%; } 
-}
+            nav ul { gap: 15px; padding: 0 10px; } 
+            header { padding: 1.5rem 1rem 1rem; }
+            header img { max-height: 65px; max-width: 85%; } 
         }
+        
         footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
     </style>
 </head>
 <body>
+
 <header><img src="11.png" alt="Koopmans Fine Art"></header>
+
 <nav>
     <ul>
         <li><a href="/" class="active">Home</a></li>
@@ -40,45 +60,50 @@
         <li><a href="/historie/">Historie</a></li>
     </ul>
 </nav>
-       <div class="ticker-wrap">
-       <div class="ticker">
-           <div class="ticker-item"><img src="foto/thys1.jpeg"></div>
-           <div class="ticker-item"><img src="foto/helder2.jpeg"></div>
-           <div class="ticker-item"><img src="foto/HendrikHulk.jpg"></div>
-           <div class="ticker-item"><img src="foto/wydeveldnieuw.png"></div>
-           <div class="ticker-item"><img src="foto/hermanusvantankeren.jpg"></div>
-            <div class="ticker-item"><img src="foto/Hageman.jpg"></div>
-           <div class="ticker-item"><img src="foto/thys1.jpeg"></div>
-           <div class="ticker-item"><img src="foto/Epcarim.jpg"></div>
-           <div class="ticker-item"><img src="foto/helder2.jpeg"></div>
-           <div class="ticker-item"><img src="foto/wydeveldnieuw.png"></div>
-           <div class="ticker-item"><img src="foto/thys1.jpeg"></div>
-           <div class="ticker-item"><img src="foto/Hageman.jpg"></div>
-            <div class="ticker-item"><img src="foto/Epcarim.jpg"></div>
-            <div class="ticker-item"><img src="foto/waltervaes.jpg"></div>
-           <div class="ticker-item"><img src="foto/helder2.jpeg"></div>
-            <div class="ticker-item"><img src="foto/HendrikHulk.jpg"></div>
-         
-        </div>
+
+<!-- De slideshow, nu netjes op zichzelf gesloten -->
+<div class="ticker-wrap">
+    <div class="ticker">
+        <div class="ticker-item"><img src="foto/thys1.jpeg"></div>
+        <div class="ticker-item"><img src="foto/helder2.jpeg"></div>
+        <div class="ticker-item"><img src="foto/HendrikHulk.jpg"></div>
+        <div class="ticker-item"><img src="foto/wydeveldnieuw.png"></div>
+        <div class="ticker-item"><img src="foto/hermanusvantankeren.jpg"></div>
+        <div class="ticker-item"><img src="foto/Hageman.jpg"></div>
+        <div class="ticker-item"><img src="foto/thys1.jpeg"></div>
+        <div class="ticker-item"><img src="foto/Epcarim.jpg"></div>
+        <div class="ticker-item"><img src="foto/helder2.jpeg"></div>
+        <div class="ticker-item"><img src="foto/wydeveldnieuw.png"></div>
+        <div class="ticker-item"><img src="foto/thys1.jpeg"></div>
+        <div class="ticker-item"><img src="foto/Hageman.jpg"></div>
+        <div class="ticker-item"><img src="foto/Epcarim.jpg"></div>
+        <div class="ticker-item"><img src="foto/waltervaes.jpg"></div>
+        <div class="ticker-item"><img src="foto/helder2.jpeg"></div>
+        <div class="ticker-item"><img src="foto/HendrikHulk.jpg"></div>
+    </div>
+</div>
+
+<!-- De hoofdinhoud start nu pas ná de slideshow -->
 <div class="main-content">
     <h2>Welkom</h2>
     <p>Welkom op de website van Koopmans Fine Art. Wij richten ons op de conservatie en verkoop van authentieke kunstwerken en historische objecten met een eigen karakter.</p>
+    
     <div style="padding: 1.5rem 1rem; text-align: center; background-color: #f4f1ea; border-top: 1px solid #e0dcd5; margin-top: 1rem;">
-    <div style="margin: 2rem auto; max-width: 600px; padding: 20px; text-align: center; border: 2px solid #b08d57; background-color: #fcfbf8; border-radius: 5px;">
-    <p style="font-family: 'Libre Baskerville', serif; color: #1f2a35; margin: 0 0 15px 0; font-size: 1rem;">
-        Bied mee op bijzondere objecten via de veilingpagina.
-    </p>
-    <a href="https://www.catawiki.com/nl/u/30227951-koopmansfineart" target="_blank" style="display: inline-block; padding: 10px 25px; background-color: #1f2a35; color: #dcd0c0; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; border-radius: 2px;">
-        Naar Catawiki
-    </a>
-</div>
-</div>
- 
+        <div style="margin: 2rem auto; max-width: 600px; padding: 20px; text-align: center; border: 2px solid #b08d57; background-color: #fcfbf8; border-radius: 5px;">
+            <p style="font-family: 'Libre Baskerville', serif; color: #1f2a35; margin: 0 0 15px 0; font-size: 1rem;">
+                Bied mee op bijzondere objecten via de veilingpagina.
+            </p>
+            <a href="https://www.catawiki.com/nl/u/30227951-koopmansfineart" target="_blank" style="display: inline-block; padding: 10px 25px; background-color: #1f2a35; color: #dcd0c0; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; border-radius: 2px;">
+                Naar Catawiki
+            </a>
+        </div>
     </div>
 </div>
+
 <footer>
     &copy; 2026 Koopmans Fine Art | M. Koopmans | 
     <a href="/disclaimer/" style="color:#888; text-decoration:none;">Disclaimer</a>
 </footer>
+
 </body>
 </html>
