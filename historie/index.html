@@ -4,16 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historie - koopmansfineart.com</title>
-    <link rel="icon" type="image/png" href="../Koopmansfine.png">
+    <link rel="icon" type="image/png" href="/Koopmansfine.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
         header { padding: 2.5rem 1rem 1.5rem; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
-        nav { padding: 0.9rem 0; background-color: var(--blauw); }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; transition: 0.3s; }
+        
+        /* BEWEEGBARE MENUBALK STYLING */
+        nav { 
+            padding: 0.9rem 0; 
+            margin-bottom: 2.5rem; 
+            background-color: var(--blauw); 
+            overflow-x: auto; /* Swipebaar maken op mobiel */
+            white-space: nowrap;
+            scrollbar-width: none; /* Verbergt scrollbalk in Firefox */
+            -ms-overflow-style: none; /* Verbergt scrollbalk in Edge */
+            -webkit-overflow-scrolling: touch; /* Vloeiende swipe op iOS */
+        }
+        nav::-webkit-scrollbar {
+            display: none; /* Verbergt scrollbalk in Chrome/Safari */
+        }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; /* Gecentreerd op desktop */
+            gap: 40px; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #dcd0c0; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+            display: inline-block;
+        }
         nav a:hover, nav a.active { color: white; }
         
         .main-content { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; text-align: left; }
@@ -40,7 +70,13 @@
         
         footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.8rem; margin-top: 4rem; }
         footer a { color: #888; text-decoration: none; }
+        
         @media (max-width: 600px) { 
+            nav ul { 
+                justify-content: flex-start; /* Start altijd links bij 'Home' op mobiel */
+                padding: 0 25px; 
+                gap: 30px; 
+            } 
             header img { max-height: 65px; } 
             .profile-img { float: none; display: block; margin: 0 auto 20px auto; width: 85%; max-width: 240px; }
         }
@@ -48,7 +84,7 @@
 </head>
 <body>
 
-<header><img src="../11.png" alt="koopmansfineart.com"></header>
+<header><img src="/11.png" alt="koopmansfineart.com"></header>
 
 <nav>
     <ul>
@@ -67,9 +103,9 @@
 
     <h2>Over Mij</h2>
     
-    <img src="../foto/merijn.jpg" alt="Merijn Koopmans" class="profile-img">
+    <img src="/foto/merijn.jpg" alt="Merijn Koopmans" class="profile-img">
     
-    <p>Mijn naam is <strong>Merijn Koopmans</strong>. </p>
+    <p>Mijn naam is <strong>Merijn Koopmans</strong>.</p>
     
     <p>Het mooiste aspect van deze passie is de ontdekkingstocht: het intensief afzoeken van regionale veilinghuizen, boedelscheidingen en particuliere collecties naar die ene verborgen parel. Een vergeelde, donker geworden vernislaag of een subtiele, bijna onleesbare signatuur verbergen vaak de hand van een klassieke meester—denk aan de uiterst verfijnde stillevens van Arnoud Wydeveld of de sfeervolle maritieme gezichten van Hendrik Hulk.</p>
     
