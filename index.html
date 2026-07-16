@@ -11,7 +11,6 @@
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         header { padding: 2rem 1rem 1rem; }
         
-        /* can-change toegevoegd voor buttery smooth prestaties op mobiel */
         header img { 
             max-height: 120px; 
             max-width: 90%; 
@@ -22,9 +21,38 @@
             transition: opacity 0.05s linear; 
         }
         
-        nav { padding: 0.9rem 0; margin-bottom: 2.5rem; background-color: var(--blauw); }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; transition: 0.3s; }
+        /* BEWEEGBARE MENUBALK STYLING */
+        nav { 
+            padding: 0.9rem 0; 
+            margin-bottom: 2.5rem; 
+            background-color: var(--blauw); 
+            overflow-x: auto; /* Swipebaar maken op mobiel */
+            white-space: nowrap;
+            scrollbar-width: none; /* Verbergt scrollbalk in Firefox */
+            -ms-overflow-style: none; /* Verbergt scrollbalk in Edge */
+            -webkit-overflow-scrolling: touch; /* Vloeiende swipe op iOS */
+        }
+        nav::-webkit-scrollbar {
+            display: none; /* Verbergt scrollbalk in Chrome/Safari */
+        }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; /* Gecentreerd op desktop */
+            gap: 40px; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #dcd0c0; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+            display: inline-block;
+        }
         nav a:hover, nav a.active { color: white; }
         
         .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
@@ -68,7 +96,11 @@
         @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
         @media (max-width: 600px) { 
-            nav ul { gap: 15px; padding: 0 10px; } 
+            nav ul { 
+                justify-content: flex-start; /* Start altijd links bij 'Home' op mobiel */
+                padding: 0 25px; 
+                gap: 30px; 
+            } 
             header { padding: 1.5rem 1rem 1rem; }
             header img { max-height: 65px; max-width: 85%; } 
         }
@@ -78,13 +110,13 @@
 </head>
 <body>
 
-<!-- ID toegevoegd aan de img om deze via Javascript aan te sturen -->
 <header><img src="11.png" alt="Koopmans Fine Art" id="header-logo"></header>
 
 <nav>
     <ul>
         <li><a href="/" class="active">Home</a></li>
         <li><a href="/verzameling/">Verzameling</a></li>
+        <li><a href="/veilingen/">Veilingen</a></li>
         <li><a href="/historie/">Historie</a></li>
     </ul>
 </nav>
@@ -131,23 +163,14 @@
     <a href="/disclaimer/" style="color:#888; text-decoration:none;">Disclaimer</a>
 </footer>
 
-<!-- Javascript om het logo te vervagen bij scrollen -->
 <script>
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('header-logo');
         var scrollPosition = window.scrollY;
-        
-        // De afstand (in pixels) vanaf de top tot waar het logo volledig onzichtbaar is.
-        // Staat nu op 180px, pas dit getal aan als het logo sneller of langzamer moet uitfaden.
         var maxScroll = 180; 
-        
-        // Bereken de helderheid (opacity) tussen 1 (zichtbaar) en 0 (onzichtbaar)
         var opacity = 1 - (scrollPosition / maxScroll);
-        
-        // Voorkom dat de waarde buiten de grenzen (0 en 1) schiet
         if (opacity < 0) opacity = 0;
         if (opacity > 1) opacity = 1;
-        
         logo.style.opacity = opacity;
     });
 </script>
