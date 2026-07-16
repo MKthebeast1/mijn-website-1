@@ -10,7 +10,6 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
         
-        /* Witruimte exact gelijkgetrokken met de homepage */
         header { padding: 2rem 1rem 1rem; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
         
@@ -24,6 +23,7 @@
             scrollbar-width: none; 
             -ms-overflow-style: none; 
             -webkit-overflow-scrolling: touch; 
+            line-height: 1; /* Voorkomt dat de balk dikker wordt door overerving */
         }
         nav::-webkit-scrollbar {
             display: none; 
@@ -89,7 +89,6 @@
                 padding: 0 25px; 
                 gap: 30px; 
             } 
-            /* Mobiele headerruimte hersteld */
             header { padding: 1.5rem 1rem 1rem; }
             header img { max-height: 65px; max-width: 85%; } 
             .profile-img { float: none; display: block; margin: 0 auto 20px auto; width: 85%; max-width: 240px; }
@@ -111,7 +110,7 @@
 
 <div class="main-content clearfix">
     <h1>Historie & Passie</h1>
-    <p>De collectie van <strong>koopmansfineart.com</strong> is ontstaan uit een diepgewortelde fascinatie voor klassieke Europese schilderkunst. Wat begon als een persoonlijke ontdekingstocht langs de verfijnde meesterwerken uit de negentiende eeuw, is uitgegroeid tot een zorgvuldig samengestelde particuliere verzameling. De collectie richt zich in het bijzonder op sfeervolle stillevens, interieurstukken en landschappen die getuigen van uitzonderlijk vakmanschap en een sprekend historisch karakter.</p>
+    <p>De collectie van <strong>koopmansfineart.com</strong> is ontstaan uit een diepgewortelde fascinatie voor klassieke Europese schilderkunst. Wat begon als een persoonlijke ontdekkingstocht langs de verfijnde meesterwerken uit de negentiende eeuw, is uitgegroeid tot een zorgvuldig samengestelde particuliere verzameling. De collectie richt zich in het bijzonder op sfeervolle stillevens, interieurstukken en landschappen die getuigen van uitzonderlijk vakmanschap en een sprekend historisch karakter.</p>
     
     <p>Wij geloven dat elk antiek schilderij een uniek venster naar het verleden is dat met respect behandeld moet worden. Om die reden besteden we veel tijd aan historisch herkomstonderzoek, materiële analyses en de zorgvuldige conservatie van zowel de doeken als hun monumentale, handvergulde lijsten.</p>
 
@@ -127,6 +126,16 @@
 </div>
 
 <footer>&copy; 2026 <a href="/">koopmansfineart.com</a> | M. Koopmans | <a href="/disclaimer/">Disclaimer</a></footer>
+
+<!-- Script om de actieve knop op mobiel automatisch in beeld te centreren -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var activeLink = document.querySelector('nav a.active');
+        if (activeLink) {
+            activeLink.scrollIntoView({ block: 'nearest', inline: 'center' });
+        }
+    });
+</script>
 
 </body>
 </html>
