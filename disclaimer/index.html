@@ -4,52 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disclaimer - koopmansfineart.com</title>
-    <link rel="icon" type="image/png" href="../Koopmansfine.png">
+    <link rel="icon" type="image/png" href="/Koopmansfine.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
         header { padding: 2.5rem 1rem 1.5rem; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
-        nav { padding: 0.9rem 0; background-color: var(--blauw); }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
-        .main-content { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; text-align: left; }
-        h1 { font-family: 'Playfair Display', serif; color: var(--blauw); margin-bottom: 2rem; }
-        h2 { font-size: 1.2rem; color: var(--blauw); margin-top: 2rem; }
-        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.8rem; }
-        @media (max-width: 600px) { header img { max-height: 65px; } }
+        
+        /* BEWEEGBARE MENUBALK STYLING */
+        nav { 
+            padding: 0.9rem 0; 
+            margin-bottom: 2.5rem; 
+            background-color: var(--blauw); 
+            overflow-x: auto; /* Swipebaar maken op mobiel */
+            white-space: nowrap;
+            scrollbar-width: none; /* Verbergt scrollbalk in Firefox */
+            -ms-overflow-style: none; /* Verbergt scrollbalk in Edge */
+            -webkit-overflow-scrolling: touch; /* Vloeiende swipe op iOS */
+        }
+        nav::-webkit-scrollbar {
+            display: none; /* Verbergt scrollbalk in Chrome/Safari */
+        }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; /* Gecentreerd op desktop */
+            gap: 40px; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #dcd0c0; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+            display: inline-block;
+        }
+        nav a:hover, nav a.active { color: white; }
+        
+        /* padding-top verlaagd van 4rem naar 0.5rem */
+        .main-content { max-width: 800px; margin: 0 auto; padding: 0.5rem 2rem 5rem; text-align: left; }
+        
+        /* H1 styling nu identiek aan de andere pagina's (inclusief blauwe streep) */
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.2rem;
+            color: var(--blauw); 
+            border-bottom: 3px solid var(--blauw); 
+            display: inline-block; 
+            padding-bottom: 5px; 
+            margin-top: 0.5rem;
+            margin-bottom: 2rem; 
+        }
+        
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--blauw); margin-top: 2.5rem; margin-bottom: 1rem; }
+        
+        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.8rem; margin-top: 4rem; }
+        footer a { color: #888; text-decoration: none; }
+        
+        @media (max-width: 600px) { 
+            nav ul { 
+                justify-content: flex-start; /* Start altijd links bij 'Home' op mobiel */
+                padding: 0 25px; 
+                gap: 30px; 
+            } 
+            header img { max-height: 65px; } 
+        }
     </style>
 </head>
 <body>
-    <header><img src="../11.png" alt="koopmansfineart.com"></header>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/verzameling/">Verzameling</a></li>
-            <li><a href="/historie/">Historie</a></li>
-        </ul>
-    </nav>
-    <div class="main-content">
-        <h1>Disclaimer & Algemene Voorwaarden</h1>
-        
-        <h2>Disclaimer & Particulier Initiatief</h2>
-        <p><strong>koopmansfineart.com</strong> is een persoonlijk en privaat initiatief, ontstaan uit een diepe passie voor de negentiende-eeuwse klassieke schilderkunst, historie en restauratie. De getoonde werken op deze website maken deel uit van een persoonlijke, particuliere verzameling.</p>
-        <p>Wij wijzen u er vriendelijk op dat <strong>koopmansfineart.com</strong> geen commerciële onderneming of geregistreerd bedrijf is. De activiteiten worden uitsluitend op hobbymatige basis en als persoonlijke liefhebberij uitgevoerd. Eventuele overdrachten of verkopen van objecten vinden dan ook plaats op particuliere basis (consument-tot-consument). Aan de inhoud van deze website kunnen geen zakelijke rechten, garanties of commerciële aansprakelijkheden worden ontleend.</p>
 
-        <h2>Toeschrijving en Authenticiteit</h2>
-        <p><strong>koopmansfineart.com</strong> streeft naar de hoogst mogelijke zorgvuldigheid bij het beschrijven en toeschrijven van de kunstwerken op deze website. Alle informatie, waaronder titels, jaartallen, kunstenaarsnamen en technieken, is gebaseerd op de professionele expertise, visuele beoordeling en de bekende herkomstgegevens op het moment van plaatsing.</p>
-        <p>Ondanks deze inspanningen kunnen toeschrijvingen en beoordelingen aan verandering onderhevig zijn door nieuwe wetenschappelijke inzichten of expertise. <strong>koopmansfineart.com</strong> geeft geen garanties, expliciet noch impliciet, met betrekking tot de absolute authenticiteit of onomstotelijke toeschrijving van de aangeboden objecten. Elke aankoop via <strong>koopmansfineart.com</strong> geschiedt op basis van de eigen beoordeling en expertise van de koper. <strong>koopmansfineart.com</strong> aanvaardt geen aansprakelijkheid voor schade of gevolgen voortvloeiend uit latere voortschrijdende inzichten over een werk of de toeschrijving daarvan.</p>
+<header><img src="/11.png" alt="koopmansfineart.com"></header>
 
-        <h2>Informatie op de website</h2>
-        <p>De inhoud van <strong>koopmansfineart.com</strong> is met de grootst mogelijke zorg samengesteld. Desalniettemin kan de informatie op de website onvolledig of onjuist zijn. <strong>koopmansfineart.com</strong> is niet verantwoordelijk voor eventuele typfouten, onjuiste prijsvermeldingen of technische storingen. De getoonde afbeeldingen kunnen door scherminstellingen of fotografie licht afwijken van de werkelijkheid.</p>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/verzameling/">Verzameling</a></li>
+        <li><a href="/veilingen/">Veilingen</a></li>
+        <li><a href="/historie/">Historie</a></li>
+    </ul>
+</nav>
 
-        <h2>Geen Taxatieadvies</h2>
-        <p>De informatie op <strong>koopmansfineart.com</strong> dient uitsluitend ter oriëntatie en vormt geen formeel taxatierapport of investeringsadvies. Wij adviseren kopers om bij twijfel of voor beleggingsdoeleinden altijd een onafhankelijke expert te raadplegen.</p>
+<div class="main-content">
+    <h1>Disclaimer & Algemene Voorwaarden</h1>
+    
+    <h2>Disclaimer & Particulier Initiatief</h2>
+    <p><strong>koopmansfineart.com</strong> is een persoonlijk en privaat initiatief, ontstaan uit een diepe passie voor de negentiende-eeuwse klassieke schilderkunst, historie en restauratie. De getoonde werken op deze website maken deel uit van een persoonlijke, particuliere verzameling.</p>
+    <p>Wij wijzen u er vriendelijk op dat <strong>koopmansfineart.com</strong> geen commerciële onderneming of geregistreerd bedrijf is. De activiteiten worden uitsluitend op hobbymatige basis en als persoonlijke liefhebberij uitgevoerd. Eventuele overdrachten of verkopen van objecten vinden dan ook plaats op particuliere basis (consument-tot-consument). Aan de inhoud van deze website kunnen geen zakelijke rechten, garanties of commerciële aansprakelijkheden worden ontleend.</p>
 
-        <h2>Aansprakelijkheid</h2>
-        <p><strong>koopmansfineart.com</strong> is op geen enkele wijze aansprakelijk voor indirecte schade, gevolgschade of winstderving die voortvloeit uit het gebruik van deze website of uit de aankoop van een object via dit platform, ongeacht de juridische grondslag.</p>
-    </div>
-    <footer>&copy; 2026 koopmansfineart.com | M. Koopmans | <a href="/disclaimer/" style="color:#888;">Disclaimer</a></footer>
+    <h2>Toeschrijving en Authenticiteit</h2>
+    <p><strong>koopmansfineart.com</strong> streeft naar de hoogst mogelijke zorgvuldigheid bij het beschrijven en toeschrijven van de kunstwerken op deze website. Alle informatie, waaronder titels, jaartallen, kunstenaarsnamen en technieken, is gebaseerd op de professionele expertise, visuele beoordeling en de bekende herkomstgegevens op het moment van plaatsing.</p>
+    <p>Ondanks deze inspanningen kunnen toeschrijvingen en beoordelingen aan verandering onderhevig zijn door nieuwe wetenschappelijke inzichten of expertise. <strong>koopmansfineart.com</strong> geeft geen garanties, expliciet noch impliciet, met betrekking tot de absolute authenticiteit of onomstotelijke toeschrijving van de aangeboden objecten. Elke aankoop via <strong>koopmansfineart.com</strong> geschiedt op basis van de eigen beoordeling en expertise van de koper. <strong>koopmansfineart.com</strong> aanvaardt geen aansprakelijkheid voor schade of gevolgen voortvloeiend uit latere voortschrijdende inzichten over een werk of de toeschrijving daarvan.</p>
+
+    <h2>Informatie op de website</h2>
+    <p>De inhoud van <strong>koopmansfineart.com</strong> is met de grootst mogelijke zorg samengesteld. Desalniettemin kan de informatie op de website onvolledig of onjuist zijn. <strong>koopmansfineart.com</strong> is niet verantwoordelijk for eventuele typfouten, onjuiste prijsvermeldingen of technische storingen. De getoonde afbeeldingen kunnen door scherminstellingen of fotografie licht afwijken van de werkelijkheid.</p>
+
+    <h2>Geen Taxatieadvies</h2>
+    <p>De informatie op <strong>koopmansfineart.com</strong> dient uitsluitend ter oriëntatie en vormt geen formeel taxatierapport of investeringsadvies. Wij adviseren kopers om bij twijfel of voor beleggingsdoeleinden altijd een onafhankelijke expert te raadplegen.</p>
+
+    <h2>Aansprakelijkheid</h2>
+    <p><strong>koopmansfineart.com</strong> is op geen enkele wijze aansprakelijk voor indirecte schade, gevolgschade of winstderving die voortvloeit uit het gebruik van deze website of uit de aankoop van een object via dit platform, ongeacht de juridische grondslag.</p>
+</div>
+
+<footer>&copy; 2026 <a href="/">koopmansfineart.com</a> | M. Koopmans | <a href="/disclaimer/">Disclaimer</a></footer>
+
 </body>
 </html>
