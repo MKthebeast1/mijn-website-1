@@ -9,7 +9,9 @@
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
-        header { padding: 2.5rem 1rem 1.5rem; }
+        
+        /* 1. Header padding gelijkgetrokken met de homepage */
+        header { padding: 2rem 1rem 1rem; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
         
         /* BEWEEGBARE MENUBALK STYLING */
@@ -46,10 +48,8 @@
         }
         nav a:hover, nav a.active { color: white; }
         
-        /* padding-top verlaagd van 4rem naar 0.5rem */
         .main-content { max-width: 800px; margin: 0 auto; padding: 0.5rem 2rem 5rem; text-align: left; }
         
-        /* H1 styling nu identiek aan H2 op de homepage */
         h1 { 
             font-family: 'Playfair Display', serif; 
             font-size: 2.2rem;
@@ -63,7 +63,6 @@
         
         h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--blauw); margin-top: 3rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--blauw); padding-bottom: 8px; }
         
-        /* De profielfoto met inkeping (text wrap) */
         .profile-img { 
             float: left; 
             margin: 5px 25px 15px 0; 
@@ -90,7 +89,9 @@
                 padding: 0 25px; 
                 gap: 30px; 
             } 
-            header img { max-height: 65px; } 
+            /* 2. Ook op mobiel de witruimte en logogrootte exact gelijkgetrokken */
+            header { padding: 1.5rem 1rem 1rem; }
+            header img { max-height: 65px; max-width: 85%; } 
             .profile-img { float: none; display: block; margin: 0 auto 20px auto; width: 85%; max-width: 240px; }
         }
     </style>
