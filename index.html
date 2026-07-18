@@ -10,12 +10,12 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* HEADER VLAK COMPACTER GEMAAKT (Minder hoogte in totaal) */
-        header { padding: 0.2rem 1rem; position: relative; }
+        /* Header padding EXACT gekopieerd van de verzameling-pagina */
+        header { padding: 2rem 1rem 1rem; position: relative; }
         
-        /* LOGO ZELF NÓG IETS GROTER BINNEN HET VLAK */
+        /* LOGO VOLLEDIG GEOPTIMALISEERD - GROTER BINNEN HETZELFDE VLAK */
         header img { 
-            max-height: 190px; /* Foto groter gemaakt */
+            max-height: 145px; /* Het logo zelf groter gemaakt dan op de verzameling-pagina (was 120px) */
             max-width: 95%; 
             display: block; 
             margin: 0 auto; 
@@ -42,7 +42,7 @@
         }
         .lang-switch a:hover { transform: scale(1.15); }
         
-        /* BEWEEGBARE MENUBALK STYLING */
+        /* BEWEEGBARE MENUBALK STYLING (Letters groter en breder) */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -115,10 +115,11 @@
         
         @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
+        /* MOBIELE SCHALING RECHTSSTREEKS AFGEKEKEN VAN DE VERZAMELING PAGINA */
         @media (max-width: 600px) { 
             nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
-            header { padding: 1rem 1rem; }
-            header img { max-height: 95px; max-width: 90%; } 
+            header { padding: 3rem 1rem 1rem; }
+            header img { max-height: 85px; max-width: 85%; } /* Perfecte mobiele grootte, net als bij Verzameling */
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
         }
