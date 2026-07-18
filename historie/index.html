@@ -10,11 +10,9 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
         
-        /* Header exact gelijkgeschakeld met de homepagina */
         header { padding: 2rem 1rem 1rem; position: relative; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
         
-        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
         .lang-switch {
             position: absolute;
             top: 2rem;
@@ -31,7 +29,7 @@
         }
         .lang-switch a:hover { transform: scale(1.15); }
         
-        /* BEWEEGBARE MENUBALK STYLING */
+        /* BEWEEGBARE MENUBALK STYLING (VOLLEDIG GEÏSOLEERD) */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -41,7 +39,7 @@
             scrollbar-width: none; 
             -ms-overflow-style: none; 
             -webkit-overflow-scrolling: touch; 
-            line-height: 1; /* Fix: Voorkomt dat de balk dikker wordt door body line-height */
+            line-height: 1 !important;
         }
         nav::-webkit-scrollbar { display: none; }
         nav ul { 
@@ -51,6 +49,7 @@
             display: flex; 
             justify-content: center; 
             gap: 40px; 
+            line-height: 1 !important;
         }
         nav a { 
             text-decoration: none; 
@@ -61,6 +60,7 @@
             font-size: 0.85rem; 
             transition: 0.3s; 
             display: inline-block;
+            line-height: 1 !important; /* Forceert de exacte homepage-hoogte */
         }
         nav a:hover, nav a.active { color: white; }
         
@@ -148,10 +148,15 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        var activeLink = document.querySelector('nav a.active');
-        if (activeLink) {
-            activeLink.scrollIntoView({ block: 'nearest', inline: 'center' });
-        }
+        setTimeout(function() {
+            var activeLink = document.querySelector('nav a.active');
+            var nav = document.querySelector('nav');
+            if (activeLink && nav) {
+                var navRect = nav.getBoundingClientRect();
+                var linkRect = activeLink.getBoundingClientRect();
+                nav.scrollLeft = nav.scrollLeft + (linkRect.left - navRect.left) - (navRect.width / 2) + (linkRect.width / 2);
+            }
+        }, 50);
     });
 </script>
 
