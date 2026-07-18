@@ -15,15 +15,19 @@
         
         header img { 
             max-height: 120px; 
-            max-width: 90%; 
+            max-width: 95%; 
             display: block; 
             margin: 0 auto; 
             object-fit: contain; 
             transition: opacity 0.05s linear; 
             
-            /* Vloeiend fade-effect aan de linker- en rechterkant (vlag-effect) */
-            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
-            mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+            /* Museale transitie: het blauw blijft rondom de letters volledig intact, 
+               alleen de uiterste 6% aan de randen vervaagt ultra-zacht in de achtergrond */
+            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, rgba(0,0,0,0) 100%);
+            
+            /* Subtiele boost om het goud en het reliëf echt te laten spreken tegen het donkere canvas */
+            filter: contrast(1.06) brightness(1.02);
             
             /* Fix voor mobiele browsers en laptops (Safari/Chrome hardware acceleration) */
             -webkit-transform: translateZ(0);
@@ -36,17 +40,17 @@
             top: 2rem;
             right: 2rem;
             display: flex;
-            gap: 12px; /* Ruimte tussen de twee vlaggetjes */
+            gap: 12px;
         }
         .lang-switch a {
             text-decoration: none;
-            font-size: 1.3rem; /* Iets groter gemaakt omdat de letters nu weg zijn */
+            font-size: 1.3rem;
             transition: 0.2s;
             display: inline-block;
             line-height: 1;
         }
         .lang-switch a:hover { 
-            transform: scale(1.15); /* Subtiele vergroting bij hover */
+            transform: scale(1.15);
         }
         
         /* BEWEEGBARE MENUBALK STYLING */
@@ -143,7 +147,6 @@
 
 <header>
     <img src="/foto/10.jpg" alt="Koopmans Fine Art" id="header-logo">
-    <!-- Altijd beide vlaggen zichtbaar zonder letters -->
     <div class="lang-switch">
         <a href="/">🇳🇱</a>
         <a href="/en/">🇬🇧</a>
