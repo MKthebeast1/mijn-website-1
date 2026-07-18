@@ -10,8 +10,28 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
         
-        header { padding: 2rem 1rem 1rem; }
+        /* Header relatief gepositioneerd voor de taalswitcher */
+        header { padding: 2rem 1rem 1rem; position: relative; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
+        
+        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
+        .lang-switch {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 12px;
+        }
+        .lang-switch a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: 0.2s;
+            display: inline-block;
+            line-height: 1;
+        }
+        .lang-switch a:hover { 
+            transform: scale(1.15);
+        }
         
         /* BEWEEGBARE MENUBALK STYLING */
         nav { 
@@ -47,9 +67,6 @@
             display: inline-block;
         }
         nav a:hover, nav a.active { color: white; }
-        
-        /* Goudkleur voor de taalswitch */
-        nav a.lang-switch { color: var(--goud); }
         
         .main-content { max-width: 800px; margin: 0 auto; padding: 0.5rem 2rem 5rem; text-align: left; }
         
@@ -92,15 +109,24 @@
                 padding: 0 25px; 
                 gap: 30px; 
             } 
-            header { padding: 1.5rem 1rem 1rem; }
+            /* Mobiele positie voor de header en vlaggen */
+            header { padding: 3rem 1rem 1rem; }
             header img { max-height: 65px; max-width: 85%; } 
+            .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
+            .lang-switch a { font-size: 1.1rem; }
             .profile-img { float: none; display: block; margin: 0 auto 20px auto; width: 85%; max-width: 240px; }
         }
     </style>
 </head>
 <body>
 
-<header><img src="/11.png" alt="koopmansfineart.com"></header>
+<header>
+    <img src="/11.png" alt="koopmansfineart.com">
+    <div class="lang-switch">
+        <a href="/historie/">🇳🇱</a>
+        <a href="/en/history/">🇬🇧</a>
+    </div>
+</header>
 
 <nav>
     <ul>
@@ -108,7 +134,6 @@
         <li><a href="/en/collection/">Collection</a></li>
         <li><a href="/en/auctions/">Auctions</a></li>
         <li><a href="/en/history/" class="active">History</a></li>
-        <li><a href="/historie/" class="lang-switch">NL</a></li>
     </ul>
 </nav>
 
