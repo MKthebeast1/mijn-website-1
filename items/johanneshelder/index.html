@@ -4,16 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Johannes Helder - Koopmans Fine Art</title>
-    <!-- Absolute paden vanaf de root voor gegarandeerd laden -->
     <link rel="icon" type="image/png" href="/Koopmansfine.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
         
-        /* Witruimte exact gesynchroniseerd met de homepage */
-        header { padding: 2rem 1rem 1rem; }
+        /* Header relatief gepositioneerd voor de taalswitcher */
+        header { padding: 2rem 1rem 1rem; position: relative; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
+        
+        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
+        .lang-switch {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 12px;
+        }
+        .lang-switch a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: 0.2s;
+            display: inline-block;
+            line-height: 1;
+        }
+        .lang-switch a:hover { 
+            transform: scale(1.15);
+        }
         
         /* BEWEEGBARE MENUBALK STYLING */
         nav { 
@@ -22,20 +40,20 @@
             background-color: var(--blauw); 
             overflow-x: auto; /* Swipebaar maken op mobiel */
             white-space: nowrap;
-            scrollbar-width: none; /* Verbergt scrollbalk in Firefox */
-            -ms-overflow-style: none; /* Verbergt scrollbalk in Edge */
-            -webkit-overflow-scrolling: touch; /* Vloeiende swipe op iOS */
-            line-height: 1; /* Voorkomt dat de balk dikker wordt door overerving */
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+            -webkit-overflow-scrolling: touch; 
+            line-height: 1; 
         }
         nav::-webkit-scrollbar {
-            display: none; /* Verbergt scrollbalk in Chrome/Safari */
+            display: none; 
         }
         nav ul { 
             list-style: none; 
             padding: 0; 
             margin: 0; 
             display: flex; 
-            justify-content: center; /* Gecentreerd op desktop */
+            justify-content: center; 
             gap: 40px; 
         }
         nav a { 
@@ -71,21 +89,23 @@
         
         .price { margin-top: 2.5rem; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blauw); font-weight: 700; font-style: italic; }
         
+        /* Modal (Vergroot Foto) Styling */
         .modal { display: none; position: fixed; z-index: 1000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(31, 42, 53, 0.95); }
         .modal-content { margin: auto; display: block; max-width: 90%; max-height: 85vh; object-fit: contain; border: 5px solid var(--goud); box-shadow: 0 0 50px rgba(0,0,0,0.8); }
         .close { position: absolute; top: 15px; right: 35px; color: #f4f1ea; font-size: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .close:hover, .close:focus { color: var(--goud); text-decoration: none; }
+        .close:hover { color: var(--goud); }
 
-        @media (max-width: 900px) { .item-layout { flex-direction: column; } .image-side, .text-side { flex: none; width: 100%; } }
-        
+        @media (max-width: 900px) { 
+            .item-layout { flex-direction: column; gap: 40px; } 
+            .image-side, .text-side { flex: none; width: 100%; } 
+        }
         @media (max-width: 600px) { 
-            nav ul { 
-                justify-content: flex-start; /* Start altijd links bij 'Home' op mobiel */
-                padding: 0 25px; 
-                gap: 30px; 
-            } 
-            header { padding: 1.5rem 1rem 1rem; } 
+            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
+            header { padding: 3rem 1rem 1rem; } 
             header img { max-height: 65px; max-width: 85%; } 
+            h1 { font-size: 2rem; } 
+            .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
+            .lang-switch a { font-size: 1.1rem; }
             .modal-content { border-width: 2px; } 
         }
         
@@ -95,58 +115,68 @@
 </head>
 <body>
 
-<header><img src="/11.png" alt="Koopmans Fine Art"></header>
+    <header>
+        <img src="/11.png" alt="Koopmans Fine Art">
+        <div class="lang-switch">
+            <a href="/items/johanneshelder/">🇳🇱</a>
+            <a href="/en/items/johanneshelder/">🇬🇧</a>
+        </div>
+    </header>
 
-<nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/verzameling/">Verzameling</a></li>
-        <li><a href="/veilingen/">Veilingen</a></li>
-        <li><a href="/historie/">Historie</a></li>
-    </ul>
-</nav>
-
-<div class="container">
-    <div class="back-nav"><a href="/verzameling/" class="back-link">&larr; Terug naar verzameling</a></div>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/verzameling/">Verzameling</a></li>
+            <li><a href="/veilingen/">Veilingen</a></li>
+            <li><a href="/historie/">Historie</a></li>
+        </ul>
+    </nav>
     
-    <div class="item-layout">
-        <div class="image-side">
-            <div class="frame">
-                <img src="/foto/helder2.jpeg" alt="Johannes Helder" onclick="openModal(this.src)">
+    <div class="container">
+        <div class="back-nav">
+            <a href="/verzameling/" class="back-link">&larr; Terug naar verzameling</a>
+        </div>
+        
+        <div class="item-layout">
+            <div class="image-side">
+                <div class="frame">
+                    <img src="/foto/helder2.jpeg" alt="Johannes Helder" onclick="openModal(this.src)">
+                </div>
+            </div>
+            
+            <div class="text-side">
+                <h1>Johannes Helder</h1>
+                <ul class="info-list">
+                    <li>Kunstenaar: <span>Johannes Helder (1842 &ndash; 1913)</span></li>
+                    <li>Techniek: <span>Olieverf op paneel</span></li>
+                    <li>Jaar: <span>ca. 1880</span></li>
+                    <li>Afmetingen: <span>103,5 x 90,5 cm</span></li>
+                    <li>Status: <span>Start veiling: 24 juli</span></li>
+                </ul>
+                <div class="price">EUR 2.000,-</div>
+                <p style="margin-top: 2rem;">Een ingetogen werk door Johannes Helder (1842-1913). Helder stond bekend om zijn vermogen om rust en licht in alledaagse settings te vangen. Het schilderij is gevat in een rijkelijk gedecoreerde, goud vergulde lijst.</p>
             </div>
         </div>
-        <div class="text-side">
-            <h1>Johannes Helder</h1>
-            <ul class="info-list">
-                <li>Techniek: <span>Olieverf op paneel</span></li>
-                <li>Jaar: <span>ca. 1880</span></li>
-                <li>Afmetingen: <span>103,5 x 90,5 cm</span></li>
-                <li>Status: <span>Start veiling: 24 juli</span></li>
-            </ul>
-            <p class="price">EUR 2.000,-</p>
-            <p style="margin-top: 2rem;">Een ingetogen werk door Johannes Helder (1842-1913). Helder stond bekend om zijn vermogen om rust en licht in alledaagse settings te vangen. Het schilderij is gevat in een rijkelijk gedecoreerde, goud vergulde lijst.</p>
-        </div>
     </div>
-</div>
+    
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="expandedImg" alt="Vergrote weergave">
+    </div>
 
-<div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="expandedImg" alt="Vergrote weergave">
-</div>
+    <footer>
+        &copy; 2026 <a href="/">Koopmans Fine Art</a> | M. Koopmans | 
+        <a href="/disclaimer/">Disclaimer</a>
+    </footer>
 
-<footer>
-    &copy; 2026 <a href="/">Koopmans Fine Art</a> | M. Koopmans | 
-    <a href="/disclaimer/">Disclaimer</a>
-</footer>
-
-<script>
-    function openModal(imgSrc) {
-        document.getElementById("imageModal").style.display = "block";
-        document.getElementById("expandedImg").src = imgSrc;
-    }
-    function closeModal() {
-        document.getElementById("imageModal").style.display = "none";
-    }
-</script>
+    <script>
+        function openModal(imgSrc) {
+            document.getElementById("imageModal").style.display = "block";
+            document.getElementById("expandedImg").src = imgSrc;
+        }
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
 </body>
 </html>
