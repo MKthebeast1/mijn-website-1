@@ -29,7 +29,7 @@
         }
         .lang-switch a:hover { transform: scale(1.15); }
         
-        /* BEWEEGBARE MENUBALK STYLING */
+        /* BEWEEGBARE MENUBALK STYLING (VOLLEDIG GEÏSOLEERD) */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -39,7 +39,7 @@
             scrollbar-width: none; 
             -ms-overflow-style: none; 
             -webkit-overflow-scrolling: touch; 
-            line-height: 1; /* Fix: Forceert de exacte dikte van de homepagina */
+            line-height: 1 !important;
         }
         nav::-webkit-scrollbar { display: none; }
         nav ul { 
@@ -49,6 +49,7 @@
             display: flex; 
             justify-content: center; 
             gap: 40px; 
+            line-height: 1 !important;
         }
         nav a { 
             text-decoration: none; 
@@ -59,6 +60,7 @@
             font-size: 0.85rem; 
             transition: 0.3s; 
             display: inline-block;
+            line-height: 1 !important; /* Forceert de exacte homepage-hoogte */
         }
         nav a:hover, nav a.active { color: white; }
         
@@ -147,10 +149,15 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        var activeLink = document.querySelector('nav a.active');
-        if (activeLink) {
-            activeLink.scrollIntoView({ block: 'nearest', inline: 'center' });
-        }
+        setTimeout(function() {
+            var activeLink = document.querySelector('nav a.active');
+            var nav = document.querySelector('nav');
+            if (activeLink && nav) {
+                var navRect = nav.getBoundingClientRect();
+                var linkRect = activeLink.getBoundingClientRect();
+                nav.scrollLeft = nav.scrollLeft + (linkRect.left - navRect.left) - (navRect.width / 2) + (linkRect.width / 2);
+            }
+        }, 50);
     });
 </script>
 
