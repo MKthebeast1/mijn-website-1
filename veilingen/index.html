@@ -158,5 +158,15 @@
     <a href="/disclaimer/">Disclaimer</a>
 </footer>
 
+<!-- Dit script zorgt voor het centreereffect op mobiel -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var activeLink = document.querySelector('nav a.active');
+        if (activeLink) {
+            activeLink.scrollIntoView({ block: 'nearest', inline: 'center' });
+        }
+    });
+</script>
+
 </body>
 </html>
