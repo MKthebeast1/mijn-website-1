@@ -10,11 +10,11 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* Header relatief gepositioneerd voor de taalswitcher */
-        header { padding: 2rem 1rem 1rem; position: relative; }
+        /* PADDING VERLAAGD: Zorgt ervoor dat het totale vlak compact blijft terwijl het logo groeit */
+        header { padding: 0.5rem 1rem 0.5rem; position: relative; }
         
         header img { 
-            max-height: 175px; /* Verhoogd naar 175px voor een grotere uitstraling op desktop */
+            max-height: 175px; /* Het logo zelf is nu lekker groot en duidelijk aanwezig */
             max-width: 95%; 
             display: block; 
             margin: 0 auto; 
@@ -68,8 +68,8 @@
             color: #dcd0c0; 
             font-weight: 700; 
             text-transform: uppercase; 
-            letter-spacing: 3px; /* Verhoogd naar 3px voor een bredere, chiquere look */
-            font-size: 0.95rem;  /* Letters iets groter gemaakt */
+            letter-spacing: 3px; 
+            font-size: 0.95rem; 
             transition: 0.3s; 
             display: inline-block;
             line-height: 1 !important;
@@ -116,8 +116,8 @@
         
         @media (max-width: 600px) { 
             nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
-            header { padding: 3rem 1rem 1rem; }
-            header img { max-height: 95px; max-width: 90%; } /* Ook op mobiel iets opgeschaald voor een betere verhouding */
+            header { padding: 1.5rem 1rem 1rem; }
+            header img { max-height: 95px; max-width: 90%; } 
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
         }
@@ -188,7 +188,6 @@
 </footer>
 
 <script>
-    // Logo fade effect tijdens scrollen
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('header-logo');
         var scrollPosition = window.scrollY;
@@ -199,7 +198,6 @@
         logo.style.opacity = opacity;
     });
 
-    // Mobiele menu-centering
     document.addEventListener("DOMContentLoaded", function() {
         var activeLink = document.querySelector('nav a.active');
         if (activeLink) {
