@@ -4,16 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arnoud Wydeveld - koopmansfineart.com</title>
-    <link rel="icon" type="image/png" href="../../Koopmansfine.png">
+    <link rel="icon" type="image/png" href="/Koopmansfine.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
-        header { padding: 2.5rem 1rem 1.5rem; }
+        
+        /* Header relatief gepositioneerd voor de taalswitcher */
+        header { padding: 2rem 1rem 1rem; position: relative; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
-        nav { padding: 0.9rem 0; background-color: var(--blauw); }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; transition: 0.3s; }
+        
+        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
+        .lang-switch {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 12px;
+        }
+        .lang-switch a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: 0.2s;
+            display: inline-block;
+            line-height: 1;
+        }
+        .lang-switch a:hover { 
+            transform: scale(1.15);
+        }
+        
+        /* BEWEEGBARE MENUBALK STYLING */
+        nav { 
+            padding: 0.9rem 0; 
+            margin-bottom: 2.5rem; 
+            background-color: var(--blauw); 
+            overflow-x: auto; /* Swipebaar maken op mobiel */
+            white-space: nowrap;
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+            -webkit-overflow-scrolling: touch; 
+            line-height: 1;
+        }
+        nav::-webkit-scrollbar {
+            display: none; 
+        }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #dcd0c0; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+            display: inline-block;
+        }
         nav a:hover, nav a.active { color: white; }
         
         .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
@@ -37,10 +89,10 @@
         
         .price { margin-top: 2.5rem; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blauw); font-weight: 700; font-style: italic; }
         
-        /* Modal (grote weergave) styling */
+        /* Modal (grote weergave) styling met goudrand gesynchroniseerd */
         .modal { display: none; position: fixed; z-index: 1000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(31, 42, 53, 0.95); }
-        .modal-content { margin: auto; display: block; max-width: 90%; max-height: 85vh; object-fit: contain; }
-        .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .modal-content { margin: auto; display: block; max-width: 90%; max-height: 85vh; object-fit: contain; border: 5px solid var(--goud); box-shadow: 0 0 50px rgba(0,0,0,0.8); }
+        .close { position: absolute; top: 15px; right: 35px; color: #f4f1ea; font-size: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .close:hover { color: var(--goud); }
         
         footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.8rem; margin-top: 4rem; }
@@ -50,15 +102,32 @@
             .item-layout { flex-direction: column; gap: 40px; }
             .image-side, .text-side { flex: 1; width: 100%; }
         }
-        @media (max-width: 600px) { header img { max-height: 65px; } h1 { font-size: 2rem; } }
+        @media (max-width: 600px) { 
+            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; }
+            header { padding: 3rem 1rem 1rem; } 
+            header img { max-height: 65px; max-width: 85%; } 
+            h1 { font-size: 2rem; } 
+            .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
+            .lang-switch a { font-size: 1.1rem; }
+            .modal-content { border-width: 2px; }
+        }
     </style>
 </head>
 <body>
-    <header><img src="../../11.png" alt="koopmansfineart.com"></header>
+
+    <header>
+        <img src="/11.png" alt="koopmansfineart.com">
+        <div class="lang-switch">
+            <a href="/items/arnoudwydeveld/">🇳🇱</a>
+            <a href="/en/items/arnoudwydeveld/">🇬🇧</a>
+        </div>
+    </header>
+
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/verzameling/">Verzameling</a></li>
+            <li><a href="/veilingen/">Veilingen</a></li>
             <li><a href="/historie/">Historie</a></li>
         </ul>
     </nav>
@@ -71,7 +140,7 @@
         <div class="item-layout">
             <div class="image-side">
                 <div class="frame">
-                    <img src="../../foto/wydeveldnieuw.png" alt="Arnoud Wydeveld - Stilleven met hangende tros druiven" id="zoomImg">
+                    <img src="/foto/wydeveldnieuw.png" alt="Arnoud Wydeveld - Stilleven met hangende tros druiven" id="zoomImg">
                 </div>
             </div>
             
@@ -88,12 +157,11 @@
                 <div class="price">Prijs op aanvraag</div>
                 
                 <p>Dit prachtige negentiende-eeuwse stilleven toont een zware, glanzende tros druiven die aan een touwtje hangt; een compositorisch kenmerk waar de meester Arnoud Wydeveld (1823–1888) om bekendstaat. Wydeveld werkte een groot deel van zijn leven in New York en verwierf daar grote faam met zijn uiterst verfijnde stillevens van vruchten en sfeervolle, intieme interieurs.</p>
-                <p>In dit specifieke werk komt zijn fabelachtige beheersing van clair-obscur en stofuitdrukking subliem tot uiting. Het subtiele spel van het licht dat reflecteert op de doorschijnende schil van de individuele blauwe en rode druiven geeft de compositie een uitzonderlijke diepte en tastbaarheid. Door de natuurlijke veroudering van het harsvernis heeft het schilderij een warme, sfeervolle en diepe tonaliteit gekregen die de historische bezieling van het werk extra onderstreept.</p>
+                <p>In dit specifieke werk komt his fabelachtige beheersing van clair-obscur en stofuitdrukking subliem tot uiting. Het subtiele spel van het licht dat reflecteert op de doorschijnende schil van de individuele blauwe en rode druiven geeft de compositie een uitzonderlijke diepte en tastbaarheid. Door de natuurlijke veroudering van het harsvernis heeft het schilderij een warme, sfeervolle en diepe tonaliteit gekregen die de historische bezieling van het werk extra onderstreept.</p>
             </div>
         </div>
     </div>
     
-    <!-- Het grote vergrotingsscherm (Modal) -->
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01" alt="Grote weergave van Arnoud Wydeveld">
@@ -101,25 +169,21 @@
     
     <footer>&copy; 2026 <a href="/">koopmansfineart.com</a> | M. Koopmans | <a href="/disclaimer/">Disclaimer</a></footer>
 
-    <!-- Script om de klikfunctionaliteit te activeren -->
     <script>
         var modal = document.getElementById("myModal");
         var img = document.getElementById("zoomImg");
         var modalImg = document.getElementById("img01");
         var span = document.getElementsByClassName("close")[0];
 
-        // Open de modal bij een klik op de foto
         img.onclick = function(){
             modal.style.display = "block";
             modalImg.src = this.src;
         }
 
-        // Sluit de modal bij klik op het kruisje (x)
         span.onclick = function() { 
             modal.style.display = "none";
         }
 
-        // Sluit de modal bij een klik buiten de foto
         modal.onclick = function(event) {
             if (event.target === modal) {
                 modal.style.display = "none";
