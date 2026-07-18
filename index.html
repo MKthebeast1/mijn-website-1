@@ -10,11 +10,12 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* PADDING VERLAAGD: Zorgt ervoor dat het totale vlak compact blijft terwijl het logo groeit */
-        header { padding: 0.5rem 1rem 0.5rem; position: relative; }
+        /* HEADER VLAK COMPACTER GEMAAKT (Minder hoogte in totaal) */
+        header { padding: 0.2rem 1rem; position: relative; }
         
+        /* LOGO ZELF NÓG IETS GROTER BINNEN HET VLAK */
         header img { 
-            max-height: 175px; /* Het logo zelf is nu lekker groot en duidelijk aanwezig */
+            max-height: 190px; /* Foto groter gemaakt */
             max-width: 95%; 
             display: block; 
             margin: 0 auto; 
@@ -41,7 +42,7 @@
         }
         .lang-switch a:hover { transform: scale(1.15); }
         
-        /* BEWEEGBARE MENUBALK STYLING (Letters groter en breder) */
+        /* BEWEEGBARE MENUBALK STYLING */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -116,7 +117,7 @@
         
         @media (max-width: 600px) { 
             nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
-            header { padding: 1.5rem 1rem 1rem; }
+            header { padding: 1rem 1rem; }
             header img { max-height: 95px; max-width: 90%; } 
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
