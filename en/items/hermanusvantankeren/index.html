@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermanus van Tankeren - Koopmans Fine Art</title>
+    <link rel="icon" type="image/png" href="/Koopmansfine.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
+        body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
+        
+        header { padding: 2rem 1rem 1rem; position: relative; }
+        header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
+        
+        .lang-switch {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 12px;
+        }
+        .lang-switch a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: 0.2s;
+            display: inline-block;
+            line-height: 1;
+        }
+        .lang-switch a:hover { 
+            transform: scale(1.15);
+        }
+        
+        nav { 
+            padding: 0.9rem 0; 
+            margin-bottom: 2.5rem; 
+            background-color: var(--blauw); 
+            overflow-x: auto; 
+            white-space: nowrap;
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+            -webkit-overflow-scrolling: touch; 
+            line-height: 1;
+        }
+        nav::-webkit-scrollbar {
+            display: none; 
+        }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #dcd0c0; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+            display: inline-block;
+        }
+        nav a:hover, nav a.active { color: white; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+        .back-nav { margin-bottom: 3rem; text-align: left; }
+        .back-link { text-decoration: none; color: var(--blauw); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; border-bottom: 2px solid var(--blauw); transition: 0.3s; }
+        .back-link:hover { color: var(--goud); border-color: var(--goud); }
+        
+        .item-layout { display: flex; gap: 60px; align-items: flex-start; margin-top: 2rem; }
+        .image-side { flex: 1.3; }
+        .text-side { flex: 1; text-align: left; }
+        
+        .frame { padding: 15px; border: 18px solid var(--blauw); outline: 1px solid var(--goud); outline-offset: -10px; box-shadow: 20px 20px 40px rgba(0,0,0,0.3); background-color: white; }
+        .frame img { width: 100%; display: block; cursor: zoom-in; transition: transform 0.3s ease; }
+        .frame img:hover { transform: scale(1.02); }
+        
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 0 0 1.5rem 0; text-transform: uppercase; letter-spacing: 2px; color: var(--blauw); }
+        
+        .info-list { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--blauw); padding-top: 2rem; }
+        .info-list li { margin-bottom: 15px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; color: var(--blauw); }
+        .info-list li span { font-weight: 400; color: #555; text-transform: none; margin-left: 8px; }
+        
+        .price { margin-top: 2.5rem; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blauw); font-weight: 700; font-style: italic; }
+        
+        .modal { display: none; position: fixed; z-index: 1000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(31, 42, 53, 0.95); }
+        .modal-content { margin: auto; display: block; max-width: 90%; max-height: 85vh; object-fit: contain; border: 5px solid var(--goud); box-shadow: 0 0 50px rgba(0,0,0,0.8); }
+        .close { position: absolute; top: 15px; right: 35px; color: #f4f1ea; font-size: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .close:hover { color: var(--goud); }
+
+        @media (max-width: 900px) { 
+            .item-layout { flex-direction: column; gap: 40px; } 
+            .image-side, .text-side { flex: none; width: 100%; } 
+        }
+        @media (max-width: 600px) { 
+            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
+            header { padding: 3rem 1rem 1rem; } 
+            header img { max-height: 65px; max-width: 85%; } 
+            h1 { font-size: 2rem; }
+            .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
+            .lang-switch a { font-size: 1.1rem; }
+            .modal-content { border-width: 2px; } 
+        }
+        
+        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.8rem; margin-top: 5rem; }
+        footer a { color: #888; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="/11.png" alt="Koopmans Fine Art">
+        <div class="lang-switch">
+            <a href="/items/hermanusvantankeren/">🇳🇱</a>
+            <a href="/en/items/hermanusvantankeren/">🇬🇧</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/collection/">Collection</a></li>
+            <li><a href="/en/auctions/">Auctions</a></li>
+            <li><a href="/en/history/">History</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="back-nav">
+            <a href="/en/collection/" class="back-link">&larr; Back to collection</a>
+        </div>
+        
+        <div class="item-layout">
+            <div class="image-side">
+                <div class="frame">
+                    <img src="/foto/hermanusvantankeren.jpg" alt="Hermanus van Tankeren" onclick="openModal(this.src)">
+                </div>
+            </div>
+            
+            <div class="text-side">
+                <h1>H. van Tankeren</h1>
+                <ul class="info-list">
+                    <li>Artist: <span>Hermanus van Tankeren</span></li>
+                    <li>Medium: <span>Oil on canvas</span></li>
+                    <li>Year: <span>Unknown</span></li>
+                    <li>Status: <span>Sold</span></li>
+                </ul>
+                <div class="price">Not available</div>
+                <p style="margin-top: 2rem;">A beautiful work by Hermanus van Tankeren. He is well-known for his poultry scenes.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="expandedImg">
+    </div>
+
+    <footer>
+        &copy; 2026 Koopmans Fine Art | M. Koopmans | 
+        <a href="/en/disclaimer/">Disclaimer</a>
+    </footer>
+
+    <script>
+        function openModal(imgSrc) {
+            document.getElementById("imageModal").style.display = "block";
+            document.getElementById("expandedImg").src = imgSrc;
+        }
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
