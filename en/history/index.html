@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - koopmansfineart.com</title>
+    <link rel="icon" type="image/png" href="/Koopmansfine.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
+        body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
+        
+        header { padding: 2rem 1rem 1rem; }
+        header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
+        
+        /* BEWEEGBARE MENUBALK STYLING */
+        nav { 
+            padding: 0.9rem 0; 
+            margin-bottom: 2.5rem; 
+            background-color: var(--blauw); 
+            overflow-x: auto; 
+            white-space: nowrap;
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+            -webkit-overflow-scrolling: touch; 
+            line-height: 1; /* Voorkomt dat de balk dikker wordt door overerving */
+        }
+        nav::-webkit-scrollbar {
+            display: none; 
+        }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #dcd0c0; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+            display: inline-block;
+        }
+        nav a:hover, nav a.active { color: white; }
+        
+        /* Goudkleur voor de taalswitch */
+        nav a.lang-switch { color: var(--goud); }
+        
+        .main-content { max-width: 800px; margin: 0 auto; padding: 0.5rem 2rem 5rem; text-align: left; }
+        
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.2rem;
+            color: var(--blauw); 
+            border-bottom: 3px solid var(--blauw); 
+            display: inline-block; 
+            padding-bottom: 5px; 
+            margin-top: 0.5rem;
+            margin-bottom: 2rem; 
+        }
+        
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--blauw); margin-top: 3rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--blauw); padding-bottom: 8px; }
+        
+        .profile-img { 
+            float: left; 
+            margin: 5px 25px 15px 0; 
+            width: 200px; 
+            border: 4px solid var(--blauw); 
+            outline: 1px solid var(--goud); 
+            outline-offset: -3px; 
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.15); 
+            border-radius: 2px; 
+        }
+        
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.8rem; margin-top: 4rem; }
+        footer a { color: #888; text-decoration: none; }
+        
+        @media (max-width: 600px) { 
+            nav ul { 
+                justify-content: flex-start; 
+                padding: 0 25px; 
+                gap: 30px; 
+            } 
+            header { padding: 1.5rem 1rem 1rem; }
+            header img { max-height: 65px; max-width: 85%; } 
+            .profile-img { float: none; display: block; margin: 0 auto 20px auto; width: 85%; max-width: 240px; }
+        }
+    </style>
+</head>
+<body>
+
+<header><img src="/11.png" alt="koopmansfineart.com"></header>
+
+<nav>
+    <ul>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/collection/">Collection</a></li>
+        <li><a href="/en/auctions/">Auctions</a></li>
+        <li><a href="/en/history/" class="active">History</a></li>
+        <li><a href="/historie/" class="lang-switch">NL</a></li>
+    </ul>
+</nav>
+
+<div class="main-content clearfix">
+    <h1>History & Passion</h1>
+    <p>The collection of <strong>koopmansfineart.com</strong> originated from a deep-rooted fascination with classical European painting. What began as a personal journey of discovery through the refined masterpieces of the nineteenth century has grown into a carefully curated private collection. The collection focuses particularly on atmospheric still lifes, interiors, and landscapes that bear witness to exceptional craftsmanship and a striking historical character.</p>
+    
+    <p>We believe that every antique painting is a unique window to the past that must be treated with respect. For this reason, we dedicate a great deal of time to historical provenance research, material analysis, and the careful conservation of both the canvases and their monumental, hand-gilded frames.</p>
+
+    <h2>About Me</h2>
+    
+    <img src="/foto/IMG_4164.JPG" alt="Merijn Koopmans" class="profile-img">
+    
+    <p>My name is <strong>Merijn Koopmans</strong>.</p>
+    
+    <p>The most beautiful aspect of this passion is the journey of discovery: intensively searching regional auction houses, estate sales, and private collections for that one hidden gem. A yellowed, darkened layer of varnish or a subtle, almost illegible signature often conceals the hand of a classical master—such as the highly refined still lifes of Arnoud Wydeveld or the atmospheric maritime views of Hendrik Hulk.</p>
+    
+    <p>Conserving and researching these works is, for me, a form of historical respect. Through <strong>koopmansfineart.com</strong>, I hope to share this passion and the tangible beauty of classical craftsmanship with fellow collectors and enthusiasts.</p>
+</div>
+
+<footer>&copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans | <a href="/en/disclaimer/">Disclaimer</a></footer>
+
+<!-- Script to automatically center the active menu item on mobile viewports -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var activeLink = document.querySelector('nav a.active');
+        if (activeLink) {
+            activeLink.scrollIntoView({ block: 'nearest', inline: 'center' });
+        }
+    });
+</script>
+
+</body>
+</html>
