@@ -10,11 +10,9 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
         
-        /* Header relatief gepositioneerd voor de taalswitcher */
         header { padding: 2rem 1rem 1rem; position: relative; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
         
-        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
         .lang-switch {
             position: absolute;
             top: 2rem;
@@ -29,9 +27,7 @@
             display: inline-block;
             line-height: 1;
         }
-        .lang-switch a:hover { 
-            transform: scale(1.15);
-        }
+        .lang-switch a:hover { transform: scale(1.15); }
         
         /* BEWEEGBARE MENUBALK STYLING */
         nav { 
@@ -43,10 +39,9 @@
             scrollbar-width: none; 
             -ms-overflow-style: none; 
             -webkit-overflow-scrolling: touch; 
+            line-height: 1; /* Fix: Heft de 1.8 van de body op en vlakt hem perfect af */
         }
-        nav::-webkit-scrollbar {
-            display: none; 
-        }
+        nav::-webkit-scrollbar { display: none; }
         nav ul { 
             list-style: none; 
             padding: 0; 
@@ -100,18 +95,13 @@
         }
         
         @media (max-width: 600px) { 
-            nav ul { 
-                justify-content: flex-start; 
-                padding: 0 25px; 
-                gap: 30px; 
-            } 
+            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
             header { padding: 3rem 1rem 1rem; }
             header img { max-height: 65px; max-width: 85%; } 
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
             .profile-img { float: none; display: block; margin: 0 auto 20px auto; width: 85%; max-width: 240px; }
         }
-
         footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.8rem; margin-top: 4rem; }
         footer a { color: #888; text-decoration: none; }
     </style>
@@ -137,9 +127,9 @@
 
 <div class="main-content clearfix">
     <h1>Historie & Passie</h1>
-    <p>De verzameling van <strong>koopmansfineart.com</strong> is ontstaan uit een diepgewortelde fascinatie voor de klassieke Europese schilderkunst. Wat begon als een persoonlijke ontdekkingsreis langs de verfijnde meesterwerken van de negentiende eeuw, is uitgegroeid tot een zorgvuldig samengestelde particuliere collectie. Hierbij ligt de focus in het bijzonder op sfeervolle stillevens, interieurs og landschappen die getuigen van uitzonderlijk vakmanschap en een markant historisch karakter.</p>
+    <p>De verzameling van <strong>koopmansfineart.com</strong> is ontstaan uit een diepgewortelde fascinatie voor de klassieke Europese schilderkunst. Wat begon als een persoonlijke ontdekkingsreis langs de verfijnde meesterwerken van de negentiende eeuw, is uitgegroeid tot een zorgvuldig samengestelde particuliere collectie. Hierbij ligt de focus in het bijzonder op sfeervolle stillevens, interieurs en landschappen die getuigen van uitzonderlijk vakmanschap en een markant historisch karakter.</p>
     
-    <p>Wij geloven dat elk antiek schilderij een unique venster naar het verleden is dat met respect behandeld moet worden. Om die reden besteden wij veel tijd aan historisch herkomstonderzoek, materiaalanalyses en de zorgvuldige conservering van zowel de doeken als hun monumentale, handvergulde lijsten.</p>
+    <p>Wij geloven dat elk antiek schilderij een uniek venster naar het verleden is dat met respect behandeld moet worden. Om die reden besteden wij veel tijd aan historisch herkomstonderzoek, materiaalanalyses en de zorgvuldige conservering van zowel de doeken als hun monumentale, handvergulde lijsten.</p>
 
     <h2>Over Mij</h2>
     
@@ -147,14 +137,13 @@
     
     <p>Mijn naam is <strong>Merijn Koopmans</strong>.</p>
     
-    <p>Het mooiste aspect van deze passie is de ontdekkingsreis: het intensief afzoeken van regionale veilinghuizen, nalatenschappen en particuliere collecties naar die ene verborgen parel. Vaak schuilt er onder een vergeelde, donkere vernislaag of achter een subtiele, haast onleesbare signatuur de hand van een klassieke meester—zoals de uiterst verfijnde stillevens van Arnoud Wydeveld of de atmosferische rivier- en zeegezichten van Hendrik Hulk.</p>
+    <p>Het mooiste aspect van deze passion is de ontdekkingsreis: het intensief afzoeken van regionale veilinghuizen, nalatenschappen en particuliere collecties naar die ene verborgen parel. Vaak schuilt er onder een vergeelde, donkere vernislaag of achter een subtiele, haast onleesbare signatuur de hand van een klassieke meester—zoals de uiterst verfijnde stillevens van Arnoud Wydeveld of de atmosferische rivier- en zeegezichten van Hendrik Hulk.</p>
     
     <p>Het conserveren en documenteren van deze werken is voor mij een vorm van historisch respect. Met <strong>koopmansfineart.com</strong> hoop ik deze passie en de tastbare schoonheid van klassiek vakmanschap te delen met mede-verzamelaars en liefhebbers.</p>
 </div>
 
 <footer>&copy; 2026 <a href="/">koopmansfineart.com</a> | M. Koopmans | <a href="/disclaimer/">Disclaimer</a></footer>
 
-<!-- Dit script zorgt ervoor dat 'Historie' direct in beeld schuift op mobiel -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         var activeLink = document.querySelector('nav a.active');
