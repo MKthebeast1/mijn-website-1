@@ -14,24 +14,14 @@
         header { padding: 2rem 1rem 1rem; position: relative; }
         
         header img { 
-            max-height: 120px; 
+            max-height: 130px; /* Iets verhoogd voor betere leesbaarheid */
             max-width: 95%; 
             display: block; 
             margin: 0 auto; 
             object-fit: contain; 
+            
+            will-change: opacity; 
             transition: opacity 0.05s linear; 
-            
-            /* Museale transitie: het blauw blijft rondom de letters volledig intact, 
-               alleen de uiterste 6% aan de randen vervaagt ultra-zacht in de achtergrond */
-            -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, rgba(0,0,0,0) 100%);
-            mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, rgba(0,0,0,0) 100%);
-            
-            /* Subtiele boost om het goud en het reliëf echt te laten spreken tegen het donkere canvas */
-            filter: contrast(1.06) brightness(1.02);
-            
-            /* Fix voor mobiele browsers en laptops (Safari/Chrome hardware acceleration) */
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
         }
         
         /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
@@ -49,11 +39,9 @@
             display: inline-block;
             line-height: 1;
         }
-        .lang-switch a:hover { 
-            transform: scale(1.15);
-        }
+        .lang-switch a:hover { transform: scale(1.15); }
         
-        /* BEWEEGBARE MENUBALK STYLING */
+        /* BEWEEGBARE MENUBALK STYLING (Letters groter en breder) */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -63,10 +51,9 @@
             scrollbar-width: none; 
             -ms-overflow-style: none; 
             -webkit-overflow-scrolling: touch; 
+            line-height: 1 !important;
         }
-        nav::-webkit-scrollbar {
-            display: none; 
-        }
+        nav::-webkit-scrollbar { display: none; }
         nav ul { 
             list-style: none; 
             padding: 0; 
@@ -74,16 +61,18 @@
             display: flex; 
             justify-content: center; 
             gap: 40px; 
+            line-height: 1 !important;
         }
         nav a { 
             text-decoration: none; 
             color: #dcd0c0; 
             font-weight: 700; 
             text-transform: uppercase; 
-            letter-spacing: 2px; 
-            font-size: 0.85rem; 
+            letter-spacing: 3px; /* Verhoogd naar 3px voor een bredere, chiquere look */
+            font-size: 0.95rem;  /* Letters iets groter gemaakt */
             transition: 0.3s; 
             display: inline-block;
+            line-height: 1 !important;
         }
         nav a:hover, nav a.active { color: white; }
         
@@ -100,6 +89,7 @@
             margin-bottom: 2rem; 
         }
         
+        /* Schilderijen carrousel */
         .ticker-wrap { 
             width: 100%; 
             overflow: hidden; 
@@ -109,9 +99,7 @@
             border-top: 2px solid var(--blauw); 
             border-bottom: 2px solid var(--blauw); 
         }
-        
         .ticker { display: flex; width: fit-content; animation: ticker-scroll 55s linear infinite; }
-        
         .ticker-item { 
             flex-shrink: 0; 
             margin: 0 20px; 
@@ -122,19 +110,14 @@
             box-shadow: 10px 10px 20px rgba(0,0,0,0.2); 
             background-color: white; 
         }
-        
         .ticker-item img { height: 100%; display: block; }
         
         @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
         @media (max-width: 600px) { 
-            nav ul { 
-                justify-content: flex-start; 
-                padding: 0 25px; 
-                gap: 30px; 
-            } 
+            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
             header { padding: 3rem 1rem 1rem; }
-            header img { max-height: 65px; max-width: 85%; } 
+            header img { max-height: 75px; max-width: 90%; } 
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
         }
@@ -146,7 +129,7 @@
 <body>
 
 <header>
-    <img src="/foto/10.jpg" alt="Koopmans Fine Art" id="header-logo">
+    <img src="/foto/logo10.png" alt="Koopmans Fine Art" id="header-logo">
     <div class="lang-switch">
         <a href="/">🇳🇱</a>
         <a href="/en/">🇬🇧</a>
@@ -185,12 +168,12 @@
 
 <div class="main-content">
     <h2>Welkom</h2>
-    <p>Welkom op de website van Koopmans Fine Art. Wij richten ons op de conservatie en verkoop van authentieke kunstwerken en historische objecten met een eigen karakter.</p>
+    <p>Welkom op de website van Koopmans Fine Art. Wij zijn gespecialiseerd in het behoud en de overdracht van authentieke kunstwerken en historische objecten, elk met een geheel eigen karakter.</p>
     
     <div style="padding: 1.5rem 1rem; text-align: center; background-color: #f4f1ea; border-top: 1px solid #e0dcd5; margin-top: 1rem;">
         <div style="margin: 2rem auto; max-width: 600px; padding: 20px; text-align: center; border: 2px solid #b08d57; background-color: #fcfbf8; border-radius: 5px;">
             <p style="font-family: 'Libre Baskerville', serif; color: #1f2a35; margin: 0 0 15px 0; font-size: 1rem;">
-                Bied mee op bijzondere objecten via de veilingpagina.
+                Bied mee op bijzondere objecten via onze veilingpagina.
             </p>
             <a href="https://www.catawiki.com/nl/u/30227951-koopmansfineart" target="_blank" style="display: inline-block; padding: 10px 25px; background-color: #1f2a35; color: #dcd0c0; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; border-radius: 2px;">
                 Naar Catawiki
@@ -200,11 +183,12 @@
 </div>
 
 <footer>
-    &copy; 2026 Koopmans Fine Art | M. Koopmans | 
+    &copy; 2026 <a href="/">koopmansfineart.com</a> | M. Koopmans | 
     <a href="/disclaimer/">Disclaimer</a>
 </footer>
 
 <script>
+    // Logo fade effect tijdens scrollen
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('header-logo');
         var scrollPosition = window.scrollY;
@@ -213,6 +197,14 @@
         if (opacity < 0) opacity = 0;
         if (opacity > 1) opacity = 1;
         logo.style.opacity = opacity;
+    });
+
+    // Mobiele menu-centering
+    document.addEventListener("DOMContentLoaded", function() {
+        var activeLink = document.querySelector('nav a.active');
+        if (activeLink) {
+            activeLink.scrollIntoView({ block: 'nearest', inline: 'center' });
+        }
     });
 </script>
 
