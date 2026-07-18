@@ -10,9 +10,23 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* Header padding gelijkgetrokken met de rest van de website */
-        header { padding: 2rem 1rem 1rem; }
+        /* Header relatief gepositioneerd voor de taalswitcher */
+        header { padding: 2rem 1rem 1rem; position: relative; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
+        
+        /* TAALSWITCHER RECHTSBOVEN STYLING */
+        .lang-switch {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            text-decoration: none;
+            color: var(--blauw);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .lang-switch:hover { color: var(--goud); }
         
         /* BEWEEGBARE MENUBALK STYLING */
         nav { 
@@ -63,8 +77,10 @@
                 padding: 0 25px; 
                 gap: 30px; 
             } 
-            header { padding: 1.5rem 1rem 1rem; }
+            /* Mobiele positie voor de header en vlag */
+            header { padding: 3rem 1rem 1rem; }
             header img { max-height: 65px; max-width: 85%; } 
+            .lang-switch { top: 0.8rem; right: 1rem; font-size: 0.75rem; }
         }
         
         footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
@@ -73,7 +89,10 @@
 </head>
 <body>
 
-<header><img src="/11.png" alt="Koopmans Fine Art"></header>
+<header>
+    <img src="/11.png" alt="Koopmans Fine Art">
+    <a href="/en/collection/" class="lang-switch">🇬🇧 EN</a>
+</header>
 
 <nav>
     <ul>
