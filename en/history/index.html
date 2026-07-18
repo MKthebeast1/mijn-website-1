@@ -10,11 +10,9 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
         
-        /* Header relatief gepositioneerd voor de taalswitcher */
         header { padding: 2rem 1rem 1rem; position: relative; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
         
-        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
         .lang-switch {
             position: absolute;
             top: 2rem;
@@ -41,7 +39,7 @@
             scrollbar-width: none; 
             -ms-overflow-style: none; 
             -webkit-overflow-scrolling: touch; 
-            line-height: 1; /* Fix: Voorkomt dat de balk dikker wordt door body line-height */
+            line-height: normal; /* Fix: Neutraliseert de body-hoogte exact naar de homepage-maat */
         }
         nav::-webkit-scrollbar { display: none; }
         nav ul { 
@@ -148,7 +146,6 @@
 <footer>&copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans | <a href="/en/disclaimer/">Disclaimer</a></footer>
 
 <script>
-    // Zorgt ervoor dat ook 'History' direct perfect in het midden schuift op mobiel
     document.addEventListener("DOMContentLoaded", function() {
         var activeLink = document.querySelector('nav a.active');
         if (activeLink) {
