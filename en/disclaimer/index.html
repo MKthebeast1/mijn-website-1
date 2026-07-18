@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - Koopmans Fine Art</title>
+    <link rel="icon" type="image/png" href="/Koopmansfine.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
+        body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
+        
+        /* Header relatief gepositioneerd voor de taalswitcher */
+        header { padding: 2rem 1rem 1rem; position: relative; }
+        header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
+        
+        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
+        .lang-switch {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 12px;
+        }
+        .lang-switch a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: 0.2s;
+            display: inline-block;
+            line-height: 1;
+        }
+        .lang-switch a:hover { transform: scale(1.15); }
+        
+        /* BEWEEGBARE MENUBALK STYLING */
+        nav { 
+            padding: 0.9rem 0; 
+            margin-bottom: 2.5rem; 
+            background-color: var(--blauw); 
+            overflow-x: auto; 
+            white-space: nowrap;
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+            -webkit-overflow-scrolling: touch; 
+            line-height: 1; /* Fix: Voorkomt dat de balk dikker wordt door body line-height */
+        }
+        nav::-webkit-scrollbar { display: none; }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #dcd0c0; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+            display: inline-block;
+        }
+        nav a:hover { color: white; }
+        
+        .main-content { max-width: 800px; margin: 0 auto; padding: 0.5rem 2rem 5rem; text-align: left; }
+        
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.2rem; 
+            color: var(--blauw); 
+            border-bottom: 3px solid var(--blauw); 
+            display: inline-block; 
+            padding-bottom: 5px; 
+            margin-top: 0.5rem;
+            margin-bottom: 2rem; 
+        }
+        
+        h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--blauw); margin-top: 2.5rem; margin-bottom: 1rem; }
+        
+        @media (max-width: 600px) { 
+            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
+            header { padding: 3rem 1rem 1rem; }
+            header img { max-height: 65px; max-width: 85%; } 
+            .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
+            .lang-switch a { font-size: 1.1rem; }
+        }
+        
+        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
+        footer a { color: #888; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="/11.png" alt="Koopmans Fine Art" id="header-logo">
+    <div class="lang-switch">
+        <a href="/disclaimer/">🇳🇱</a>
+        <a href="/en/disclaimer/">🇬🇧</a>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/collection/">Collection</a></li>
+        <li><a href="/en/auctions/">Auctions</a></li>
+        <li><a href="/en/history/">History</a></li>
+    </ul>
+</nav>
+
+<div class="main-content">
+    <h2>Disclaimer</h2>
+    <p>The terms of this disclaimer apply to the website <strong>koopmansfineart.com</strong>. By visiting this website and/or using the information provided on or via this website, you agree to the applicability of this disclaimer.</p>
+    
+    <h3>Use of the Website</h3>
+    <p>The information on this website is intended solely for general information purposes. No rights can be derived from the information on this website. Although Koopmans Fine Art takes great care in compiling and maintaining this website, using sources considered reliable, we cannot guarantee the accuracy, completeness, or timeliness of the provided information. Koopmans Fine Art explicitly disclaims any liability regarding the accuracy, completeness, timeliness of the information provided, and the uninterrupted use of this website.</p>
+    
+    <h3>Artworks and Attributions</h3>
+    <p>Great care is dedicated to researching the history, provenance, descriptions, dimensions, and attributions of the classical artworks and antique objects presented in the collection. However, all descriptions, condition reports, and statements regarding authorship represent opinions and estimates based on historical research and material analysis. They do not constitute absolute guarantees. Prospective buyers and collectors are encouraged to perform their own due diligence.</p>
+
+    <h3>Third-Party Information and External Links</h3>
+    <p>When Koopmans Fine Art provides links to third-party websites or external platforms, such as Catawiki, this does not imply a recommendation or endorsement of the services, products, or lots offered there. Koopmans Fine Art accepts no liability and no responsibility for the content, use, or availability of websites referenced or linking to this website. The use of such links is entirely at your own risk.</p>
+    
+    <h3>Intellectual Property</h3>
+    <p>Koopmans Fine Art reserves all intellectual property rights and other rights regarding all information provided on or via this website (including all texts, graphic materials, photographs of artworks, and logos). It is strictly prohibited to copy, download, publish, distribute, or reproduce any information on this website in any form without the prior written consent of Koopmans Fine Art or the lawful consent of the rights holder.</p>
+    
+    <h3>Amendments</h3>
+    <p>Koopmans Fine Art reserves the right to change the information provided on or via this website, including the text of this disclaimer, at any time without further notice.</p>
+</div>
+
+<footer>
+    &copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans | 
+    <a href="/en/disclaimer/">Disclaimer</a>
+</footer>
+
+</body>
+</html>
