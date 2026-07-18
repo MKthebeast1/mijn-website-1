@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auctions - koopmansfineart.com</title>
+    <link rel="icon" type="image/png" href="/Koopmansfine.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
+        body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
+        
+        header { padding: 2rem 1rem 1rem; }
+        header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
+        
+        /* BEWEEGBARE MENUBALK STYLING */
+        nav { 
+            padding: 0.9rem 0; 
+            margin-bottom: 2.5rem; 
+            background-color: var(--blauw); 
+            overflow-x: auto; 
+            white-space: nowrap;
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+            -webkit-overflow-scrolling: touch; 
+        }
+        nav::-webkit-scrollbar {
+            display: none; 
+        }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #dcd0c0; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+            display: inline-block;
+        }
+        nav a:hover, nav a.active { color: white; }
+        
+        /* Goudkleur voor de taalswitch */
+        nav a.lang-switch { color: var(--goud); }
+        
+        .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--blauw); border-bottom: 3px solid var(--blauw); display: inline-block; padding-bottom: 5px; margin-bottom: 2rem; }
+        
+        .auction-box { 
+            margin: 3rem auto; 
+            max-width: 600px; 
+            padding: 30px; 
+            text-align: center; 
+            border: 4px solid var(--blauw); 
+            outline: 1px solid var(--goud); 
+            outline-offset: -3px; 
+            background-color: #fcfbf8; 
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.1); 
+        }
+        .auction-btn { 
+            display: inline-block; 
+            padding: 12px 30px; 
+            background-color: var(--blauw); 
+            color: #dcd0c0; 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            font-size: 0.85rem; 
+            border-radius: 2px; 
+            transition: 0.3s; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+        .auction-btn:hover { 
+            background-color: var(--goud); 
+            color: var(--blauw); 
+        }
+        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
+        footer a { color: #888; text-decoration: none; }
+        
+        @media (max-width: 600px) { 
+            nav ul { 
+                justify-content: flex-start; 
+                padding: 0 25px; 
+                gap: 30px; 
+            } 
+            header { padding: 1.5rem 1rem 1rem; }
+            header img { max-height: 65px; max-width: 85%; } 
+        }
+    </style>
+</head>
+<body>
+
+<header><img src="/11.png" alt="koopmansfineart.com"></header>
+
+<nav>
+    <ul>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/collection/">Collection</a></li>
+        <li><a href="/en/auctions/" class="active">Auctions</a></li>
+        <li><a href="/en/history/">History</a></li>
+        <li><a href="/veilingen/" class="lang-switch">NL</a></li>
+    </ul>
+</nav>
+
+<div class="main-content">
+    <h2>Our Auctions</h2>
+    <p>We regularly offer exceptional and authentic nineteenth-century paintings, classical artworks, and historical objects on Catawiki's international art auction. Our selection is curated with the utmost care, paying close attention to the quality, provenance, and historical soul of each object.</p>
+    <p>Are you interested in one of our collection pieces or would you like to bid on our active lots? You can view current auctions and place secure bids via our official seller profile on Catawiki.</p>
+    
+    <div class="auction-box">
+        <p style="font-family: 'Libre Baskerville', serif; color: #1f2a35; margin: 0 0 15px 0; font-size: 1.1rem; font-weight: 700;">
+            Bid on exceptional objects via our auction page.
+        </p>
+        <p style="font-family: 'Libre Baskerville', serif; color: #555; margin: 0 0 25px 0; font-size: 0.9rem; line-height: 1.6;">
+            Click the button below to go directly to our active lots and profile on Catawiki.
+        </p>
+        <a href="https://www.catawiki.com/nl/u/30227951-koopmansfineart" target="_blank" class="auction-btn">
+            Go to Catawiki
+        </a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans | 
+    <a href="/en/disclaimer/">Disclaimer</a>
+</footer>
+
+</body>
+</html>
