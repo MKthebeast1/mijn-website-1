@@ -137,9 +137,9 @@
 
 <div class="main-content clearfix">
     <h1>Historie & Passie</h1>
-    <p>De verzameling van <strong>koopmansfineart.com</strong> is ontstaan uit een diepgewortelde fascinatie voor de klassieke Europese schilderkunst. Wat begon als een persoonlijke ontdekkingsreis langs de verfijnde meesterwerken van de negentiende eeuw, is uitgegroeid tot een zorgvuldig samengestelde particuliere collectie. Hierbij ligt de focus in het bijzonder op sfeervolle stillevens, interieurs en landschappen die getuigen van uitzonderlijk vakmanschap en een markant historisch karakter.</p>
+    <p>De verzameling van <strong>koopmansfineart.com</strong> is ontstaan uit een diepgewortelde fascinatie voor de klassieke Europese schilderkunst. Wat begon als een persoonlijke ontdekkingsreis langs de verfijnde meesterwerken van de negentiende eeuw, is uitgegroeid tot een zorgvuldig samengestelde particuliere collectie. Hierbij ligt de focus in het bijzonder op sfeervolle stillevens, interieurs og landschappen die getuigen van uitzonderlijk vakmanschap en een markant historisch karakter.</p>
     
-    <p>Wij geloven dat elk antiek schilderij een uniek venster naar het verleden is dat met respect behandeld moet worden. Om die reden besteden wij veel tijd aan historisch herkomstonderzoek, materiaalanalyses en de zorgvuldige conservering van zowel de doeken als hun monumentale, handvergulde lijsten.</p>
+    <p>Wij geloven dat elk antiek schilderij een unique venster naar het verleden is dat met respect behandeld moet worden. Om die reden besteden wij veel tijd aan historisch herkomstonderzoek, materiaalanalyses en de zorgvuldige conservering van zowel de doeken als hun monumentale, handvergulde lijsten.</p>
 
     <h2>Over Mij</h2>
     
@@ -153,6 +153,16 @@
 </div>
 
 <footer>&copy; 2026 <a href="/">koopmansfineart.com</a> | M. Koopmans | <a href="/disclaimer/">Disclaimer</a></footer>
+
+<!-- Dit script zorgt ervoor dat 'Historie' direct in beeld schuift op mobiel -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var activeLink = document.querySelector('nav a.active');
+        if (activeLink) {
+            activeLink.scrollIntoView({ block: 'nearest', inline: 'center' });
+        }
+    });
+</script>
 
 </body>
 </html>
