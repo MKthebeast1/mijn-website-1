@@ -9,30 +9,49 @@
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
-        header { padding: 2.5rem 1rem 1.5rem; }
+        
+        /* Header exact gelijkgeschakeld met de homepagina */
+        header { padding: 2rem 1rem 1rem; position: relative; }
         header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
         
-        /* BEWEEGBARE MENUBALK STYLING */
+        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
+        .lang-switch {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 12px;
+        }
+        .lang-switch a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: 0.2s;
+            display: inline-block;
+            line-height: 1;
+        }
+        .lang-switch a:hover { transform: scale(1.15); }
+        
+        /* BEWEEGBARE MENUBALK STYLING (VOLLEDIG GEÏSOLEERD) */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
             background-color: var(--blauw); 
-            overflow-x: auto; /* Swipebaar maken op mobiel */
+            overflow-x: auto; 
             white-space: nowrap;
-            scrollbar-width: none; /* Verbergt scrollbalk in Firefox */
-            -ms-overflow-style: none; /* Verbergt scrollbalk in Edge */
-            -webkit-overflow-scrolling: touch; /* Vloeiende swipe op iOS */
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+            -webkit-overflow-scrolling: touch; 
+            line-height: 1 !important;
         }
-        nav::-webkit-scrollbar {
-            display: none; /* Verbergt scrollbalk in Chrome/Safari */
-        }
+        nav::-webkit-scrollbar { display: none; }
         nav ul { 
             list-style: none; 
             padding: 0; 
             margin: 0; 
             display: flex; 
-            justify-content: center; /* Gecentreerd op desktop */
+            justify-content: center; 
             gap: 40px; 
+            line-height: 1 !important;
         }
         nav a { 
             text-decoration: none; 
@@ -43,13 +62,12 @@
             font-size: 0.85rem; 
             transition: 0.3s; 
             display: inline-block;
+            line-height: 1 !important;
         }
         nav a:hover, nav a.active { color: white; }
         
-        /* padding-top verlaagd van 4rem naar 0.5rem */
         .main-content { max-width: 800px; margin: 0 auto; padding: 0.5rem 2rem 5rem; text-align: left; }
         
-        /* H1 styling nu identiek aan de andere pagina's (inclusief blauwe streep) */
         h1 { 
             font-family: 'Playfair Display', serif; 
             font-size: 2.2rem;
@@ -63,22 +81,27 @@
         
         h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--blauw); margin-top: 2.5rem; margin-bottom: 1rem; }
         
-        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.8rem; margin-top: 4rem; }
-        footer a { color: #888; text-decoration: none; }
-        
         @media (max-width: 600px) { 
-            nav ul { 
-                justify-content: flex-start; /* Start altijd links bij 'Home' op mobiel */
-                padding: 0 25px; 
-                gap: 30px; 
-            } 
-            header img { max-height: 65px; } 
+            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
+            header { padding: 3rem 1rem 1rem; }
+            header img { max-height: 65px; max-width: 85%; } 
+            .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
+            .lang-switch a { font-size: 1.1rem; }
         }
+        
+        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
+        footer a { color: #888; text-decoration: none; }
     </style>
 </head>
 <body>
 
-<header><img src="/11.png" alt="koopmansfineart.com"></header>
+<header>
+    <img src="/11.png" alt="koopmansfineart.com" id="header-logo">
+    <div class="lang-switch">
+        <a href="/disclaimer/">🇳🇱</a>
+        <a href="/en/disclaimer/">🇬🇧</a>
+    </div>
+</header>
 
 <nav>
     <ul>
@@ -101,7 +124,7 @@
     <p>Ondanks deze inspanningen kunnen toeschrijvingen en beoordelingen aan verandering onderhevig zijn door nieuwe wetenschappelijke inzichten of expertise. <strong>koopmansfineart.com</strong> geeft geen garanties, expliciet noch impliciet, met betrekking tot de absolute authenticiteit of onomstotelijke toeschrijving van de aangeboden objecten. Elke aankoop via <strong>koopmansfineart.com</strong> geschiedt op basis van de eigen beoordeling en expertise van de koper. <strong>koopmansfineart.com</strong> aanvaardt geen aansprakelijkheid voor schade of gevolgen voortvloeiend uit latere voortschrijdende inzichten over een werk of de toeschrijving daarvan.</p>
 
     <h2>Informatie op de website</h2>
-    <p>De inhoud van <strong>koopmansfineart.com</strong> is met de grootst mogelijke zorg samengesteld. Desalniettemin kan de informatie op de website onvolledig of onjuist zijn. <strong>koopmansfineart.com</strong> is niet verantwoordelijk for eventuele typfouten, onjuiste prijsvermeldingen of technische storingen. De getoonde afbeeldingen kunnen door scherminstellingen of fotografie licht afwijken van de werkelijkheid.</p>
+    <p>De inhoud van <strong>koopmansfineart.com</strong> is met de grootst mogelijke zorg samengesteld. Desalniettemin kan de informatie op de website onvolledig of onjuist zijn. <strong>koopmansfineart.com</strong> is niet verantwoordelijk voor eventuele typfouten, onjuiste prijsvermeldingen of technische storingen. De getoonde afbeeldingen kunnen door scherminstellingen of fotografie licht afwijken van de werkelijkheid.</p>
 
     <h2>Geen Taxatieadvies</h2>
     <p>De informatie op <strong>koopmansfineart.com</strong> dient uitsluitend ter oriëntatie en vormt geen formeel taxatierapport of investeringsadvies. Wij adviseren kopers om bij twijfel of voor beleggingsdoeleinden altijd een onafhankelijke expert te raadplegen.</p>
