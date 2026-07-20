@@ -130,13 +130,13 @@
 <div class="main-content">
     <h2>De Verzameling</h2>
     <div class="gallery">
-        <div class="gallery-item"><a href="/items/johanneshelder/"><img src="/foto/helder2.jpeg"></a><p class="item-info">Johannes Helder</p></div>
-        <div class="gallery-item"><a href="/items/hectorthys/"><img src="/foto/thys1.jpeg"></a><p class="item-info">Hector Thys</p></div>
-        <div class="gallery-item"><a href="/items/hendrikhulk/"><img src="/foto/HendrikHulk.jpg"></a><p class="item-info">Hendrik Hulk</p></div>
-        <div class="gallery-item"><a href="/items/arnoudwydeveld/"><img src="/foto/wydeveldnieuw.png"></a><p class="item-info">Arnoud Wydeveld</p></div>
-        <div class="gallery-item"><a href="/items/hermanusvantankeren/"><img src="/foto/hermanusvantankeren.jpg"></a><p class="item-info">H. van Tankeren</p></div>
-        <div class="gallery-item"><a href="/items/hageman/"><img src="/foto/Hageman.jpg"></a><p class="item-info">Gerard Hageman</p></div>
-        <div class="gallery-item"><a href="/items/waltervaes/"><img src="/foto/waltervaes.jpg"></a><p class="item-info">Walter Vaes</p></div>
+        <div class="gallery-item"><a href="/items/johanneshelder/"><img src="/foto/helder2.jpeg" alt="Johannes Helder"></a><p class="item-info">Johannes Helder</p></div>
+        <div class="gallery-item"><a href="/items/hectorthys/"><img src="/foto/thys1.jpeg" alt="Hector Thys"></a><p class="item-info">Hector Thys</p></div>
+        <div class="gallery-item"><a href="/items/hendrikhulk/"><img src="/foto/HendrikHulk.jpg" alt="Hendrik Hulk"></a><p class="item-info">Hendrik Hulk</p></div>
+        <div class="gallery-item"><a href="/items/arnoudwydeveld/"><img src="/foto/wydeveldnieuw.png" alt="Arnoud Wydeveld"></a><p class="item-info">Arnoud Wydeveld</p></div>
+        <div class="gallery-item"><a href="/items/hermanusvantankeren/"><img src="/foto/hermanusvantankeren.jpg" alt="H. van Tankeren"></a><p class="item-info">H. van Tankeren</p></div>
+        <div class="gallery-item"><a href="/items/hageman/"><img src="/foto/Hageman.jpg" alt="Gerard Hageman"></a><p class="item-info">Gerard Hageman</p></div>
+        <div class="gallery-item"><a href="/items/waltervaes/"><img src="/foto/waltervaes.jpg" alt="Walter Vaes"></a><p class="item-info">Walter Vaes</p></div>
     </div>
 </div>
 
@@ -144,6 +144,32 @@
     &copy; 2026 Koopmans Fine Art | M. Koopmans | 
     <a href="/disclaimer/">Disclaimer</a>
 </footer>
+
+<script>
+    // Logo fade effect tijdens scrollen
+    window.addEventListener('scroll', function() {
+        var logo = document.getElementById('header-logo');
+        var scrollPosition = window.scrollY;
+        var maxScroll = 180; 
+        var opacity = 1 - (scrollPosition / maxScroll);
+        if (opacity < 0) opacity = 0;
+        if (opacity > 1) opacity = 1;
+        if (logo) logo.style.opacity = opacity;
+    });
+
+    // Zorgt ervoor dat de actieve knop op mobiel netjes in het viewport schuift
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            var activeLink = document.querySelector('nav a.active');
+            var nav = document.querySelector('nav');
+            if (activeLink && nav) {
+                var navRect = nav.getBoundingClientRect();
+                var linkRect = activeLink.getBoundingClientRect();
+                nav.scrollLeft = nav.scrollLeft + (linkRect.left - navRect.left) - (navRect.width / 2) + (linkRect.width / 2);
+            }
+        }, 50);
+    });
+</script>
 
 </body>
 </html>
