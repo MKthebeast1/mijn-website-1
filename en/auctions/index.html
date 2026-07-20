@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auctions - koopmansfineart.com</title>
+    <title>The Collection - Koopmans Fine Art</title>
     <link rel="icon" type="image/png" href="/Koopmansfine.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
+        body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        body { 
-            font-family: 'Libre Baskerville', serif; 
-            margin: 0; 
-            background-color: var(--creme); 
-            color: var(--donker); 
-            text-align: center; 
-            border-top: 10px solid var(--blauw); 
-            line-height: 1.8; 
+        /* 1. DUNNE HEADER PADDING (Zorgt dat het witte vlak niet te dik wordt) */
+        header { padding: 0.5rem 1rem 0.2rem; position: relative; }
+        
+        /* 2. GROOT LOGO (De perfecte grootte van de homepagina) */
+        header img { 
+            max-height: 160px; 
+            max-width: 95%; 
+            display: block; 
+            margin: 0 auto; 
+            object-fit: contain; 
+            will-change: opacity; 
+            transition: opacity 0.05s linear; 
         }
         
-        header { padding: 2rem 1rem 1rem; position: relative; }
-        header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
-        
+        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
         .lang-switch {
             position: absolute;
             top: 2rem;
@@ -38,7 +41,7 @@
         }
         .lang-switch a:hover { transform: scale(1.15); }
         
-        /* BEWEEGBARE MENUBALK STYLING */
+        /* 3. NORMALE, STRAKKE MENUBALK */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -48,7 +51,7 @@
             scrollbar-width: none; 
             -ms-overflow-style: none; 
             -webkit-overflow-scrolling: touch; 
-            line-height: normal; /* Fix: Neutraliseert de body-hoogte exact naar de homepage-maat */
+            line-height: 1 !important;
         }
         nav::-webkit-scrollbar { display: none; }
         nav ul { 
@@ -58,63 +61,38 @@
             display: flex; 
             justify-content: center; 
             gap: 40px; 
+            line-height: 1 !important;
         }
         nav a { 
             text-decoration: none; 
             color: #dcd0c0; 
             font-weight: 700; 
             text-transform: uppercase; 
-            letter-spacing: 2px; 
-            font-size: 0.85rem; 
+            letter-spacing: 3px; 
+            font-size: 0.95rem; 
             transition: 0.3s; 
             display: inline-block;
+            line-height: 1 !important;
         }
         nav a:hover, nav a.active { color: white; }
         
-        .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
+        /* Basis styling voor de tekst/content eronder */
+        .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; line-height: 1.8; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--blauw); border-bottom: 3px solid var(--blauw); display: inline-block; padding-bottom: 5px; margin-top: 0.5rem; margin-bottom: 2rem; }
         
-        h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2.2rem; 
-            color: var(--blauw); 
-            border-bottom: 3px solid var(--blauw); 
-            display: inline-block; 
-            padding-bottom: 5px; 
-            margin-top: 0.5rem;
-            margin-bottom: 2rem; 
-        }
-        
-        .auction-box { 
-            margin: 3rem auto; 
-            max-width: 600px; 
-            padding: 30px; 
-            text-align: center; 
-            border: 4px solid var(--blauw); 
-            outline: 1px solid var(--goud); 
-            outline-offset: -3px; 
-            background-color: #fcfbf8; 
-            box-shadow: 10px 10px 20px rgba(0,0,0,0.1); 
-        }
-        .auction-btn { 
-            display: inline-block; 
-            padding: 12px 30px; 
-            background-color: var(--blauw); 
-            color: #dcd0c0; 
-            text-decoration: none; 
-            font-weight: bold; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            font-size: 0.85rem; 
-            border-radius: 2px; 
-            transition: 0.3s; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-        }
-        .auction-btn:hover { background-color: var(--goud); color: var(--blauw); }
-        
+        /* MOBIELE FIX: Strakke header en groot logo op telefoon */
         @media (max-width: 600px) { 
             nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
-            header { padding: 3rem 1rem 1rem; }
-            header img { max-height: 65px; max-width: 85%; } 
+            
+            /* Compacte bovenkant op mobiel */
+            header { padding: 1rem 1rem 0.2rem; }
+            
+            /* Logo blijft mooi groot op mobiel */
+            header img { 
+                max-height: 120px; 
+                max-width: 95%; 
+            } 
+            
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
         }
@@ -126,21 +104,25 @@
 <body>
 
 <header>
-    <img src="/foto/Adobe Express - file.png" alt="koopmansfineart.com" id="header-logo">
+    <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
     <div class="lang-switch">
-        <a href="/veilingen/">🇳🇱</a>
-        <a href="/en/auctions/">🇬🇧</a>
+        <!-- Zorg dat de NL vlag naar de juiste Nederlandse pagina wijst -->
+        <a href="/verzameling/">🇳🇱</a>
+        <a href="/en/collection/">🇬🇧</a>
     </div>
 </header>
 
 <nav>
     <ul>
         <li><a href="/en/">Home</a></li>
-        <li><a href="/en/collection/">Collection</a></li>
-        <li><a href="/en/auctions/" class="active">Auctions</a></li>
+        <!-- De "active" class staat hier nu correct op Collection -->
+        <li><a href="/en/collection/" class="active">Collection</a></li>
+        <li><a href="/en/auctions/">Auctions</a></li>
         <li><a href="/en/history/">History</a></li>
     </ul>
 </nav>
+
+<!-- Hieronder laat je jouw eigen 'main-content' code en footer van de Collection pagina staan -->
 
 <div class="main-content">
     <h2>Our Auctions</h2>
