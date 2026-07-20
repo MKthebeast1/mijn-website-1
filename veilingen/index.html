@@ -10,9 +10,19 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* Header relatief gepositioneerd voor de taalswitcher */
+        /* Header behoudt de juiste, rustige afstanden */
         header { padding: 2rem 1rem 1rem; position: relative; }
-        header img { max-height: 120px; max-width: 90%; display: block; margin: 0 auto; object-fit: contain; }
+        
+        /* Logo grootte exact overgenomen van de homepage */
+        header img { 
+            max-height: 160px; 
+            max-width: 95%; 
+            display: block; 
+            margin: 0 auto; 
+            object-fit: contain; 
+            will-change: opacity; 
+            transition: opacity 0.05s linear; 
+        }
         
         /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
         .lang-switch {
@@ -33,26 +43,26 @@
             transform: scale(1.15);
         }
         
-        /* BEWEEGBARE MENUBALK STYLING */
+        /* BEWEEGBARE MENUBALK STYLING (Originele dikte) */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
             background-color: var(--blauw); 
-            overflow-x: auto; /* Swipebaar maken op mobiel */
+            overflow-x: auto; 
             white-space: nowrap;
-            scrollbar-width: none; /* Verbergt scrollbalk in Firefox */
-            -ms-overflow-style: none; /* Verbergt scrollbalk in Edge */
-            -webkit-overflow-scrolling: touch; /* Vloeiende swipe op iOS */
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+            -webkit-overflow-scrolling: touch; 
         }
         nav::-webkit-scrollbar {
-            display: none; /* Verbergt scrollbalk in Chrome/Safari */
+            display: none; 
         }
         nav ul { 
             list-style: none; 
             padding: 0; 
             margin: 0; 
             display: flex; 
-            justify-content: center; /* Gecentreerd op desktop */
+            justify-content: center; 
             gap: 40px; 
         }
         nav a { 
@@ -103,13 +113,15 @@
         
         @media (max-width: 600px) { 
             nav ul { 
-                justify-content: flex-start; /* Start altijd links bij 'Home' op mobiel */
+                justify-content: flex-start; 
                 padding: 0 25px; 
                 gap: 30px; 
             } 
-            /* Mobiele positie voor de header en vlaggen */
+            /* Mobiele positie voor de header - origineel uit veilingen behouden */
             header { padding: 3rem 1rem 1rem; }
-            header img { max-height: 65px; max-width: 85%; } 
+            /* Logo mobiel grootte overgenomen van de homepage */
+            header img { max-height: 120px; max-width: 95%; } 
+            
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
         }
