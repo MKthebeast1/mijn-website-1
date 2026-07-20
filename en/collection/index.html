@@ -10,10 +10,10 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* 1. DUNNE HEADER PADDING (Zorgt dat het witte vlak niet te dik wordt) */
+        /* 1. DUNNE HEADER PADDING */
         header { padding: 0.5rem 1rem 0.2rem; position: relative; }
         
-        /* 2. GROOT LOGO (De perfecte grootte van de homepagina) */
+        /* 2. GROOT LOGO */
         header img { 
             max-height: 160px; 
             max-width: 95%; 
@@ -76,23 +76,21 @@
         }
         nav a:hover, nav a.active { color: white; }
         
-        /* Basis styling voor de tekst/content eronder */
-        .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; line-height: 1.8; }
+        .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--blauw); border-bottom: 3px solid var(--blauw); display: inline-block; padding-bottom: 5px; margin-top: 0.5rem; margin-bottom: 2rem; }
         
-        /* MOBIELE FIX: Strakke header en groot logo op telefoon */
+        /* GALERIJ STYLING (Houdt de schilderijen netjes in hun kaders) */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 2rem; }
+        .gallery-item { background-color: #fff; padding: 15px; border: 12px solid var(--blauw); outline: 1px solid var(--goud); outline-offset: -8px; box-shadow: 15px 15px 35px rgba(0,0,0,0.3); text-align: center; transition: 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); }
+        .gallery-item img { width: 100%; display: block; }
+        .item-info { font-weight: 700; font-size: 0.9rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; color: var(--blauw); }
+        
+        /* MOBIELE FIX */
         @media (max-width: 600px) { 
             nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
-            
-            /* Compacte bovenkant op mobiel */
             header { padding: 1rem 1rem 0.2rem; }
-            
-            /* Logo blijft mooi groot op mobiel */
-            header img { 
-                max-height: 120px; 
-                max-width: 95%; 
-            } 
-            
+            header img { max-height: 120px; max-width: 95%; } 
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
         }
@@ -106,7 +104,6 @@
 <header>
     <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
     <div class="lang-switch">
-        <!-- Zorg dat de NL vlag naar de juiste Nederlandse pagina wijst -->
         <a href="/verzameling/">🇳🇱</a>
         <a href="/en/collection/">🇬🇧</a>
     </div>
@@ -115,25 +112,22 @@
 <nav>
     <ul>
         <li><a href="/en/">Home</a></li>
-        <!-- De "active" class staat hier nu correct op Collection -->
         <li><a href="/en/collection/" class="active">Collection</a></li>
         <li><a href="/en/auctions/">Auctions</a></li>
         <li><a href="/en/history/">History</a></li>
     </ul>
 </nav>
 
-<!-- Hieronder laat je jouw eigen 'main-content' code en footer van de Collection pagina staan -->
-
 <div class="main-content">
     <h2>The Collection</h2>
     <div class="gallery">
-        <div class="gallery-item"><a href="/en/items/johanneshelder/"><img src="/foto/helder2.jpeg"></a><p class="item-info">Johannes Helder</p></div>
-        <div class="gallery-item"><a href="/en/items/hectorthys/"><img src="/foto/thys1.jpeg"></a><p class="item-info">Hector Thys</p></div>
-        <div class="gallery-item"><a href="/en/items/hendrikhulk/"><img src="/foto/HendrikHulk.jpg"></a><p class="item-info">Hendrik Hulk</p></div>
-        <div class="gallery-item"><a href="/en/items/arnoudwydeveld/"><img src="/foto/wydeveldnieuw.png"></a><p class="item-info">Arnoud Wydeveld</p></div>
-        <div class="gallery-item"><a href="/en/items/hermanusvantankeren/"><img src="/foto/hermanusvantankeren.jpg"></a><p class="item-info">H. van Tankeren</p></div>
-        <div class="gallery-item"><a href="/en/items/hageman/"><img src="/foto/Hageman.jpg"></a><p class="item-info">Gerard Hageman</p></div>
-        <div class="gallery-item"><a href="/en/items/waltervaes/"><img src="/foto/waltervaes.jpg"></a><p class="item-info">Walter Vaes</p></div>
+        <div class="gallery-item"><a href="/en/items/johanneshelder/"><img src="/foto/helder2.jpeg" alt="Johannes Helder"></a><p class="item-info">Johannes Helder</p></div>
+        <div class="gallery-item"><a href="/en/items/hectorthys/"><img src="/foto/thys1.jpeg" alt="Hector Thys"></a><p class="item-info">Hector Thys</p></div>
+        <div class="gallery-item"><a href="/en/items/hendrikhulk/"><img src="/foto/HendrikHulk.jpg" alt="Hendrik Hulk"></a><p class="item-info">Hendrik Hulk</p></div>
+        <div class="gallery-item"><a href="/en/items/arnoudwydeveld/"><img src="/foto/wydeveldnieuw.png" alt="Arnoud Wydeveld"></a><p class="item-info">Arnoud Wydeveld</p></div>
+        <div class="gallery-item"><a href="/en/items/hermanusvantankeren/"><img src="/foto/hermanusvantankeren.jpg" alt="H. van Tankeren"></a><p class="item-info">H. van Tankeren</p></div>
+        <div class="gallery-item"><a href="/en/items/hageman/"><img src="/foto/Hageman.jpg" alt="Gerard Hageman"></a><p class="item-info">Gerard Hageman</p></div>
+        <div class="gallery-item"><a href="/en/items/waltervaes/"><img src="/foto/waltervaes.jpg" alt="Walter Vaes"></a><p class="item-info">Walter Vaes</p></div>
     </div>
 </div>
 
@@ -141,6 +135,32 @@
     &copy; 2026 Koopmans Fine Art | M. Koopmans | 
     <a href="/en/disclaimer/">Disclaimer</a>
 </footer>
+
+<script>
+    // Logo fade effect tijdens scrollen
+    window.addEventListener('scroll', function() {
+        var logo = document.getElementById('header-logo');
+        var scrollPosition = window.scrollY;
+        var maxScroll = 180; 
+        var opacity = 1 - (scrollPosition / maxScroll);
+        if (opacity < 0) opacity = 0;
+        if (opacity > 1) opacity = 1;
+        if (logo) logo.style.opacity = opacity;
+    });
+
+    // Zorgt ervoor dat de actieve knop op mobiel netjes in het viewport schuift
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            var activeLink = document.querySelector('nav a.active');
+            var nav = document.querySelector('nav');
+            if (activeLink && nav) {
+                var navRect = nav.getBoundingClientRect();
+                var linkRect = activeLink.getBoundingClientRect();
+                nav.scrollLeft = nav.scrollLeft + (linkRect.left - navRect.left) - (navRect.width / 2) + (linkRect.width / 2);
+            }
+        }, 50);
+    });
+</script>
 
 </body>
 </html>
