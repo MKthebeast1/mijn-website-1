@@ -10,10 +10,10 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* Header behoudt de juiste, rustige afstanden */
-        header { padding: 2rem 1rem 1rem; position: relative; }
+        /* 1. DUNNE HEADER VOOR CHIQUE UITSTRALING (Gekopieerd van Home) */
+        header { padding: 0.5rem 1rem 0.2rem; position: relative; }
         
-        /* Logo grootte exact overgenomen van de homepage */
+        /* 2. GROOT LOGO (Gekopieerd van Home) */
         header img { 
             max-height: 160px; 
             max-width: 95%; 
@@ -43,7 +43,7 @@
             transform: scale(1.15);
         }
         
-        /* BEWEEGBARE MENUBALK STYLING (Originele dikte) */
+        /* 3. BEWEEGBARE MENUBALK STYLING (Gekopieerd van Home) */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -53,10 +53,9 @@
             scrollbar-width: none; 
             -ms-overflow-style: none; 
             -webkit-overflow-scrolling: touch; 
+            line-height: 1 !important;
         }
-        nav::-webkit-scrollbar {
-            display: none; 
-        }
+        nav::-webkit-scrollbar { display: none; }
         nav ul { 
             list-style: none; 
             padding: 0; 
@@ -64,16 +63,18 @@
             display: flex; 
             justify-content: center; 
             gap: 40px; 
+            line-height: 1 !important;
         }
         nav a { 
             text-decoration: none; 
             color: #dcd0c0; 
             font-weight: 700; 
             text-transform: uppercase; 
-            letter-spacing: 2px; 
-            font-size: 0.85rem; 
+            letter-spacing: 3px; 
+            font-size: 0.95rem; 
             transition: 0.3s; 
             display: inline-block;
+            line-height: 1 !important;
         }
         nav a:hover, nav a.active { color: white; }
         
@@ -111,15 +112,15 @@
             color: var(--blauw); 
         }
         
+        /* MOBIELE FIX: Strakke header en groot logo op telefoon (Gekopieerd van Home) */
         @media (max-width: 600px) { 
             nav ul { 
                 justify-content: flex-start; 
                 padding: 0 25px; 
                 gap: 30px; 
             } 
-            /* Mobiele positie voor de header - origineel uit veilingen behouden */
-            header { padding: 3rem 1rem 1rem; }
-            /* Logo mobiel grootte overgenomen van de homepage */
+            /* Dit verhelpt het probleem op je screenshot: */
+            header { padding: 1rem 1rem 0.2rem; }
             header img { max-height: 120px; max-width: 95%; } 
             
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
