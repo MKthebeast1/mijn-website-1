@@ -10,12 +10,11 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* HEADER: Compacte padding voor chique uitstraling */
-        header { padding: 0.5rem 1rem; position: relative; }
+        /* Desktop basis header - EXACTE AFSTANDEN ZOALS OP DE NL HOMEPAGINA */
+        header { padding: 1.5rem 1rem 1rem; position: relative; }
         
-        /* LOGO: Groter schalen binnen het compacte vlak */
         header img { 
-            max-height: 170px; 
+            max-height: 160px; 
             max-width: 95%; 
             display: block; 
             margin: 0 auto; 
@@ -25,30 +24,106 @@
         }
         
         /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
-        .lang-switch { position: absolute; top: 2rem; right: 2rem; display: flex; gap: 12px; }
-        .lang-switch a { text-decoration: none; font-size: 1.3rem; transition: 0.2s; display: inline-block; line-height: 1; }
+        .lang-switch {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 12px;
+        }
+        .lang-switch a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: 0.2s;
+            display: inline-block;
+            line-height: 1;
+        }
         .lang-switch a:hover { transform: scale(1.15); }
         
         /* BEWEEGBARE MENUBALK STYLING */
-        nav { padding: 0.9rem 0; margin-bottom: 2.5rem; background-color: var(--blauw); overflow-x: auto; white-space: nowrap; scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch; }
+        nav { 
+            padding: 0.9rem 0; 
+            margin-bottom: 2.5rem; 
+            background-color: var(--blauw); 
+            overflow-x: auto; 
+            white-space: nowrap;
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+            -webkit-overflow-scrolling: touch; 
+            line-height: 1 !important;
+        }
         nav::-webkit-scrollbar { display: none; }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; }
-        nav a { text-decoration: none; color: #dcd0c0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; transition: 0.3s; display: inline-block; }
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+            line-height: 1 !important;
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #dcd0c0; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            font-size: 0.95rem; 
+            transition: 0.3s; 
+            display: inline-block;
+            line-height: 1 !important;
+        }
         nav a:hover, nav a.active { color: white; }
         
         .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--blauw); border-bottom: 3px solid var(--blauw); display: inline-block; padding-bottom: 5px; margin-top: 0.5rem; margin-bottom: 2rem; }
         
-        .ticker-wrap { width: 100%; overflow: hidden; background-color: var(--papier); padding: 30px 0; margin: 1.5rem 0 1rem 0; border-top: 2px solid var(--blauw); border-bottom: 2px solid var(--blauw); }
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.2rem; 
+            color: var(--blauw); 
+            border-bottom: 3px solid var(--blauw); 
+            display: inline-block; 
+            padding-bottom: 5px; 
+            margin-top: 0.5rem; 
+            margin-bottom: 2rem; 
+        }
+        
+        /* Schilderijen carrousel */
+        .ticker-wrap { 
+            width: 100%; 
+            overflow: hidden; 
+            background-color: var(--papier); 
+            padding: 30px 0; 
+            margin: 1.5rem 0 1rem 0; 
+            border-top: 2px solid var(--blauw); 
+            border-bottom: 2px solid var(--blauw); 
+        }
         .ticker { display: flex; width: fit-content; animation: ticker-scroll 55s linear infinite; }
-        .ticker-item { flex-shrink: 0; margin: 0 20px; height: 120px; border: 4px solid var(--blauw); outline: 1px solid var(--goud); outline-offset: -3px; box-shadow: 10px 10px 20px rgba(0,0,0,0.2); background-color: white; }
+        .ticker-item { 
+            flex-shrink: 0; 
+            margin: 0 20px; 
+            height: 120px; 
+            border: 4px solid var(--blauw); 
+            outline: 1px solid var(--goud); 
+            outline-offset: -3px; 
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.2); 
+            background-color: white; 
+        }
         .ticker-item img { height: 100%; display: block; }
+        
         @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
+        /* MOBIELE FIX OP BASIS VAN NL HOMEPAGINA */
         @media (max-width: 600px) { 
             nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
+            
             header { padding: 1rem 1rem 0.2rem; }
-            header img { max-height: 100px; max-width: 90%; } 
+            
+            header img { 
+                max-height: 120px; 
+                max-width: 95%; 
+            } 
+            
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
         }
@@ -60,7 +135,7 @@
 <body>
 
 <header>
-    <img src="/foto/Koopmanslogo1.png" alt="koopmansfineart.com" id="header-logo">
+    <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
     <div class="lang-switch">
         <a href="/">🇳🇱</a>
         <a href="/en/">🇬🇧</a>
@@ -119,7 +194,6 @@
 </footer>
 
 <script>
-    // Logo fade effect tijdens scrollen
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('header-logo');
         var scrollPosition = window.scrollY;
@@ -130,7 +204,6 @@
         logo.style.opacity = opacity;
     });
 
-    // Zorgt ervoor dat de actieve knop op mobiel netjes in het viewport schuift
     document.addEventListener("DOMContentLoaded", function() {
         var activeLink = document.querySelector('nav a.active');
         if (activeLink) {
