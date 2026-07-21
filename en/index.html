@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koopmans Fine Art</title>
-    <link rel="icon" type="image/png" href="/Koopmansfine.png">
+    
+    <!-- FAVICON LINK (AFBEELDING UIT MAP /foto/) -->
+    <link rel="icon" type="image/png" href="/foto/ChatGPT%20Image%2016%20jul%202026,%2012_30_26.png">
+    <link rel="apple-touch-icon" href="/foto/ChatGPT%20Image%2016%20jul%202026,%2012_30_26.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* Desktop basis header - EXACTE AFSTANDEN ZOALS OP DE NL HOMEPAGINA */
-        header { padding: 1.5rem 1rem 1rem; position: relative; }
+        /* DUNNE HEADER VOOR CHIQUE UITSTRALING */
+        header { padding: 0.5rem 1rem 0.2rem; position: relative; }
         
+        /* GROOT LOGO */
         header img { 
             max-height: 160px; 
             max-width: 95%; 
@@ -113,16 +118,12 @@
         
         @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
-        /* MOBIELE FIX OP BASIS VAN NL HOMEPAGINA */
+        /* MOBIELE FIX */
         @media (max-width: 600px) { 
             nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
             
             header { padding: 1rem 1rem 0.2rem; }
-            
-            header img { 
-                max-height: 120px; 
-                max-width: 95%; 
-            } 
+            header img { max-height: 120px; max-width: 95%; } 
             
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
@@ -153,22 +154,22 @@
 
 <div class="ticker-wrap">
     <div class="ticker">
-        <div class="ticker-item"><img src="/foto/thys1.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg"></div>
-        <div class="ticker-item"><img src="/foto/wydeveldnieuw.png"></div>
-        <div class="ticker-item"><img src="/foto/hermanusvantankeren.jpg"></div>
-        <div class="ticker-item"><img src="/foto/Hageman.jpg"></div>
-        <div class="ticker-item"><img src="/foto/thys1.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/Epcarim.jpg"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/wydeveldnieuw.png"></div>
-        <div class="ticker-item"><img src="/foto/thys1.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/Hageman.jpg"></div>
-        <div class="ticker-item"><img src="/foto/Epcarim.jpg"></div>
-        <div class="ticker-item"><img src="/foto/waltervaes.jpg"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/wydeveldnieuw.png" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/hermanusvantankeren.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/wydeveldnieuw.png" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/waltervaes.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Painting"></div>
     </div>
 </div>
 
@@ -201,7 +202,7 @@
         var opacity = 1 - (scrollPosition / maxScroll);
         if (opacity < 0) opacity = 0;
         if (opacity > 1) opacity = 1;
-        logo.style.opacity = opacity;
+        if (logo) logo.style.opacity = opacity;
     });
 
     document.addEventListener("DOMContentLoaded", function() {
