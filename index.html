@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koopmans Fine Art</title>
-    <link rel="icon" type="image/png" href="/Koopmansfine.png">
+    
+    <!-- FAVICON LINKS -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
@@ -150,22 +154,22 @@
 
 <div class="ticker-wrap">
     <div class="ticker">
-        <div class="ticker-item"><img src="/foto/thys1.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg"></div>
-        <div class="ticker-item"><img src="/foto/wydeveldnieuw.png"></div>
-        <div class="ticker-item"><img src="/foto/hermanusvantankeren.jpg"></div>
-        <div class="ticker-item"><img src="/foto/Hageman.jpg"></div>
-        <div class="ticker-item"><img src="/foto/thys1.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/Epcarim.jpg"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/wydeveldnieuw.png"></div>
-        <div class="ticker-item"><img src="/foto/thys1.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/Hageman.jpg"></div>
-        <div class="ticker-item"><img src="/foto/Epcarim.jpg"></div>
-        <div class="ticker-item"><img src="/foto/waltervaes.jpg"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg"></div>
-        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/wydeveldnieuw.png" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/hermanusvantankeren.jpg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/wydeveldnieuw.png" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/waltervaes.jpg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Schilderij"></div>
     </div>
 </div>
 
@@ -198,7 +202,7 @@
         var opacity = 1 - (scrollPosition / maxScroll);
         if (opacity < 0) opacity = 0;
         if (opacity > 1) opacity = 1;
-        logo.style.opacity = opacity;
+        if (logo) logo.style.opacity = opacity;
     });
 
     document.addEventListener("DOMContentLoaded", function() {
