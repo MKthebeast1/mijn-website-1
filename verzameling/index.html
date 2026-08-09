@@ -90,7 +90,31 @@
         .gallery-item img { width: 100%; display: block; }
         .item-info { font-weight: 700; font-size: 0.9rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; }
         /* ===================================================================== */
-        
+        /* ===================================================================== */
+/* VERKOCHT-LINT */
+/* ===================================================================== */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.sold-ribbon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--blauw);
+    color: #dcd0c0;
+    padding: 10px 8px 9px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    box-sizing: border-box;
+    border-top: 1px solid var(--goud);
+}
         /* MOBIELE FIX: Strakke header en groot logo op telefoon */
         @media (max-width: 600px) { 
             nav ul { 
@@ -127,17 +151,72 @@
     </ul>
 </nav>
 
-<div class="main-content">
-    <h2>De Verzameling</h2>
-    <div class="gallery">
-        <div class="gallery-item"><a href="/items/johanneshelder/"><img src="/foto/helder2.jpeg" alt="Johannes Helder"></a><p class="item-info">Johannes Helder</p></div>
-        <div class="gallery-item"><a href="/items/hectorthys/"><img src="/foto/thys1.jpeg" alt="Hector Thys"></a><p class="item-info">Hector Thys</p></div>
-        <div class="gallery-item"><a href="/items/hendrikhulk/"><img src="/foto/HendrikHulk.jpg" alt="Hendrik Hulk"></a><p class="item-info">Hendrik Hulk</p></div>
-        <div class="gallery-item"><a href="/items/arnoudwydeveld/"><img src="/foto/arnoud.png" alt="Arnoud Wydeveld"></a><p class="item-info">Arnoud Wydeveld</p></div>
-        <div class="gallery-item"><a href="/items/hermanusvantankeren/"><img src="/foto/hermanusvantankeren.jpg" alt="H. van Tankeren"></a><p class="item-info">H. van Tankeren</p></div>
-        <div class="gallery-item"><a href="/items/hageman/"><img src="/foto/Hageman.jpg" alt="Gerard Hageman"></a><p class="item-info">Gerard Hageman</p></div>
-        <div class="gallery-item"><a href="/items/waltervaes/"><img src="/foto/waltervaes.jpg" alt="Walter Vaes"></a><p class="item-info">Walter Vaes</p></div>
+<div class="gallery">
+
+    <div class="gallery-item">
+        <a href="/items/johanneshelder/">
+            <img src="/foto/helder2.jpeg" alt="Johannes Helder">
+        </a>
+        <p class="item-info">Johannes Helder</p>
     </div>
+
+    <div class="gallery-item">
+        <a href="/items/hectorthys/">
+            <div class="image-wrapper">
+                <img src="/foto/thys1.jpeg" alt="Hector Thys">
+                <div class="sold-ribbon">Verkocht</div>
+            </div>
+        </a>
+        <p class="item-info">Hector Thys</p>
+    </div>
+
+    <div class="gallery-item">
+        <a href="/items/hendrikhulk/">
+            <div class="image-wrapper">
+                <img src="/foto/HendrikHulk.jpg" alt="Hendrik Hulk">
+                <div class="sold-ribbon">Verkocht</div>
+            </div>
+        </a>
+        <p class="item-info">Hendrik Hulk</p>
+    </div>
+
+    <div class="gallery-item">
+        <a href="/items/arnoudwydeveld/">
+            <img src="/foto/arnoud.png" alt="Arnoud Wydeveld">
+        </a>
+        <p class="item-info">Arnoud Wydeveld</p>
+    </div>
+
+    <div class="gallery-item">
+        <a href="/items/hermanusvantankeren/">
+            <div class="image-wrapper">
+                <img src="/foto/hermanusvantankeren.jpg" alt="H. van Tankeren">
+                <div class="sold-ribbon">Verkocht</div>
+            </div>
+        </a>
+        <p class="item-info">H. van Tankeren</p>
+    </div>
+
+    <div class="gallery-item">
+        <a href="/items/hageman/">
+            <div class="image-wrapper">
+                <img src="/foto/Hageman.jpg" alt="Hageman">
+                <div class="sold-ribbon">Verkocht</div>
+            </div>
+        </a>
+        <p class="item-info">Hageman</p>
+    </div>
+
+    <div class="gallery-item">
+        <a href="/items/waltervaes/">
+            <div class="image-wrapper">
+                <img src="/foto/waltervaes.jpg" alt="Walter Vaes">
+                <div class="sold-ribbon">Verkocht</div>
+            </div>
+        </a>
+        <p class="item-info">Walter Vaes</p>
+    </div>
+
 </div>
 
 <footer>
