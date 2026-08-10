@@ -86,6 +86,32 @@
         .gallery-item img { width: 100%; display: block; }
         .item-info { font-weight: 700; font-size: 0.9rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; color: var(--blauw); }
         
+        /* ===================================================================== */
+        /* SOLD-RIBBON ONDERAAN HET ITEMBLOK */
+        /* ===================================================================== */
+        .gallery-item.sold {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sold-ribbon {
+            margin-top: auto;
+            margin-left: -15px;
+            margin-right: -15px;
+            margin-bottom: -15px;
+            background-color: var(--blauw);
+            color: #dcd0c0;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            padding: 10px 8px;
+            border-top: 1px solid var(--goud);
+            box-sizing: border-box;
+        }
+
         /* MOBIELE FIX */
         @media (max-width: 600px) { 
             nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
@@ -121,13 +147,47 @@
 <div class="main-content">
     <h2>The Collection</h2>
     <div class="gallery">
-        <div class="gallery-item"><a href="/en/items/johanneshelder/"><img src="/foto/helder2.jpeg" alt="Johannes Helder"></a><p class="item-info">Johannes Helder</p></div>
-        <div class="gallery-item"><a href="/en/items/hectorthys/"><img src="/foto/thys1.jpeg" alt="Hector Thys"></a><p class="item-info">Hector Thys</p></div>
-        <div class="gallery-item"><a href="/en/items/hendrikhulk/"><img src="/foto/HendrikHulk.jpg" alt="Hendrik Hulk"></a><p class="item-info">Hendrik Hulk</p></div>
-        <div class="gallery-item"><a href="/en/items/arnoudwydeveld/"><img src="/foto/arnoud.png" alt="Arnoud Wydeveld"></a><p class="item-info">Arnoud Wydeveld</p></div>
-        <div class="gallery-item"><a href="/en/items/hermanusvantankeren/"><img src="/foto/hermanusvantankeren.jpg" alt="H. van Tankeren"></a><p class="item-info">H. van Tankeren</p></div>
-        <div class="gallery-item"><a href="/en/items/hageman/"><img src="/foto/Hageman.jpg" alt="Gerard Hageman"></a><p class="item-info">Gerard Hageman</p></div>
-        <div class="gallery-item"><a href="/en/items/waltervaes/"><img src="/foto/waltervaes.jpg" alt="Walter Vaes"></a><p class="item-info">Walter Vaes</p></div>
+        
+        <div class="gallery-item">
+            <a href="/en/items/johanneshelder/"><img src="/foto/helder2.jpeg" alt="Johannes Helder"></a>
+            <p class="item-info">Johannes Helder</p>
+        </div>
+        
+        <div class="gallery-item sold">
+            <a href="/en/items/hectorthys/"><img src="/foto/thys1.jpeg" alt="Hector Thys"></a>
+            <p class="item-info">Hector Thys</p>
+            <div class="sold-ribbon">Sold</div>
+        </div>
+        
+        <div class="gallery-item sold">
+            <a href="/en/items/hendrikhulk/"><img src="/foto/HendrikHulk.jpg" alt="Hendrik Hulk"></a>
+            <p class="item-info">Hendrik Hulk</p>
+            <div class="sold-ribbon">Sold</div>
+        </div>
+        
+        <div class="gallery-item">
+            <a href="/en/items/arnoudwydeveld/"><img src="/foto/arnoud.png" alt="Arnoud Wydeveld"></a>
+            <p class="item-info">Arnoud Wydeveld</p>
+        </div>
+        
+        <div class="gallery-item sold">
+            <a href="/en/items/hermanusvantankeren/"><img src="/foto/hermanusvantankeren.jpg" alt="H. van Tankeren"></a>
+            <p class="item-info">H. van Tankeren</p>
+            <div class="sold-ribbon">Sold</div>
+        </div>
+        
+        <div class="gallery-item sold">
+            <a href="/en/items/hageman/"><img src="/foto/Hageman.jpg" alt="Gerard Hageman"></a>
+            <p class="item-info">Gerard Hageman</p>
+            <div class="sold-ribbon">Sold</div>
+        </div>
+        
+        <div class="gallery-item sold">
+            <a href="/en/items/waltervaes/"><img src="/foto/waltervaes.jpg" alt="Walter Vaes"></a>
+            <p class="item-info">Walter Vaes</p>
+            <div class="sold-ribbon">Sold</div>
+        </div>
+        
     </div>
 </div>
 
