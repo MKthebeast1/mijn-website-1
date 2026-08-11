@@ -77,7 +77,9 @@
         nav a:hover, nav a.active { color: white; }
         
         .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
+        
         h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--blauw); border-bottom: 3px solid var(--blauw); display: inline-block; padding-bottom: 5px; margin-top: 0.5rem; margin-bottom: 2rem; }
+        .archief-titel { margin-top: 5rem; } /* Extra witruimte voor de tweede titel */
         
         /* GALERIJ STYLING (Houdt de schilderijen netjes in hun kaders) */
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 2rem; }
@@ -145,7 +147,8 @@
 </nav>
 
 <div class="main-content">
-    <h2>The Collection</h2>
+    <!-- Huidige collectie sectie -->
+    <h2>Current Collection</h2>
     <div class="gallery">
         
         <div class="gallery-item">
@@ -153,6 +156,17 @@
             <p class="item-info">Johannes Helder</p>
         </div>
         
+        <div class="gallery-item">
+            <a href="/en/items/arnoudwydeveld/"><img src="/foto/arnoud.png" alt="Arnoud Wydeveld"></a>
+            <p class="item-info">Arnoud Wydeveld</p>
+        </div>
+        
+    </div>
+
+    <!-- Verkochte items sectie -->
+    <h2 class="archief-titel">In Private Collections</h2>
+    <div class="gallery">
+
         <div class="gallery-item sold">
             <a href="/en/items/hectorthys/"><img src="/foto/thys1.jpeg" alt="Hector Thys"></a>
             <p class="item-info">Hector Thys</p>
@@ -163,11 +177,6 @@
             <a href="/en/items/hendrikhulk/"><img src="/foto/HendrikHulk.jpg" alt="Hendrik Hulk"></a>
             <p class="item-info">Hendrik Hulk</p>
             <div class="sold-ribbon">Sold</div>
-        </div>
-        
-        <div class="gallery-item">
-            <a href="/en/items/arnoudwydeveld/"><img src="/foto/arnoud.png" alt="Arnoud Wydeveld"></a>
-            <p class="item-info">Arnoud Wydeveld</p>
         </div>
         
         <div class="gallery-item sold">
