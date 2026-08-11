@@ -13,7 +13,6 @@
             --blauw: #1f2a35; 
             --donker: #242424; 
             --creme: #f4f1ea; 
-            --papier: #e9e4d9; 
         }
 
         body { 
@@ -124,10 +123,10 @@
 
         .archive-title { margin-top: 5rem; }
         
-        /* Gallery Grid */
+        /* 3. GALLERY STYLING (auto-fill keeps all item cards strictly identical in size) */
         .gallery { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
             gap: 40px; 
             margin-top: 2rem; 
         }
@@ -186,6 +185,7 @@
             header img { max-height: 120px; max-width: 95%; } 
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
+            .gallery { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; }
         }
         
         footer { 
@@ -220,7 +220,8 @@
 </nav>
 
 <div class="main-content">
-    <!-- Current Collection Section -->
+
+    <!-- Current Collection -->
     <h2>Current Collection</h2>
     <div class="gallery">
         
@@ -236,7 +237,7 @@
         
     </div>
 
-    <!-- Private Collections Section -->
+    <!-- Private Collections -->
     <h2 class="archive-title">In Private Collections</h2>
     <div class="gallery">
 
@@ -271,6 +272,7 @@
         </div>
         
     </div>
+
 </div>
 
 <footer>
