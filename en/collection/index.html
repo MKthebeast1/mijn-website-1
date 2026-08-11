@@ -161,22 +161,28 @@
         }
 
         .sold-ribbon {
-            margin-top: auto;
-            margin-left: -15px;
-            margin-right: -15px;
-            margin-bottom: -15px;
-            background-color: var(--blauw);
-            color: var(--goud); /* Gewijzigd naar goud */
-            font-family: 'Playfair Display', serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-align: center;
-            padding: 10px 8px;
-            border-top: 1px solid var(--goud);
-            box-sizing: border-box;
-        }
+    margin-top: auto;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -15px;
+    background-color: var(--blauw);
+    
+    /* 1. Helderder metallic goud */
+    color: #f1d372; 
+    
+    /* 2. Subtiele lichtglans (glow) + diepteschaduw */
+    text-shadow: 0 0 4px rgba(255, 235, 170, 0.4), 0 1px 2px rgba(0, 0, 0, 0.8);
+    
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    padding: 10px 8px;
+    border-top: 1px solid var(--goud);
+    box-sizing: border-box;
+}
 
         /* Mobile Fixes */
         @media (max-width: 600px) { 
