@@ -10,10 +10,10 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* 1. DUNNE HEADER (Exact overgenomen van de strakke homepagina) */
+        /* 1. DUNNE HEADER */
         header { padding: 0.5rem 1rem 0.2rem; position: relative; }
         
-        /* 2. GROOT LOGO (Exact overgenomen van de homepagina) */
+        /* 2. GROOT LOGO */
         header img { 
             max-height: 160px; 
             max-width: 95%; 
@@ -43,7 +43,7 @@
             transform: scale(1.15);
         }
         
-        /* 3. MENUBALK (Exact overgenomen van de homepagina) */
+        /* 3. MENUBALK */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -79,48 +79,45 @@
         nav a:hover, nav a.active { color: white; }
         
         .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; }
+        
         h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--blauw); border-bottom: 3px solid var(--blauw); display: inline-block; padding-bottom: 5px; margin-bottom: 2rem; }
+        .archief-titel { margin-top: 5rem; } /* Extra witruimte voor de tweede titel */
         
         /* ===================================================================== */
-        /* ORIGINELE GALERIJ STYLING (Hierdoor blijven schilderijen mooi in kader) */
+        /* ORIGINELE GALERIJ STYLING */
         /* ===================================================================== */
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 2rem; }
         .gallery-item { background-color: #fff; padding: 15px; border: 12px solid var(--blauw); outline: 1px solid var(--goud); outline-offset: -8px; box-shadow: 15px 15px 35px rgba(0,0,0,0.3); text-align: center; transition: 0.3s; }
         .gallery-item:hover { transform: translateY(-5px); }
         .gallery-item img { width: 100%; display: block; }
         .item-info { font-weight: 700; font-size: 0.9rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        
         /* ===================================================================== */
+        /* VERKOCHT-LINT ONDERAAN HET ITEMBLOK */
         /* ===================================================================== */
-/* ===================================================================== */
-/* VERKOCHT-LINT ONDERAAN HET ITEMBLOK */
-/* ===================================================================== */
+        .gallery-item.sold {
+            display: flex;
+            flex-direction: column;
+        }
+        .sold-ribbon {
+            margin-top: auto;
+            margin-left: -15px;
+            margin-right: -15px;
+            margin-bottom: -15px;
+            background-color: var(--blauw);
+            color: #dcd0c0;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            padding: 10px 8px;
+            border-top: 1px solid var(--goud);
+            box-sizing: border-box;
+        }
 
-.gallery-item.sold {
-    display: flex;
-    flex-direction: column;
-}
-
-.sold-ribbon {
-    margin-top: auto;
-    margin-left: -15px;
-    margin-right: -15px;
-    margin-bottom: -15px;
-
-    background-color: var(--blauw);
-    color: #dcd0c0;
-
-    font-family: 'Playfair Display', serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-align: center;
-
-    padding: 10px 8px;
-    border-top: 1px solid var(--goud);
-    box-sizing: border-box;
-}
-        /* MOBIELE FIX: Strakke header en groot logo op telefoon */
+        /* MOBIELE FIX */
         @media (max-width: 600px) { 
             nav ul { 
                 justify-content: flex-start; 
@@ -158,7 +155,8 @@
 
 <div class="main-content">
 
-    <h2>De Verzameling</h2>
+    <!-- Huidige collectie sectie -->
+    <h2>Huidige Collectie</h2>
 
     <div class="gallery">
 
@@ -168,6 +166,20 @@
             </a>
             <p class="item-info">Johannes Helder</p>
         </div>
+
+        <div class="gallery-item">
+            <a href="/items/arnoudwydeveld/">
+                <img src="/foto/arnoud.png" alt="Arnoud Wydeveld">
+            </a>
+            <p class="item-info">Arnoud Wydeveld</p>
+        </div>
+
+    </div>
+
+    <!-- Verkochte items sectie -->
+    <h2 class="archief-titel">In Particulier Bezit</h2>
+
+    <div class="gallery">
 
         <div class="gallery-item sold">
             <a href="/items/hectorthys/">
@@ -183,13 +195,6 @@
             </a>
             <p class="item-info">Hendrik Hulk</p>
             <div class="sold-ribbon">Verkocht</div>
-        </div>
-
-        <div class="gallery-item">
-            <a href="/items/arnoudwydeveld/">
-                <img src="/foto/arnoud.png" alt="Arnoud Wydeveld">
-            </a>
-            <p class="item-info">Arnoud Wydeveld</p>
         </div>
 
         <div class="gallery-item sold">
