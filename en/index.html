@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koopmans Fine Art</title>
     
-    <!-- FAVICON LINK (AFBEELDING UIT MAP /foto/) -->
+    <!-- FAVICON LINK -->
     <link rel="icon" type="image/png" href="/foto/ChatGPT%20Image%2016%20jul%202026,%2012_30_26.png">
     <link rel="apple-touch-icon" href="/foto/ChatGPT%20Image%2016%20jul%202026,%2012_30_26.png">
 
@@ -14,10 +14,10 @@
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* DUNNE HEADER VOOR CHIQUE UITSTRALING */
+        /* HEADER STYLING */
         header { padding: 0.5rem 1rem 0.2rem; position: relative; }
         
-        /* GROOT LOGO */
+        /* LOGO */
         header img { 
             max-height: 160px; 
             max-width: 95%; 
@@ -28,7 +28,7 @@
             transition: opacity 0.05s linear; 
         }
         
-        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
+        /* TAALSWITCHER RECHTSBOVEN */
         .lang-switch {
             position: absolute;
             top: 2rem;
@@ -45,7 +45,7 @@
         }
         .lang-switch a:hover { transform: scale(1.15); }
         
-        /* BEWEEGBARE MENUBALK STYLING */
+        /* MENUBALK */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -92,8 +92,16 @@
             margin-top: 0.5rem; 
             margin-bottom: 2rem; 
         }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--blauw);
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+        }
         
-        /* Schilderijen carrousel */
+        /* CARROUSEL TICKER */
         .ticker-wrap { 
             width: 100%; 
             overflow: hidden; 
@@ -117,6 +125,40 @@
         .ticker-item img { height: 100%; display: block; }
         
         @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* REVIEWS STYLING */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        .review-card {
+            background-color: var(--papier);
+            padding: 20px;
+            border-left: 4px solid var(--goud);
+            border-radius: 3px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .review-stars {
+            color: var(--goud);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .review-text {
+            font-style: italic;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin: 0 0 12px 0;
+            color: var(--donker);
+        }
+        .review-author {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--blauw);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
         
         /* MOBIELE FIX */
         @media (max-width: 600px) { 
@@ -154,38 +196,38 @@
 
 <div class="ticker-wrap">
     <div class="ticker">
-           <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/arnoud.png" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/hermanusvantankeren.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/arnoud.png" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/waltervaes.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/arnoud.png" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/hermanusvantankeren.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/arnoud.png" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/waltervaes.jpg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Schilderij"></div>
-        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Schilderij"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/arnoud.png" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/hermanusvantankeren.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/arnoud.png" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/waltervaes.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/arnoud.png" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/hermanusvantankeren.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/arnoud.png" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/thys1.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Hageman.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/Epcarim.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/waltervaes.jpg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/helder2.jpeg" alt="Painting"></div>
+        <div class="ticker-item"><img src="/foto/HendrikHulk.jpg" alt="Painting"></div>
     </div>
 </div>
 
@@ -194,7 +236,7 @@
     <p>Welcome to the website of Koopmans Fine Art. We specialize in the conservation and sale of authentic artworks and historical objects, each possessing its own distinct character.</p>
     
     <div style="padding: 1.5rem 1rem; text-align: center; background-color: #f4f1ea; border-top: 1px solid #e0dcd5; margin-top: 1rem;">
-        <div style="margin: 2rem auto; max-width: 600px; padding: 20px; text-align: center; border: 2px solid #b08d57; background-color: #fcfbf8; border-radius: 5px;">
+        <div style="margin: 1rem auto 2rem; max-width: 600px; padding: 20px; text-align: center; border: 2px solid #b08d57; background-color: #fcfbf8; border-radius: 5px;">
             <p style="font-family: 'Libre Baskerville', serif; color: #1f2a35; margin: 0 0 15px 0; font-size: 1rem;">
                 Bid on exceptional objects via our auction page.
             </p>
@@ -203,6 +245,28 @@
             </a>
         </div>
     </div>
+
+    <!-- REVIEWS SECTION -->
+    <section style="margin-top: 3rem;">
+        <h3 style="text-align: center;">What Collectors Say</h3>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Item arrived safely and was packed with immense care. The painting looks even better in real life."</p>
+                <div class="review-author">— Buyer from France</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Excellent communication and fast international shipping. A true professional in fine art."</p>
+                <div class="review-author">— Buyer from Germany</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Beautiful 19th-century painting, perfectly described and fully authentic. Highly recommended seller."</p>
+                <div class="review-author">— Buyer from Netherlands</div>
+            </div>
+        </div>
+    </section>
 </div>
 
 <footer>
