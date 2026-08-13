@@ -148,10 +148,37 @@
             font-family: 'Playfair Display', serif;
             color: var(--blauw);
             font-size: 1.4rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
+
+        /* REVIEWS TAALSWITCHER KNOPPEN */
+        .review-lang-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+        }
+        .review-lang-btn {
+            background-color: transparent;
+            border: 1px solid var(--goud);
+            color: var(--blauw);
+            padding: 5px 14px;
+            font-size: 0.75rem;
+            font-family: 'Libre Baskerville', serif;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .review-lang-btn:hover, .review-lang-btn.active {
+            background-color: var(--blauw);
+            color: #dcd0c0;
+            border-color: var(--blauw);
+        }
+
         .reviews-grid {
             display: flex;
             gap: 20px;
@@ -183,11 +210,12 @@
             line-height: 1.7;
             margin: 0 0 1.2rem 0;
             color: var(--blauw);
+            min-height: 70px;
         }
         .review-author {
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             font-size: 0.75rem;
             color: var(--donker);
             margin: 0 0 0.3rem 0;
@@ -301,31 +329,47 @@
             </a>
         </div>
 
-        <!-- REVIEWS SECTIE ONDER HET CATAWIKI KNOPJE -->
+        <!-- REVIEWS SECTIE MET TAALSWITCHER EN LAND VAN HERKOMST -->
         <div class="reviews-section">
             <h3 class="reviews-title">Ervaringen van kopers</h3>
             
+            <div class="review-lang-buttons">
+                <button class="review-lang-btn active" onclick="switchReviewLang('nl', this)">Nederlands</button>
+                <button class="review-lang-btn" onclick="switchReviewLang('orig', this)">Origineel</button>
+                <button class="review-lang-btn" onclick="switchReviewLang('en', this)">English</button>
+            </div>
+
             <div class="reviews-grid">
-                <!-- REVIEW 1 (HECTOR THYS) -->
+                <!-- REVIEW 1 (HECTOR THYS - FRANKRIJK) -->
                 <div class="review-card">
                     <div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="review-text">"Je suis très satisfait de mon acquisition. Le tableau a été soigneusement emballé. FrP"</p>
+                        <p class="review-text" 
+                           data-nl='"Ik ben zeer tevreden met mijn aankoop. Het schilderij was zorgvuldig verpakt. FrP"'
+                           data-orig='"Je suis très satisfait de mon acquisition. Le tableau a été soigneusement emballé. FrP"'
+                           data-en='"I am very pleased with my acquisition. The painting was carefully packaged. FrP"'>
+                           "Ik ben zeer tevreden met mijn aankoop. Het schilderij was zorgvuldig verpakt. FrP"
+                        </p>
                     </div>
                     <div>
-                        <p class="review-author">Geverifieerde Koper (Catawiki)</p>
+                        <p class="review-author">Geverifieerde Koper uit Frankrijk 🇫🇷</p>
                         <p class="review-item">Hector Thys (1864–1915) - "Boerenhoeve bij Zomeravond"</p>
                     </div>
                 </div>
 
-                <!-- REVIEW 2 (H. HULK) -->
+                <!-- REVIEW 2 (H. HULK - NEDERLAND) -->
                 <div class="review-card">
                     <div>
                         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="review-text">"Heel tevreden. Het schilderij was zorgvuldig verpakt en is in goede staat aangekomen. Een prachtig en fascinerend werk waar ik erg blij mee ben. Prettige en correcte afhandeling, bedankt!"</p>
+                        <p class="review-text" 
+                           data-nl='"Heel tevreden. Het schilderij was zorgvuldig verpakt en is in goede staat aangekomen. Een prachtig en fascinerend werk waar ik erg blij mee ben. Prettige en correcte afhandeling, bedankt!"'
+                           data-orig='"Heel tevreden. Het schilderij was zorgvuldig verpakt en is in goede staat aangekomen. Een prachtig en fascinerend werk waar ik erg blij mee ben. Prettige en correcte afhandeling, bedankt!"'
+                           data-en='"Very satisfied. The painting was packaged with care and arrived in good condition. A beautiful and fascinating work that I am very pleased with. Pleasant and correct handling, thank you!"'>
+                           "Heel tevreden. Het schilderij was zorgvuldig verpakt en is in goede staat aangekomen. Een prachtig en fascinerend werk waar ik erg blij mee ben. Prettige en correcte afhandeling, bedankt!"
+                        </p>
                     </div>
                     <div>
-                        <p class="review-author">Geverifieerde Koper (Catawiki)</p>
+                        <p class="review-author">Geverifieerde Koper uit Nederland 🇳🇱</p>
                         <p class="review-item">H. Hulk (XIX) - "Rust aan de Oever"</p>
                     </div>
                 </div>
@@ -344,6 +388,7 @@
 </footer>
 
 <script>
+    // Header fade bij scrollen
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('header-logo');
         var scrollPosition = window.scrollY;
@@ -360,6 +405,22 @@
             activeLink.scrollIntoView({ block: 'nearest', inline: 'center' });
         }
     });
+
+    // Functie voor het wisselen van taal in de reviewsectie
+    function switchReviewLang(lang, btnElement) {
+        var reviewTexts = document.querySelectorAll('.review-text');
+        reviewTexts.forEach(function(el) {
+            if (el.getAttribute('data-' + lang)) {
+                el.textContent = el.getAttribute('data-' + lang);
+            }
+        });
+        
+        var buttons = document.querySelectorAll('.review-lang-btn');
+        buttons.forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+        btnElement.classList.add('active');
+    }
 </script>
 
 </body>
