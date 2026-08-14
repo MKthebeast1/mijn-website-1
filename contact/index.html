@@ -191,12 +191,6 @@
             min-height: 140px;
         }
 
-        /* Verborgen Veld tegen Bots (Honeypot) */
-        .website-field {
-            display: none !important;
-            visibility: hidden !important;
-        }
-
         /* Verzendknop */
         .submit-btn {
             background-color: var(--blauw);
@@ -273,37 +267,29 @@
 
     <!-- Contactformulier -->
     <section class="contact-form">
-        <form action="https://formsubmit.co/info@koopmansfineart.com" method="POST">
+        <form id="contact-form">
             
-            <!-- FormSubmit instellingen -->
-            <input type="hidden" name="_subject" value="Nieuw contactbericht via Koopmans Fine Art">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="true">
-
-            <!-- Anti-Bot Honeypot (Aangepast tegen autofill-blokkade) -->
-            <input type="text" name="_honey" style="display:none !important;" tabindex="-1" autocomplete="new-password">
-
             <div class="form-group">
                 <label for="name">Naam</label>
-                <input type="text" id="name" name="Naam" required placeholder="Uw naam">
+                <input type="text" id="name" name="from_name" required placeholder="Uw naam">
             </div>
 
             <div class="form-group">
                 <label for="email">E-mailadres</label>
-                <input type="email" id="email" name="Email" required placeholder="uw@emailadres.nl">
+                <input type="email" id="email" name="from_email" required placeholder="uw@emailadres.nl">
             </div>
 
             <div class="form-group">
                 <label for="subject">Onderwerp</label>
-                <input type="text" id="subject" name="Onderwerp" placeholder="Onderwerp van uw bericht">
+                <input type="text" id="subject" name="subject" placeholder="Onderwerp van uw bericht">
             </div>
 
             <div class="form-group">
                 <label for="message">Bericht</label>
-                <textarea id="message" name="Bericht" required placeholder="Typ hier uw bericht..."></textarea>
+                <textarea id="message" name="message" required placeholder="Typ hier uw bericht..."></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Bericht Verzenden</button>
+            <button type="submit" id="submit-btn" class="submit-btn">Bericht Verzenden</button>
         </form>
     </section>
 
@@ -314,7 +300,36 @@
     <a href="/disclaimer/">Disclaimer</a>
 </footer>
 
+<!-- EmailJS Library & Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
+    // Geïnitialiseerd met jouw Public Key
+    (function() {
+        emailjs.init("crMxrNbG_C8MXhgAC");
+    })();
+
+    // EmailJS Verzending
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var btn = document.getElementById('submit-btn');
+        btn.innerText = 'Verzenden...';
+        btn.disabled = true;
+
+        emailjs.sendForm('service_7nmyzrd', 'template_48n2vng', this)
+            .then(function() {
+                alert('Hartelijk dank! Uw bericht is succesvol verzonden.');
+                document.getElementById('contact-form').reset();
+                btn.innerText = 'Bericht Verzenden';
+                btn.disabled = false;
+            }, function(error) {
+                alert('Er is iets misgegaan bij het verzenden. Probeer het later opnieuw.');
+                console.error('EmailJS Error:', error);
+                btn.innerText = 'Bericht Verzenden';
+                btn.disabled = false;
+            });
+    });
+
     // Logo fade effect tijdens scrollen
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('header-logo');
