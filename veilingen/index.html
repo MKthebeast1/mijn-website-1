@@ -23,13 +23,13 @@
             border-top: 10px solid var(--blauw); 
         }
         
-        /* 1. DUNNE HEADER (Exact overgenomen van Historie) */
+        /* 1. Header Styling */
         header { 
             padding: 0.5rem 1rem 0.2rem; 
             position: relative; 
         }
         
-        /* 2. GROOT LOGO (Exact overgenomen van Historie) */
+        /* 2. Logo Styling */
         header img { 
             max-height: 160px; 
             max-width: 95%; 
@@ -40,7 +40,7 @@
             transition: opacity 0.05s linear; 
         }
         
-        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING (Exact overgenomen van Historie) */
+        /* Taalswitcher Styling */
         .lang-switch {
             position: absolute;
             top: 2rem;
@@ -52,16 +52,19 @@
         .lang-switch a {
             text-decoration: none;
             font-size: 1.3rem;
-            transition: 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
             display: inline-block;
             line-height: 1;
+            opacity: 0.55;
         }
 
-        .lang-switch a:hover { 
+        .lang-switch a:hover,
+        .lang-switch a.active { 
+            opacity: 1;
             transform: scale(1.15); 
         }
         
-        /* 3. MENUBALK (Exact overgenomen van Historie) */
+        /* 3. Menubalk */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -93,12 +96,12 @@
             text-transform: uppercase; 
             letter-spacing: 3px; 
             font-size: 0.95rem; 
-            transition: 0.3s; 
+            transition: color 0.3s; 
             display: inline-block;
             line-height: 1 !important;
         }
 
-        nav a:hover, nav a.active { color: white; }
+        nav a:hover, nav a.active { color: #ffffff; }
         
         /* Content Styling */
         .main-content { 
@@ -153,7 +156,7 @@
             color: var(--blauw); 
         }
         
-        /* MOBIELE STYLING (Exact overgenomen van Historie) */
+        /* Mobiele styling */
         @media (max-width: 600px) { 
             nav ul { 
                 justify-content: flex-start; 
@@ -182,9 +185,9 @@
 <body>
 
 <header>
-    <img src="/foto/Adobe Express - file.png" alt="koopmansfineart.com" id="header-logo">
+    <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
     <div class="lang-switch">
-        <a href="/veilingen/" title="Nederlands" aria-label="Nederlands">🇳🇱</a>
+        <a href="/veilingen/" class="active" title="Nederlands" aria-label="Nederlands">🇳🇱</a>
         <a href="/en/auctions/" title="English" aria-label="English">🇬🇧</a>
     </div>
 </header>
