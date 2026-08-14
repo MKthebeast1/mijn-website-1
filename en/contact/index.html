@@ -321,8 +321,7 @@
         btn.innerText = 'Sending...';
         btn.disabled = true;
 
-        // GEBRUIK HIER GEWOON JE BESTAANDE NEDERLANDSE TEMPLATE ID:
-        emailjs.sendForm('service_7nmyzrd', 'JOUW_BESTAANDE_TEMPLATE_ID', this)
+        emailjs.sendForm('service_7nmyzrd', 'template_48n2vng', this)
             .then(function() {
                 alert('Thank you! Your message has been sent successfully.');
                 document.getElementById('contact-form').reset();
