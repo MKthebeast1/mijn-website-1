@@ -23,13 +23,13 @@
             border-top: 10px solid var(--blauw); 
         }
         
-        /* 1. DUNNE HEADER (Exact overgenomen van Historie) */
+        /* 1. DUNNE HEADER */
         header { 
             padding: 0.5rem 1rem 0.2rem; 
             position: relative; 
         }
         
-        /* 2. GROOT LOGO (Exact overgenomen van Historie) */
+        /* 2. GROOT LOGO */
         header img { 
             max-height: 160px; 
             max-width: 95%; 
@@ -40,7 +40,7 @@
             transition: opacity 0.05s linear; 
         }
         
-        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING (Exact overgenomen van Historie) */
+        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
         .lang-switch {
             position: absolute;
             top: 2rem;
@@ -61,7 +61,7 @@
             transform: scale(1.15); 
         }
         
-        /* 3. MENUBALK (Exact overgenomen van Historie) */
+        /* 3. MENUBALK */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -153,7 +153,7 @@
             color: var(--blauw); 
         }
         
-        /* MOBIELE STYLING (Exact overgenomen van Historie) */
+        /* MOBIELE STYLING */
         @media (max-width: 600px) { 
             nav ul { 
                 justify-content: flex-start; 
@@ -182,10 +182,10 @@
 <body>
 
 <header>
-    <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
+    <img src="/foto/Adobe Express - file.png" alt="koopmansfineart.com" id="header-logo">
     <div class="lang-switch">
         <a href="/veilingen/" title="Nederlands" aria-label="Nederlands">🇳🇱</a>
-        <a href="/en/auctions/" class="active" title="English" aria-label="English">🇬🇧</a>
+        <a href="/en/auctions/" title="English" aria-label="English">🇬🇧</a>
     </div>
 </header>
 
@@ -218,12 +218,12 @@
 </div>
 
 <footer>
-    &copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans | 
+    &copy; 2026 Koopmans Fine Art | M. Koopmans | 
     <a href="/en/disclaimer/">Disclaimer</a>
 </footer>
 
+<!-- Logo scroll effect + automatische centrering van het actieve menu-item op mobiel -->
 <script>
-    // Logo fade effect tijdens scrollen
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('header-logo');
         var scrollPosition = window.scrollY;
@@ -234,7 +234,6 @@
         if (logo) logo.style.opacity = opacity;
     }, { passive: true });
 
-    // Zorgt ervoor dat de actieve knop op mobiel netjes in het viewport schuift
     document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             var activeLink = document.querySelector('nav a.active');
