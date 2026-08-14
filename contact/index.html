@@ -280,8 +280,8 @@
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="true">
 
-            <!-- Anti-Bot Honeypot -->
-            <input type="text" name="_honey" class="website-field" autocomplete="off">
+            <!-- Anti-Bot Honeypot (Aangepast tegen autofill-blokkade) -->
+            <input type="text" name="_honey" style="display:none !important;" tabindex="-1" autocomplete="new-password">
 
             <div class="form-group">
                 <label for="name">Naam</label>
