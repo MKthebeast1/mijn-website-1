@@ -12,7 +12,6 @@
             --blauw: #1f2a35; 
             --donker: #242424; 
             --creme: #f4f1ea; 
-            --papier: #e9e4d9; 
         }
 
         body { 
@@ -24,14 +23,13 @@
             border-top: 10px solid var(--blauw); 
         }
         
-        /* 1. HEADER STYLING (Gecentreerd) */
+        /* 1. DUNNE HEADER (Exact overgenomen van Historie) */
         header { 
             padding: 0.5rem 1rem 0.2rem; 
             position: relative; 
-            text-align: center;
         }
         
-        /* 2. LOGO STYLING */
+        /* 2. GROOT LOGO (Exact overgenomen van Historie) */
         header img { 
             max-height: 160px; 
             max-width: 95%; 
@@ -42,7 +40,7 @@
             transition: opacity 0.05s linear; 
         }
         
-        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
+        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING (Exact overgenomen van Historie) */
         .lang-switch {
             position: absolute;
             top: 2rem;
@@ -57,16 +55,13 @@
             transition: 0.2s;
             display: inline-block;
             line-height: 1;
-            opacity: 0.6;
         }
 
-        .lang-switch a:hover,
-        .lang-switch a.active { 
-            opacity: 1;
+        .lang-switch a:hover { 
             transform: scale(1.15); 
         }
         
-        /* 3. MENUBALK STYLING (Gecentreerd via inline-flex) */
+        /* 3. MENUBALK (Exact overgenomen van Historie) */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -77,21 +72,17 @@
             -ms-overflow-style: none; 
             -webkit-overflow-scrolling: touch; 
             line-height: 1 !important;
-            text-align: center;
         }
 
         nav::-webkit-scrollbar { display: none; }
 
         nav ul { 
             list-style: none; 
-            padding: 0 20px; 
-            margin: 0 auto; 
-            display: inline-flex; 
+            padding: 0; 
+            margin: 0; 
+            display: flex; 
             justify-content: center; 
-            align-items: center;
             gap: 40px; 
-            min-width: 100%;
-            box-sizing: border-box;
             line-height: 1 !important;
         }
 
@@ -107,7 +98,7 @@
             line-height: 1 !important;
         }
 
-        nav a:hover, nav a.active { color: #ffffff; }
+        nav a:hover, nav a.active { color: white; }
         
         /* Content Styling */
         .main-content { 
@@ -162,11 +153,12 @@
             color: var(--blauw); 
         }
         
-        /* MOBIELE FIX (Gecentreerd op mobiel scherm) */
+        /* MOBIELE STYLING (Exact overgenomen van Historie) */
         @media (max-width: 600px) { 
             nav ul { 
-                gap: 25px; 
+                justify-content: flex-start; 
                 padding: 0 25px; 
+                gap: 30px; 
             } 
             header { padding: 1rem 1rem 0.2rem; }
             header img { max-height: 120px; max-width: 95%; } 
