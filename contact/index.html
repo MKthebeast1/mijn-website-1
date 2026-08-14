@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Koopmans Fine Art</title>
-  
-  <!-- Chique typografie (Playfair Display voor headers, Inter voor leestekst) -->
+
+  <!-- Google Fonts voor de klassieke uitstraling -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Algemene Stijlen & Galerij Uitstraling */
+    /* Kleuren & Huisstijl van jouw website */
     :root {
-      --bg-color: #fcfbf9;
-      --text-color: #1a1a1a;
-      --accent-color: #a38244; /* Subtiel goud/brons accent */
-      --border-color: #e0dad3;
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --font-sans: 'Inter', -apple-system, sans-serif;
+      --bg-cream: #f4f0e8;       /* Warme achtergrondkleur */
+      --nav-dark: #1c2b36;        /* Donkere navigatiebalk */
+      --text-dark: #1c1c1c;       /* Donkere tekst */
+      --gold-accent: #b08d57;    /* Goudkleur logo/accenten */
+      --font-heading: 'Cinzel', 'Times New Roman', serif;
+      --font-body: 'Cormorant Garamond', Georgia, serif;
     }
 
     * {
@@ -28,145 +28,178 @@
     }
 
     body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: var(--font-sans);
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      font-size: 1.15rem;
       line-height: 1.6;
-      padding-bottom: 60px;
     }
 
-    /* Navigatiebalk */
-    header {
-      border-bottom: 1px solid var(--border-color);
-      background: #ffffff;
-    }
-
-    nav {
-      max-width: 1100px;
+    /* Top Bar met Taal-swapper */
+    .top-header {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 20px 30px;
+      padding: 15px 30px 5px 30px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: flex-end;
     }
 
-    .logo {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
+    .lang-select {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
       letter-spacing: 1px;
+    }
+
+    .lang-select a {
+      color: var(--nav-dark);
       text-decoration: none;
-      color: var(--text-color);
+      margin-left: 8px;
+    }
+
+    .lang-select a.active {
+      font-weight: bold;
+      border-bottom: 1px solid var(--nav-dark);
+    }
+
+    /* Logo Header */
+    .logo-container {
+      text-align: center;
+      padding: 10px 20px 25px 20px;
+    }
+
+    .logo-title {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      letter-spacing: 3px;
+      color: var(--gold-accent);
+      text-transform: uppercase;
       font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .logo-subtitle {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      letter-spacing: 5px;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
+    /* Donkere Navigatiebalk */
+    nav {
+      background-color: var(--nav-dark);
+      width: 100%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .nav-links {
       display: flex;
-      list-style: none;
-      gap: 30px;
+      justify-content: center;
       align-items: center;
+      list-style: none;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      gap: 40px;
     }
 
     .nav-links a {
+      color: #ffffff;
       text-decoration: none;
-      color: var(--text-color);
-      font-size: 0.95rem;
-      letter-spacing: 0.5px;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       transition: color 0.2s ease;
+      opacity: 0.9;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      color: var(--accent-color);
+      color: var(--gold-accent);
+      opacity: 1;
     }
 
-    /* Contact helemaal rechts in de navigatie */
-    .nav-links li:last-child {
-      margin-left: auto;
-    }
-
-    /* Layout van de Contactpagina */
-    .container {
+    /* Hoofdinhoud Contactpagina */
+    .content-container {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 50px auto;
       padding: 0 30px;
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 60px;
     }
 
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        margin: 30px auto;
-      }
+    /* Titel met kenmerkende streep zoals 'Welkom' */
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: var(--nav-dark);
+      margin-bottom: 8px;
+      font-weight: 600;
     }
 
-    .contact-info h1 {
-      font-family: var(--font-serif);
-      font-size: 2.2rem;
-      font-weight: 400;
-      margin-bottom: 20px;
+    .title-underline {
+      width: 70px;
+      height: 3px;
+      background-color: var(--nav-dark);
+      margin-bottom: 30px;
     }
 
-    .contact-info p {
-      color: #555;
-      margin-bottom: 25px;
-      font-size: 0.95rem;
+    .intro-text {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 30px;
+      max-width: 750px;
     }
 
-    .email-link {
-      display: inline-block;
-      color: var(--text-color);
-      font-weight: 500;
-      text-decoration: none;
-      border-bottom: 1px solid var(--text-color);
-      padding-bottom: 2px;
-      transition: border-color 0.2s, color 0.2s;
+    .email-highlight {
+      margin-bottom: 40px;
+      font-size: 1.15rem;
     }
 
-    .email-link:hover {
-      color: var(--accent-color);
-      border-color: var(--accent-color);
+    .email-highlight a {
+      color: var(--nav-dark);
+      font-weight: bold;
+      text-decoration: underline;
     }
 
-    /* Formulier Stijlen */
+    /* Formulier in de stijl van het ontwerp */
     .contact-form {
-      background: #ffffff;
+      background-color: #ffffff;
       padding: 40px;
-      border: 1px solid var(--border-color);
-      border-radius: 2px;
+      border: 1px solid #e0d8cc;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
 
     .form-group {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .form-group label {
       display: block;
-      font-size: 0.85rem;
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      color: #444;
+      margin-bottom: 6px;
+      color: var(--nav-dark);
     }
 
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 12px 14px;
-      border: 1px solid var(--border-color);
-      background-color: #fafaf8;
-      font-family: var(--font-sans);
-      font-size: 0.95rem;
-      color: var(--text-color);
+      padding: 12px;
+      border: 1px solid #ccc5b9;
+      background-color: #faf8f5;
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--text-dark);
       transition: border-color 0.2s, background-color 0.2s;
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--accent-color);
+      border-color: var(--gold-accent);
       background-color: #ffffff;
     }
 
@@ -175,7 +208,7 @@
       min-height: 140px;
     }
 
-    /* HONEYPOT BOT-TRAP (Onzichtbaar voor gewone bezoekers) */
+    /* Verborgen Veld tegen Bots (Honeypot) */
     .website-field {
       display: none !important;
       visibility: hidden !important;
@@ -183,69 +216,78 @@
 
     /* Verzendknop */
     .submit-btn {
-      width: 100%;
-      background-color: var(--text-color);
+      background-color: var(--nav-dark);
       color: #ffffff;
       border: none;
-      padding: 14px 20px;
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-      letter-spacing: 1px;
+      padding: 14px 28px;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
       text-transform: uppercase;
       cursor: pointer;
       transition: background-color 0.2s;
     }
 
     .submit-btn:hover {
-      background-color: var(--accent-color);
+      background-color: var(--gold-accent);
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigatiebalk -->
-  <header>
-    <nav>
-      <a href="index.html" class="logo">KOOPMANS FINE ART</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Collectie</a></li>
-        <li><a href="restauratie.html">Restauratie</a></li>
-        <li><a href="over.html">Over ons</a></li>
-        <!-- Contact knop staat uiterst rechts -->
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Taalschakelaar -->
+  <div class="top-header">
+    <div class="lang-select">
+      <a href="#" class="active">NL</a>
+      <a href="#">GB</a>
+    </div>
+  </div>
 
-  <!-- Hoofdcontent -->
-  <main class="container">
+  <!-- Logo -->
+  <div class="logo-container">
+    <div class="logo-title">Koopmans</div>
+    <div class="logo-subtitle">Fine Art</div>
+  </div>
+
+  <!-- Donkere Navigatiebalk -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="../index.html">Collectie</a></li>
+      <li><a href="../restauratie.html">Restauratie</a></li>
+      <li><a href="../over.html">Over ons</a></li>
+      <li><a href="index.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Inhoud -->
+  <main class="content-container">
     
-    <!-- Linkerkolom: Info -->
-    <section class="contact-info">
-      <h1>Neem contact op</h1>
-      <p>Heeft u vragen over een specifiek werk uit de collectie, wilt u meer informatie over een restauratie, of bent u geïnteresseerd in een overname? Vul het formulier in of stuur direct een e-mail.</p>
-      
-      <p><strong>E-mailadres:</strong><br>
-      <a href="mailto:info@koopmansfineart.com" class="email-link">info@koopmansfineart.com</a></p>
-    </section>
+    <h1 class="page-title">Contact</h1>
+    <div class="title-underline"></div>
 
-    <!-- Rechterkolom: Formulier -->
+    <p class="intro-text">
+      Heeft u vragen over een specifiek werk uit de collectie, wilt u meer informatie over een restauratie, of bent u geïnteresseerd in een overname? Vul het onderstaande formulier in of stuur direct een e-mail.
+    </p>
+
+    <p class="email-highlight">
+      <strong>E-mail:</strong> <a href="mailto:info@koopmansfineart.com">info@koopmansfineart.com</a>
+    </p>
+
+    <!-- Contactformulier -->
     <section class="contact-form">
       <form action="https://formsubmit.co/info@koopmansfineart.com" method="POST">
         
-        <!-- FormSubmit Configuratie -->
+        <!-- FormSubmit instellingen -->
         <input type="hidden" name="_subject" value="Nieuw contactbericht via Koopmans Fine Art">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="true"> <!-- Extra reCAPTCHA beveiliging tegen hardnekkige bots -->
+        <input type="hidden" name="_captcha" value="true">
 
-        <!-- BOT TRAP / HONEYPOT FIELD -->
-        <!-- Bots vullen automatisch alle velden in. Als dit veld ingevuld wordt, weigert de server het bericht direct. -->
+        <!-- Anti-Bot Honeypot -->
         <input type="text" name="_honey" class="website-field" autocomplete="off">
 
-        <!-- Invoervelden voor bezoekers -->
         <div class="form-group">
           <label for="name">Naam</label>
-          <input type="text" id="name" name="Naam" required placeholder="Uw voor- en achternaam">
+          <input type="text" id="name" name="Naam" required placeholder="Uw naam">
         </div>
 
         <div class="form-group">
@@ -255,7 +297,7 @@
 
         <div class="form-group">
           <label for="subject">Onderwerp</label>
-          <input type="text" id="subject" name="Onderwerp" placeholder="bijv. Vraag over schilderij / Restauratie">
+          <input type="text" id="subject" name="Onderwerp" placeholder="Onderwerp van uw bericht">
         </div>
 
         <div class="form-group">
