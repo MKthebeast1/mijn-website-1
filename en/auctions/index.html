@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auctions - Koopmans Fine Art</title>
-    <meta name="description" content="Explore current and upcoming auctions of fine 19th-century paintings at Koopmans Fine Art.">
     <link rel="icon" type="image/png" href="/Koopmansfine.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
@@ -13,6 +12,7 @@
             --blauw: #1f2a35; 
             --donker: #242424; 
             --creme: #f4f1ea; 
+            --papier: #e9e4d9; 
         }
 
         body { 
@@ -24,12 +24,14 @@
             border-top: 10px solid var(--blauw); 
         }
         
-        /* 1. Header Styling */
+        /* 1. HEADER STYLING (Gecentreerd) */
         header { 
             padding: 0.5rem 1rem 0.2rem; 
             position: relative; 
+            text-align: center;
         }
         
+        /* 2. LOGO STYLING */
         header img { 
             max-height: 160px; 
             max-width: 95%; 
@@ -40,7 +42,7 @@
             transition: opacity 0.05s linear; 
         }
         
-        /* Language Switcher Styling */
+        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
         .lang-switch {
             position: absolute;
             top: 2rem;
@@ -52,10 +54,10 @@
         .lang-switch a {
             text-decoration: none;
             font-size: 1.3rem;
-            transition: transform 0.2s, opacity 0.2s;
+            transition: 0.2s;
             display: inline-block;
             line-height: 1;
-            opacity: 0.55;
+            opacity: 0.6;
         }
 
         .lang-switch a:hover,
@@ -64,7 +66,7 @@
             transform: scale(1.15); 
         }
         
-        /* 2. Navigation Bar */
+        /* 3. MENUBALK STYLING (Gecentreerd via inline-flex) */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -75,17 +77,21 @@
             -ms-overflow-style: none; 
             -webkit-overflow-scrolling: touch; 
             line-height: 1 !important;
+            text-align: center;
         }
 
         nav::-webkit-scrollbar { display: none; }
 
         nav ul { 
             list-style: none; 
-            padding: 0; 
-            margin: 0; 
-            display: flex; 
+            padding: 0 20px; 
+            margin: 0 auto; 
+            display: inline-flex; 
             justify-content: center; 
+            align-items: center;
             gap: 40px; 
+            min-width: 100%;
+            box-sizing: border-box;
             line-height: 1 !important;
         }
 
@@ -96,20 +102,22 @@
             text-transform: uppercase; 
             letter-spacing: 3px; 
             font-size: 0.95rem; 
-            transition: color 0.3s; 
+            transition: 0.3s; 
             display: inline-block;
             line-height: 1 !important;
         }
 
         nav a:hover, nav a.active { color: #ffffff; }
         
+        /* Content Styling */
         .main-content { 
             max-width: 1100px; 
             margin: 0 auto; 
             padding: 0 2rem 5rem; 
             text-align: left; 
+            line-height: 1.8; 
         }
-        
+
         h2 { 
             font-family: 'Playfair Display', serif; 
             font-size: 2.2rem; 
@@ -120,73 +128,51 @@
             margin-top: 0.5rem; 
             margin-bottom: 2rem; 
         }
-
-        .archive-title { margin-top: 5rem; }
         
-        /* 3. GALLERY STYLING */
-        .gallery { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-            gap: 40px; 
-            margin-top: 2rem; 
-        }
-
-        .gallery-item { 
-            background-color: #ffffff; 
-            padding: 15px; 
-            border: 12px solid var(--blauw); 
-            outline: 1px solid var(--goud); 
-            outline-offset: -8px; 
-            box-shadow: 15px 15px 35px rgba(0,0,0,0.3); 
+        /* VEILING BOX STYLING */
+        .auction-box { 
+            margin: 3rem auto; 
+            max-width: 600px; 
+            padding: 30px; 
             text-align: center; 
-            transition: transform 0.3s ease; 
+            border: 4px solid var(--blauw); 
+            outline: 1px solid var(--goud); 
+            outline-offset: -3px; 
+            background-color: #fcfbf8; 
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.1); 
         }
 
-        .gallery-item:hover { transform: translateY(-5px); }
-        .gallery-item img { width: 100%; display: block; height: auto; }
-        
-        .item-info { 
-            font-weight: 700; 
-            font-size: 0.9rem; 
-            margin-top: 15px; 
+        .auction-btn { 
+            display: inline-block; 
+            padding: 12px 30px; 
+            background-color: var(--blauw); 
+            color: #dcd0c0; 
+            text-decoration: none; 
+            font-weight: bold; 
             text-transform: uppercase; 
             letter-spacing: 1px; 
+            font-size: 0.85rem; 
+            border-radius: 2px; 
+            transition: 0.3s; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+
+        .auction-btn:hover { 
+            background-color: var(--goud); 
             color: var(--blauw); 
         }
         
-        /* Ribbon Styling */
-        .gallery-item.sold, .gallery-item.auction {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .sold-ribbon {
-            margin-top: auto;
-            margin-left: -15px;
-            margin-right: -15px;
-            margin-bottom: -15px;
-            background-color: var(--blauw);
-            color: #d4af37; 
-            text-shadow: 0 0 5px rgba(212, 175, 55, 0.45), 0 1px 2px rgba(0, 0, 0, 0.9);
-            font-family: 'Playfair Display', serif;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-align: center;
-            padding: 10px 8px;
-            border-top: 1px solid var(--goud);
-            box-sizing: border-box;
-        }
-
-        /* Mobile Fixes */
+        /* MOBIELE FIX (Gecentreerd op mobiel scherm) */
         @media (max-width: 600px) { 
-            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
+            nav ul { 
+                gap: 25px; 
+                padding: 0 25px; 
+            } 
             header { padding: 1rem 1rem 0.2rem; }
             header img { max-height: 120px; max-width: 95%; } 
+            
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
-            .gallery { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; }
         }
         
         footer { 
@@ -222,46 +208,30 @@
 </nav>
 
 <div class="main-content">
-
-    <!-- Active Auctions -->
-    <h2>Current Auctions</h2>
-    <div class="gallery">
-        
-        <!-- Voorbeeld actief veilingitem -->
-        <!--
-        <div class="gallery-item auction">
-            <a href="/en/auctions/item-name/"><img src="/foto/item.jpg" alt="Item Title" loading="lazy"></a>
-            <p class="item-info">Artist Name</p>
-            <div class="sold-ribbon">Active Auction</div>
-        </div>
-        -->
-
+    <h2>Our Auctions</h2>
+    <p>We regularly offer exceptional and authentic nineteenth-century paintings, classical artworks, and historical objects on Catawiki's international art auction. Our selection is curated with the utmost care, paying close attention to the quality, provenance, and historical soul of each object.</p>
+    <p>Are you interested in one of our collection pieces or would you like to bid on our active lots? You can view current auctions and place secure bids via our official seller profile on Catawiki.</p>
+    
+    <div class="auction-box">
+        <p style="font-family: 'Libre Baskerville', serif; color: #1f2a35; margin: 0 0 15px 0; font-size: 1.1rem; font-weight: 700;">
+            Bid on exceptional objects via our auction page.
+        </p>
+        <p style="font-family: 'Libre Baskerville', serif; color: #555; margin: 0 0 25px 0; font-size: 0.9rem; line-height: 1.6;">
+            Click the button below to go directly to our active lots and profile on Catawiki.
+        </p>
+        <a href="https://www.catawiki.com/en/u/30227951-koopmansfineart" target="_blank" rel="noopener noreferrer" class="auction-btn">
+            Go to Catawiki
+        </a>
     </div>
-
-    <!-- Archive Auctions -->
-    <h2 class="archive-title">Past Auctions</h2>
-    <div class="gallery">
-
-        <!-- Voorbeeld afgelopen veilingitem -->
-        <!--
-        <div class="gallery-item sold">
-            <a href="/en/auctions/item-name/"><img src="/foto/item.jpg" alt="Item Title" loading="lazy"></a>
-            <p class="item-info">Artist Name</p>
-            <div class="sold-ribbon">Auction Ended</div>
-        </div>
-        -->
-
-    </div>
-
 </div>
 
 <footer>
-    &copy; 2026 Koopmans Fine Art | M. Koopmans | 
+    &copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans | 
     <a href="/en/disclaimer/">Disclaimer</a>
 </footer>
 
 <script>
-    // Header logo scroll fade effect
+    // Logo fade effect tijdens scrollen
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('header-logo');
         var scrollPosition = window.scrollY;
@@ -272,7 +242,7 @@
         if (logo) logo.style.opacity = opacity;
     }, { passive: true });
 
-    // Auto-scroll active menu link into view on mobile devices
+    // Zorgt ervoor dat de actieve knop op mobiel netjes in het viewport schuift
     document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             var activeLink = document.querySelector('nav a.active');
