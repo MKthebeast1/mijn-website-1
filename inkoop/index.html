@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunstwerk Aanbieden | Taxatie & Inkoop</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fdfdfd; color: #222; padding: 40px 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 30px; border: 1px solid #eaeaea; border-radius: 8px; shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        h1 { font-size: 24px; font-weight: 300; margin-bottom: 8px; letter-spacing: -0.5px; }
+        p.sub { font-size: 14px; color: #666; margin-bottom: 24px; }
+        .form-group { margin-bottom: 18px; }
+        label { display: block; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        input[type="text"], input[type="email"], input[type="tel"], textarea, input[type="file"] {
+            width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 14px;
+        }
+        textarea { height: 90px; resize: vertical; }
+        button { background: #111; color: #fff; border: none; padding: 14px 24px; width: 100%; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 4px; transition: background 0.2s; }
+        button:hover { background: #333; }
+        #status { margin-top: 15px; font-size: 14px; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Schilderij Aanbieden</h1>
+    <p class="sub">Upload foto's van uw schilderij. U ontvangt vrijblijvend bericht over een mogelijke overname.</p>
+
+    <form id="artForm" action="process-inkoop.php" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Foto's (Voorkant, Achterkant, Signatuur)*</label>
+            <input type="file" name="photos[]" multiple accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <label>Vraagprijs / Richtprijs (€)</label>
+            <input type="text" name="asking_price" placeholder="bijv. 450 of 'Bieden'">
+        </div>
+
+        <div class="form-group">
+            <label>Afmetingen (h x b in cm)</label>
+            <input type="text" name="dimensions" placeholder="bijv. 50 x 40 cm">
+        </div>
+
+        <div class="form-group">
+            <label>Aanvullende informatie / Herkomst</label>
+            <textarea name="notes" placeholder="Bijzonderheden over de schilder, herkomst of conditie..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Uw Naam*</label>
+            <input type="text" name="sender_name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Uw E-mailadres*</label>
+            <input type="email" name="sender_email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Telefoonnummer</label>
+            <input type="tel" name="sender_phone">
+        </div>
+
+        <button type="submit" id="submitBtn">Aanvraag Versturen</button>
+        <div id="status"></div>
+    </form>
+</div>
+
+<script>
+document.getElementById('artForm').addEventListener('submit', function() {
+    document.getElementById('submitBtn').innerText = 'Bezig met verwerken & AI-analyse...';
+    document.getElementById('submitBtn').disabled = true;
+});
+</script>
+
+</body>
+</html>
