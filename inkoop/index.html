@@ -44,30 +44,6 @@
             transition: opacity 0.05s linear; 
         }
         
-        /* Taalswitcher Styling */
-        .lang-switch {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            display: flex;
-            gap: 12px;
-        }
-
-        .lang-switch a {
-            text-decoration: none;
-            font-size: 1.3rem;
-            transition: transform 0.2s, opacity 0.2s;
-            display: inline-block;
-            line-height: 1;
-            opacity: 0.55;
-        }
-
-        .lang-switch a:hover,
-        .lang-switch a.active { 
-            opacity: 1;
-            transform: scale(1.15); 
-        }
-        
         /* 3. Menubalk */
         nav { 
             padding: 0.9rem 0; 
@@ -233,9 +209,6 @@
             } 
             header { padding: 1rem 1rem 0.2rem; }
             header img { max-height: 120px; max-width: 95%; } 
-            
-            .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
-            .lang-switch a { font-size: 1.1rem; }
 
             .form-card {
                 padding: 20px 15px;
@@ -258,10 +231,6 @@
 
 <header>
     <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
-    <div class="lang-switch">
-        <a href="/inkoop/" class="active" title="Nederlands" aria-label="Nederlands">🇳🇱</a>
-        <a href="/en/purchase/" title="English" aria-label="English">🇬🇧</a>
-    </div>
 </header>
 
 <nav>
