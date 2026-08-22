@@ -9,10 +9,10 @@
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
-        
+
         /* 1. DUNNE HEADER */
         header { padding: 0.5rem 1rem 0.2rem; position: relative; }
-        
+
         /* 2. GROOT LOGO */
         header img { 
             max-height: 160px; 
@@ -23,7 +23,7 @@
             will-change: opacity; 
             transition: opacity 0.05s linear; 
         }
-        
+
         .lang-switch {
             position: absolute;
             top: 2rem;
@@ -39,7 +39,7 @@
             line-height: 1;
         }
         .lang-switch a:hover { transform: scale(1.15); }
-        
+
         /* 3. MENUBALK */
         nav { 
             padding: 0.9rem 0; 
@@ -74,9 +74,9 @@
             line-height: 1 !important;
         }
         nav a:hover, nav a.active { color: white; }
-        
+
         .main-content { max-width: 800px; margin: 0 auto; padding: 0.5rem 2rem 5rem; text-align: left; line-height: 1.8; }
-        
+
         h1 { 
             font-family: 'Playfair Display', serif; 
             font-size: 2.2rem;
@@ -87,9 +87,9 @@
             margin-top: 0.5rem;
             margin-bottom: 2rem; 
         }
-        
-        h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--blauw); margin-top: 2.5rem; margin-bottom: 1rem; }
-        
+
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--blauw); margin-top: 2.5rem; margin-bottom: 1rem; scroll-margin-top: 20px; }
+
         @media (max-width: 600px) { 
             nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
             header { padding: 1rem 1rem 0.2rem; }
@@ -97,7 +97,7 @@
             .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
         }
-        
+
         footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
         footer a { color: #888; text-decoration: none; }
     </style>
@@ -124,7 +124,7 @@
 
 <div class="main-content">
     <h1>Disclaimer & Algemene Voorwaarden</h1>
-    
+
     <h2>Disclaimer & Particulier Initiatief</h2>
     <p><strong>koopmansfineart.com</strong> is een persoonlijk en privaat initiatief, ontstaan uit een diepe passie voor de negentiende-eeuwse klassieke schilderkunst, historie en restauratie. De getoonde werken op deze website maken deel uit van een persoonlijke, particuliere verzameling.</p>
     <p>Wij wijzen u er vriendelijk op dat <strong>koopmansfineart.com</strong> geen commerciële onderneming of geregistreerd bedrijf is. De activiteiten worden uitsluitend op hobbymatige basis en als persoonlijke liefhebberij uitgevoerd. Eventuele overdrachten of verkopen van objecten vinden dan ook plaats op particuliere basis (consument-tot-consument). Aan de inhoud van deze website kunnen geen zakelijke rechten, garanties of commerciële aansprakelijkheden worden ontleend.</p>
@@ -142,10 +142,16 @@
     <h2>Geen Taxatieadvies</h2>
     <p>De informatie op <strong>koopmansfineart.com</strong> dient uitsluitend ter oriëntatie en vormt geen formeel taxatierapport of investeringsadvies. Wij adviseren kopers om bij twijfel of voor beleggingsdoeleinden altijd een onafhankelijke expert te raadplegen.</p>
 
-    <h2>Aanbieden en Particuliere Overname van Kunst</h2>
+    <h2 id="voorwaarden">Voorwaarden voor Particuliere Overname (Kunst Aanbieden)</h2>
     <p>De module ‘Kunst Aanbieden’ op deze website fungeert uitsluitend als een digitaal contactformulier voor <strong>koopmansfineart.com</strong>. Het inzenden van een formulier, inclusief beeldmateriaal en specificaties, kwalificeert juridisch slechts als een uitnodiging om in contact te treden. Dit verplicht <strong>koopmansfineart.com</strong> op geen enkele wijze tot het in behandeling nemen van het aanbod, het reageren daarop, of het uitbrengen van een bieding. Het besluit om op een ingezonden aanbod in te gaan, ligt eenzijdig en uitsluitend bij <strong>koopmansfineart.com</strong>.</p>
     <p>Alle communicatie, waaronder begrepen maar niet beperkt tot prijsindicaties, waardeschattingen of (tegen)biedingen die via digitale, schriftelijke of telefonische weg worden verstrekt, zijn te allen tijde strikt vrijblijvend en informatief van aard. Een rechtsgeldige en bindende particuliere (koop)overeenkomst kan uitsluitend tot stand komen onder de strikte opschortende voorwaarde van een fysieke, persoonlijke inspectie van het desbetreffende object. Tot op het moment dat deze fysieke schouw heeft plaatsgevonden én beide partijen de overname na inspectie definitief hebben bevestigd, behoudt <strong>koopmansfineart.com</strong> zich te allen tijde het recht voor om zonder opgave van redenen en zonder enige vorm van (schade)plichtigheid jegens de aanbieder, van verdere onderhandelingen of aankoop af te zien.</p>
-    <p>Door een object ter overname aan te bieden via deze website, garandeert de aanbieder onvoorwaardelijk wettelijk bevoegd te zijn om over het object te beschikken. De aanbieder verklaart hierbij dat het aangeboden object zijn/haar onbezwaarde eigendom is (of dat hij/zij beschikt over een geldige, aantoonbare volmacht), dat er geen rechten van derden op rusten, dat het een volstrekt legale herkomst kent, en dat het niet afkomstig is uit of gerelateerd is aan enig misdrijf (zoals diefstal, heling, verduistering of historische roofkunst).</p>
+    <p>Door een object ter overname aan te bieden via deze website (en hiermee akkoord te gaan in het aanbiedingsformulier), garandeert de aanbieder onvoorwaardelijk wettelijk bevoegd te zijn om over het object te beschikken. De aanbieder verklaart hierbij dat het aangeboden object zijn/haar onbezwaarde eigendom is (of dat hij/zij beschikt over een geldige, aantoonbare volmacht), dat er geen rechten van derden op rusten, dat het een volstrekt legale herkomst kent, en dat het niet afkomstig is uit of gerelateerd is aan enig misdrijf (zoals diefstal, heling, verduistering of historische roofkunst).</p>
+    
+    <p><strong>Definitieve overdracht, risico en wederverkoop</strong><br>
+    Bij een succesvolle overname door <strong>koopmansfineart.com</strong> is er te allen tijde sprake van een definitieve particuliere koop, en uitdrukkelijk niet van consignatie of bemiddeling. Zodra de overname is afgerond en het afgesproken bedrag is voldaan, gaat de volledige eigendom over op <strong>koopmansfineart.com</strong>. Vanaf dat moment draagt <strong>koopmansfineart.com</strong> het volledige (financiële) risico met betrekking tot het object, waaronder begrepen maar niet beperkt tot verborgen gebreken, restauratiekosten, onderzoekskosten en het risico op waardedaling of het uitblijven van een latere verkoop.</p>
+    
+    <p>Omdat <strong>koopmansfineart.com</strong> dit risico draagt en tevens tijd, expertise en middelen investeert in het behoud, onderzoek en de eventuele restauratie van het kunstwerk, staat het <strong>koopmansfineart.com</strong> vrij om het object op een later moment naar eigen inzicht door te verkopen voor een prijs die kan afwijken van de initiële inkoopprijs. De aanbieder gaat hier uitdrukkelijk mee akkoord, doet bij de verkoop onherroepelijk afstand van alle rechten op het object en kan achteraf nimmer aanspraak maken op enige vorm van nabetaling, winstdeling of compensatie bij een latere (door)verkoop.</p>
+    
     <p><strong>koopmansfineart.com</strong> handelt bij de beoordeling en eventuele overname van objecten te allen tijde te goeder trouw en vertrouwt hiertoe volledig op de juistheid van de door de aanbieder verstrekte informatie en garanties. Er wordt geen enkele aansprakelijkheid aanvaard voor achteraf gebleken onjuistheden inzake de authenticiteit, de (illegale) herkomst of de eigendomsstatus van een overgenomen object. Indien na overdracht blijkt dat de aanbieder inbreuk heeft gemaakt op bovengenoemde garanties, dan wel indien derden succesvol aanspraak maken op het object, vrijwaart de aanbieder <strong>koopmansfineart.com</strong> onherroepelijk en volledig. Deze vrijwaring omvat de onverwijlde en volledige vergoeding van alle daaruit voortvloeiende directe en indirecte (financiële) schade, waaronder begrepen restitutie van de koopsom, schade door inbeslagname of verlies van het object, alsmede alle redelijkerwijs gemaakte (juridische) kosten ter verdediging van de particuliere belangen.</p>
 
     <h2>Aansprakelijkheid</h2>
