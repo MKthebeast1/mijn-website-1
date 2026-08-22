@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Collection - Koopmans Fine Art</title>
+    <title>Disclaimer - Koopmans Fine Art</title>
     <link rel="icon" type="image/png" href="/Koopmansfine.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
         body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
         
-        /* 1. DUNNE HEADER PADDING (Zorgt dat het witte vlak niet te dik wordt) */
+        /* 1. DUNNE HEADER */
         header { padding: 0.5rem 1rem 0.2rem; position: relative; }
         
-        /* 2. GROOT LOGO (De perfecte grootte van de homepagina) */
+        /* 2. GROOT LOGO */
         header img { 
             max-height: 160px; 
             max-width: 95%; 
@@ -24,7 +24,7 @@
             transition: opacity 0.05s linear; 
         }
         
-        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
+        /* DUAL TAALSWITCHER */
         .lang-switch {
             position: absolute;
             top: 2rem;
@@ -41,7 +41,7 @@
         }
         .lang-switch a:hover { transform: scale(1.15); }
         
-        /* 3. NORMALE, STRAKKE MENUBALK */
+        /* 3. MENUBALK */
         nav { 
             padding: 0.9rem 0; 
             margin-bottom: 2.5rem; 
@@ -76,18 +76,26 @@
         }
         nav a:hover, nav a.active { color: white; }
         
-        /* Basis styling voor de tekst/content eronder */
-        .main-content { max-width: 1100px; margin: 0 auto; padding: 0 2rem 5rem; text-align: left; line-height: 1.8; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--blauw); border-bottom: 3px solid var(--blauw); display: inline-block; padding-bottom: 5px; margin-top: 0.5rem; margin-bottom: 2rem; }
+        .main-content { max-width: 800px; margin: 0 auto; padding: 0.5rem 2rem 5rem; text-align: left; line-height: 1.8; }
         
-        /* MOBIELE FIX: Strakke header en groot logo op telefoon */
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 2.2rem;
+            color: var(--blauw); 
+            border-bottom: 3px solid var(--blauw); 
+            display: inline-block; 
+            padding-bottom: 5px; 
+            margin-top: 0.5rem;
+            margin-bottom: 2rem; 
+        }
+
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blauw); margin-top: 2.5rem; margin-bottom: 1rem; scroll-margin-top: 20px; }
+        
         @media (max-width: 600px) { 
             nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
             
-            /* Compacte bovenkant op mobiel */
             header { padding: 1rem 1rem 0.2rem; }
             
-            /* Logo blijft mooi groot op mobiel */
             header img { 
                 max-height: 120px; 
                 max-width: 95%; 
@@ -106,9 +114,8 @@
 <header>
     <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
     <div class="lang-switch">
-        <!-- Zorg dat de NL vlag naar de juiste Nederlandse pagina wijst -->
-        <a href="/verzameling/">🇳🇱</a>
-        <a href="/en/collection/">🇬🇧</a>
+        <a href="/disclaimer/">🇳🇱</a>
+        <a href="/en/disclaimer/">🇬🇧</a>
     </div>
 </header>
 
@@ -122,28 +129,28 @@
     </ul>
 </nav>
 
-<!-- Hieronder laat je jouw eigen 'main-content' code en footer van de Collection pagina staan -->
-
 <div class="main-content">
     
-    <h1>Disclaimer & Private Initiative</h1>
+    <h1>Disclaimer & Terms and Conditions</h1>
+
+    <h2>1. Disclaimer & Private Initiative</h2>
     <p><strong>koopmansfineart.com</strong> is a personal and private initiative, born out of a deep passion for nineteenth-century classical painting, history, and restoration. The works displayed on this website are part of a personal, private collection.</p>
     <p>Please be kindly advised that <strong>koopmansfineart.com</strong> is not a commercial enterprise or a registered company. The activities are carried out solely on a hobby basis and as a personal passion. Any transfers or sales of objects therefore take place on a private basis (consumer-to-consumer). No commercial rights, business warranties, or corporate liabilities can be derived from the content of this website.</p>
 
-    <h2>Copyright & Intellectual Property</h2>
+    <h2>2. Copyright & Intellectual Property</h2>
     <p>All intellectual property rights and copyrights regarding this website, including all written texts, unique object descriptions, graphic materials, logos, and custom photographs of artworks and frames, are exclusively owned by <strong>koopmansfineart.com</strong>. It is strictly prohibited to copy, download, distribute, reproduce, or publish any material from this website in any form for commercial or private purposes of third parties without prior written consent.</p>
 
-    <h2>Attribution and Authenticity</h2>
+    <h2>3. Attribution and Authenticity</h2>
     <p><strong>koopmansfineart.com</strong> strives for the highest possible care when describing and attributing the artworks on this website. All information, including titles, dates, artists' names, and mediums, is based on expertise, visual assessment, and the known provenance data available at the time of publication.</p>
     <p>Despite these efforts, attributions and assessments may be subject to change due to new insights or expertise. <strong>koopmansfineart.com</strong> provides no warranties, explicit or implied, regarding the absolute authenticity or definitive attribution of the presented objects. Any purchase via <strong>koopmansfineart.com</strong> is made based on the buyer's own assessment and expertise. <strong>koopmansfineart.com</strong> accepts no liability for damages or consequences arising from subsequent advancing insights regarding an artwork or its attribution.</p>
 
-    <h2>Information on the Website</h2>
+    <h2>4. Information on the Website</h2>
     <p>The content of <strong>koopmansfineart.com</strong> has been compiled with the greatest possible care. Nevertheless, the information on the website may be incomplete or incorrect. <strong>koopmansfineart.com</strong> is not responsible for any typographical errors, incorrect price listings, or technical glitches. The displayed images may deviate slightly from reality due to screen settings or photography parameters.</p>
 
-    <h2>No Appraisal Advice</h2>
+    <h2>5. No Appraisal Advice</h2>
     <p>The information on <strong>koopmansfineart.com</strong> is for guidance purposes only and does not constitute a formal appraisal report or investment advice. We advise buyers to always consult an independent expert in case of doubt or for investment purposes.</p>
 
-    <h2>Liability</h2>
+    <h2>6. Liability</h2>
     <p><strong>koopmansfineart.com</strong> is in no way liable for indirect damages, consequential damages, or loss of profits resulting from the use of this website or from the purchase of an object via this platform, regardless of the legal basis.</p>
 </div>
 
@@ -151,6 +158,32 @@
     &copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans | 
     <a href="/en/disclaimer/">Disclaimer</a>
 </footer>
+
+<script>
+    // Logo fade effect tijdens scrollen
+    window.addEventListener('scroll', function() {
+        var logo = document.getElementById('header-logo');
+        var scrollPosition = window.scrollY;
+        var maxScroll = 180; 
+        var opacity = 1 - (scrollPosition / maxScroll);
+        if (opacity < 0) opacity = 0;
+        if (opacity > 1) opacity = 1;
+        if (logo) logo.style.opacity = opacity;
+    });
+
+    // Zorgt ervoor dat de actieve knop op mobiel netjes in het viewport schuift
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            var activeLink = document.querySelector('nav a.active');
+            var nav = document.querySelector('nav');
+            if (activeLink && nav) {
+                var navRect = nav.getBoundingClientRect();
+                var linkRect = activeLink.getBoundingClientRect();
+                nav.scrollLeft = nav.scrollLeft + (linkRect.left - navRect.left) - (navRect.width / 2) + (linkRect.width / 2);
+            }
+        }, 50);
+    });
+</script>
 
 </body>
 </html>
