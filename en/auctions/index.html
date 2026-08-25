@@ -4,188 +4,313 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auctions - Koopmans Fine Art</title>
-    <link rel="icon" type="image/png" href="/Koopmansfine.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <meta name="description" content="View the current auctions of Koopmans Fine Art on Catawiki.">
+    <link rel="icon" type="image/png" href="/foto/Koopmansfine.png">
+    <link rel="apple-touch-icon" href="/foto/Koopmansfine.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --goud: #b08d57; 
-            --blauw: #1f2a35; 
-            --donker: #242424; 
-            --creme: #f4f1ea; 
+        :root {
+            --blauw: #1f2a35;
+            --goud: #b08d57;
+            --goud-diep: #8a6a3d;
+            --goud-licht: #d4b98a;
+            --creme: #f4f1ea;
+            --papier: #ece6d8;
+            --inkt: #242424;
+            --wit-papier: #fcfbf8;
         }
 
-        body { 
-            font-family: 'Libre Baskerville', serif; 
-            margin: 0; 
-            background-color: var(--creme); 
-            color: var(--donker); 
-            text-align: center; 
-            border-top: 10px solid var(--blauw); 
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            margin: 0;
+            background-color: var(--creme);
+            color: var(--inkt);
+            text-align: center;
         }
-        
-        /* 1. DUNNE HEADER */
-        header { 
-            padding: 0.5rem 1rem 0.2rem; 
-            position: relative; 
+
+        /* ============ HEADER ============ */
+        header {
+            padding: 1.8rem 1rem 0.3rem;
+            position: relative;
+            border-top: 6px solid var(--blauw);
         }
-        
-        /* 2. GROOT LOGO */
-        header img { 
-            max-height: 160px; 
-            max-width: 95%; 
-            display: block; 
-            margin: 0 auto; 
-            object-fit: contain; 
-            will-change: opacity; 
-            transition: opacity 0.05s linear; 
+
+        header img#header-logo {
+            max-height: 150px;
+            max-width: 95%;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
+            will-change: opacity;
+            transition: opacity 0.05s linear;
         }
-        
-        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
+
+        .tagline {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--goud-diep);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: -1.4rem 0 0;
+        }
+
         .lang-switch {
             position: absolute;
-            top: 2rem;
+            top: 1.8rem;
             right: 2rem;
             display: flex;
             gap: 12px;
         }
-
         .lang-switch a {
             text-decoration: none;
             font-size: 1.3rem;
-            transition: 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
             display: inline-block;
             line-height: 1;
+            opacity: 0.55;
         }
+        .lang-switch a:hover, .lang-switch a.active { opacity: 1; transform: scale(1.15); }
 
-        .lang-switch a:hover { 
-            transform: scale(1.15); 
-        }
-        
-        /* 3. MENUBALK */
-        nav { 
-            padding: 0.9rem 0; 
-            margin-bottom: 2.5rem; 
-            background-color: var(--blauw); 
-            overflow-x: auto; 
+        /* ============ NAV ============ */
+        nav {
+            padding: 0.9rem 0;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            background-color: var(--blauw);
+            border-top: 1px solid var(--goud);
+            border-bottom: 1px solid var(--goud);
+            overflow-x: auto;
             white-space: nowrap;
-            scrollbar-width: none; 
-            -ms-overflow-style: none; 
-            -webkit-overflow-scrolling: touch; 
-            line-height: 1 !important;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            -webkit-overflow-scrolling: touch;
         }
-
         nav::-webkit-scrollbar { display: none; }
-
-        nav ul { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0; 
-            display: flex; 
-            justify-content: center; 
-            gap: 40px; 
-            line-height: 1 !important;
-        }
-
-        nav a { 
-            text-decoration: none; 
-            color: #dcd0c0; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            font-size: 0.95rem; 
-            transition: 0.3s; 
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; }
+        nav a {
+            text-decoration: none;
+            color: #dcd0c0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
             display: inline-block;
-            line-height: 1 !important;
+        }
+        nav a:hover, nav a.active { color: var(--goud-licht); }
+
+        /* ============ FLEURON ============ */
+        .fleuron {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin: 3rem auto;
+            max-width: 400px;
+            color: var(--goud);
+        }
+        .fleuron::before, .fleuron::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: linear-gradient(to var(--dir, right), transparent, var(--goud));
+        }
+        .fleuron::before { --dir: left; }
+        .fleuron span { font-size: 1.3rem; line-height: 1; }
+
+        /* ============ CONTENT ============ */
+        .main-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+            text-align: left;
+            line-height: 1.8;
         }
 
-        nav a:hover, nav a.active { color: white; }
-        
-        /* Content Styling */
-        .main-content { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 0 2rem 5rem; 
-            text-align: left; 
-            line-height: 1.8; 
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--blauw);
+            text-align: center;
+            margin: 0.5rem 0 2rem;
+            font-weight: 700;
+        }
+        .page-title::after {
+            content: "";
+            display: block;
+            width: 90px;
+            height: 2px;
+            margin: 0.9rem auto 0;
+            background: linear-gradient(to right, transparent, var(--goud), transparent);
         }
 
-        h2 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2.2rem; 
-            color: var(--blauw); 
-            border-bottom: 3px solid var(--blauw); 
-            display: inline-block; 
-            padding-bottom: 5px; 
-            margin-top: 0.5rem; 
-            margin-bottom: 2rem; 
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            color: var(--blauw);
+            text-align: center;
+            margin: 3.5rem 0 1.6rem;
+            font-weight: 700;
         }
-        
-        /* VEILING BOX STYLING */
-        .auction-box { 
-            margin: 3rem auto; 
-            max-width: 600px; 
-            padding: 30px; 
-            text-align: center; 
-            border: 4px solid var(--blauw); 
-            outline: 1px solid var(--goud); 
-            outline-offset: -3px; 
-            background-color: #fcfbf8; 
-            box-shadow: 10px 10px 20px rgba(0,0,0,0.1); 
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 1px;
+            margin: 0.7rem auto 0;
+            background-color: var(--goud);
         }
 
-        .auction-btn { 
-            display: inline-block; 
-            padding: 12px 30px; 
-            background-color: var(--blauw); 
-            color: #dcd0c0; 
-            text-decoration: none; 
-            font-weight: bold; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            font-size: 0.85rem; 
-            border-radius: 2px; 
-            transition: 0.3s; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        .page-intro {
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+            font-size: 1rem;
+            color: #444;
         }
 
-        .auction-btn:hover { 
-            background-color: var(--goud); 
-            color: var(--blauw); 
+        /* ============ KNOPPEN ============ */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.78rem;
+            border-radius: 1px;
+            transition: 0.25s;
+            border: 1px solid var(--goud);
+            cursor: pointer;
+            font-family: 'Libre Baskerville', serif;
         }
-        
-        /* MOBIELE STYLING */
-        @media (max-width: 600px) { 
-            nav ul { 
-                justify-content: flex-start; 
-                padding: 0 25px; 
-                gap: 30px; 
-            } 
-            header { padding: 1rem 1rem 0.2rem; }
-            header img { max-height: 120px; max-width: 95%; } 
-            
-            .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
+        .btn-primary { background-color: var(--goud); color: var(--blauw); }
+        .btn-primary:hover { background-color: var(--goud-licht); }
+        .btn-secondary { background-color: transparent; color: var(--goud-licht); }
+        .btn-secondary:hover { background-color: rgba(176,141,87,0.15); color: #fff; }
+
+        /* ============ GOUDEN PANEEL (blauw) ============ */
+        .gold-panel {
+            max-width: 680px;
+            margin: 2.8rem auto;
+            padding: 2.2rem 2rem;
+            text-align: center;
+            background-color: var(--blauw);
+            border: 1px solid var(--goud);
+            position: relative;
+        }
+        .gold-panel::before {
+            content: "";
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(176,141,87,0.4);
+            pointer-events: none;
+        }
+        .panel-eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--goud-licht);
+            margin: 0 0 0.8rem;
+        }
+        .panel-text {
+            font-family: 'Playfair Display', serif;
+            color: #f1ede2;
+            font-size: 1.15rem;
+            margin: 0 0 1rem;
+            line-height: 1.5;
+        }
+        .panel-sub {
+            color: #b9ab95;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0 0 1.6rem;
+        }
+
+        /* ============ LICHT KADER (in hero-stijl) ============ */
+        .light-card {
+            max-width: 780px;
+            margin: 2.2rem auto;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--goud-licht), var(--goud) 40%, var(--goud-diep));
+        }
+        .light-card-inner {
+            background-color: var(--wit-papier);
+            border: 1px solid var(--blauw);
+            padding: 2.1rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .card-corner-tl, .card-corner-br { position: absolute; width: 22px; height: 22px; }
+        .card-corner-tl { top: 8px; left: 8px; border-top: 2px solid var(--goud); border-left: 2px solid var(--goud); }
+        .card-corner-br { bottom: 8px; right: 8px; border-bottom: 2px solid var(--goud); border-right: 2px solid var(--goud); }
+
+        .card-eyebrow {
+            font-size: 0.78rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--goud-diep);
+            font-weight: 700;
+            margin: 0 0 1rem;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--blauw);
+            line-height: 1.25;
+            margin: 0 0 1rem;
+        }
+
+        .card-lead {
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: #444;
+            max-width: 560px;
+            margin: 0 auto 1rem;
+        }
+        .card-lead:last-child { margin-bottom: 0; }
+
+        /* ============ FOOTER ============ */
+        footer {
+            text-align: center;
+            padding: 3.5rem 1rem 2.5rem;
+            background-color: var(--blauw);
+            color: #a89a86;
+            font-size: 0.85rem;
+            border-top: 3px double var(--goud);
+        }
+        footer a { color: var(--goud-licht); text-decoration: none; }
+        footer a:hover { color: #fff; }
+
+        /* ============ MOBIEL ============ */
+        @media (max-width: 700px) {
+            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; }
+            header { padding: 1.2rem 1rem 0.4rem; }
+            header img#header-logo { max-height: 110px; }
+            .tagline { font-size: 0.7rem; letter-spacing: 2px; margin-top: -1rem; }
+            .lang-switch { top: 1rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
+            .main-content { padding: 0 1.2rem 4rem; }
+            .page-title { font-size: 1.6rem; }
+            .light-card-inner { padding: 1.6rem 1.2rem; }
+            .gold-panel { padding: 1.8rem 1.2rem; }
         }
-        
-        footer { 
-            text-align: center; 
-            padding: 4rem 1rem; 
-            background-color: var(--donker); 
-            color: #888888; 
-            font-size: 0.85rem; 
-        }
-
-        footer a { color: #888888; text-decoration: none; }
-        footer a:hover { color: #bbbbbb; }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="/foto/Adobe Express - file.png" alt="koopmansfineart.com" id="header-logo">
+    <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
+    <p class="tagline">Old Masters &amp; Fine Art</p>
     <div class="lang-switch">
-        <a href="/veilingen/" title="Nederlands" aria-label="Nederlands">🇳🇱</a>
-        <a href="/en/auctions/" title="English" aria-label="English">🇬🇧</a>
+        <a href="/veilingen/" class="active" title="Nederlands" aria-label="Nederlands">&#127475;&#127473;</a>
+        <a href="/en/auctions/" title="English" aria-label="English">&#127468;&#127463;</a>
     </div>
 </header>
 
@@ -200,34 +325,43 @@
 </nav>
 
 <div class="main-content">
-    <h2>Our Auctions</h2>
-    <p>We regularly offer exceptional and authentic nineteenth-century paintings, classical artworks, and historical objects on Catawiki's international art auction. Our selection is curated with the utmost care, paying close attention to the quality, provenance, and historical soul of each object.</p>
-    <p>Are you interested in one of our collection pieces or would you like to bid on our active lots? You can view current auctions and place secure bids via our official seller profile on Catawiki.</p>
-    
-    <div class="auction-box">
-        <p style="font-family: 'Libre Baskerville', serif; color: #1f2a35; margin: 0 0 15px 0; font-size: 1.1rem; font-weight: 700;">
-            Bid on exceptional objects via our auction page.
-        </p>
-        <p style="font-family: 'Libre Baskerville', serif; color: #555; margin: 0 0 25px 0; font-size: 0.9rem; line-height: 1.6;">
-            Click the button below to go directly to our active lots and profile on Catawiki.
-        </p>
-        <a href="https://www.catawiki.com/en/u/30227951-koopmansfineart" target="_blank" rel="noopener noreferrer" class="auction-btn">
-            Go to Catawiki
-        </a>
+
+    <h1 class="page-title">Our Auctions</h1>
+
+    <p class="page-intro">Works from the collection are regularly offered at Catawiki's international art auction.</p>
+
+    <div class="light-card">
+        <div class="light-card-inner">
+            <div class="card-corner-tl"></div>
+            <div class="card-corner-br"></div>
+            <p class="card-eyebrow">Selection &amp; provenance</p>
+            <h2 class="card-title">Curated with care.</h2>
+            <p class="card-lead">Every selection is made with close attention to quality, provenance and the historical character of the painting.</p>
+            <p class="card-lead">Interested in one of the works, or would you like to bid on a current lot? Our official seller profile on Catawiki shows all active auctions.</p>
+        </div>
     </div>
+
+    <div class="fleuron"><span>&#10086;</span></div>
+
+    <div class="gold-panel">
+        <p class="panel-eyebrow">Current lots</p>
+        <p class="panel-text">View the live auctions and place your bid.</p>
+        <p class="panel-sub">The button below takes you straight to the seller profile on Catawiki.</p>
+        <a href="https://www.catawiki.com/en/u/30227951-koopmansfineart" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Go to Catawiki</a>
+    </div>
+
 </div>
 
 <footer>
-    &copy; 2026 Koopmans Fine Art | M. Koopmans | 
+    &copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans |
     <a href="/en/disclaimer/">Disclaimer</a>
 </footer>
 
-<!-- Logo scroll effect + automatische centrering van het actieve menu-item op mobiel -->
 <script>
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('header-logo');
         var scrollPosition = window.scrollY;
-        var maxScroll = 180; 
+        var maxScroll = 180;
         var opacity = 1 - (scrollPosition / maxScroll);
         if (opacity < 0) opacity = 0;
         if (opacity > 1) opacity = 1;
