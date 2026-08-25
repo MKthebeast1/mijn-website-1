@@ -272,62 +272,67 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 55px 45px;
+            margin-top: 2.5rem;
+            align-items: start;
         }
 
-        .gallery-item {
+        .gallery-item { text-align: center; }
+
+        /* De lijst sluit strak om het schilderij */
+        .gallery-frame {
+            display: block;
             padding: 5px;
             background: linear-gradient(135deg, var(--goud-licht), var(--goud) 45%, var(--goud-diep));
-            box-shadow: 12px 12px 28px rgba(0,0,0,0.22);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 10px 12px 26px rgba(0,0,0,0.20);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
-        .gallery-item:hover { transform: translateY(-5px); }
-
-        .gallery-inner {
-            background-color: var(--blauw);
-            padding: 10px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+        .gallery-frame:hover {
+            transform: translateY(-6px);
+            box-shadow: 12px 18px 34px rgba(0,0,0,0.26);
         }
 
         .gallery-mat {
+            display: block;
             background-color: #fff;
-            padding: 12px;
+            padding: 10px;
+            border: 1px solid rgba(31,42,53,0.18);
         }
         .gallery-mat img { width: 100%; display: block; height: auto; }
 
-        .item-info {
-            font-weight: 700;
-            font-size: 0.85rem;
-            margin: 14px 0 4px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--goud-licht);
-            text-align: center;
+        /* Museumbordje onder het werk */
+        .gallery-label { padding-top: 16px; }
+        .gallery-label::before {
+            content: "";
+            display: block;
+            width: 34px;
+            height: 1px;
+            margin: 0 auto 12px;
+            background-color: var(--goud);
         }
 
-        .sold-ribbon {
-            margin-top: auto;
-            background-color: rgba(0,0,0,0.25);
-            color: var(--goud-licht);
+        .item-info {
             font-family: 'Playfair Display', serif;
-            font-size: 0.75rem;
             font-weight: 700;
+            font-size: 0.9rem;
+            margin: 0;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            text-align: center;
-            padding: 8px 6px;
-            margin: 10px -10px -10px;
-            border-top: 1px solid var(--goud);
+            letter-spacing: 2.5px;
+            color: var(--blauw);
+        }
+
+        .item-status {
+            font-size: 0.68rem;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--goud-diep);
+            margin: 0.5rem 0 0;
         }
 
         @media (max-width: 700px) {
-            .gallery { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 25px; }
+            .gallery { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 40px 25px; }
         }
     </style>
 </head>
@@ -358,14 +363,18 @@
     <h1 class="page-title">Huidige Collectie</h1>
     <div class="gallery">
         <div class="gallery-item">
-            <div class="gallery-inner">
-                <a href="/items/johanneshelder/"><div class="gallery-mat"><img src="/foto/helder2.jpeg" alt="Johannes Helder" loading="lazy"></div></a>
+            <a href="/items/johanneshelder/" class="gallery-frame">
+                <span class="gallery-mat"><img src="/foto/helder2.jpeg" alt="Johannes Helder" loading="lazy"></span>
+            </a>
+            <div class="gallery-label">
                 <p class="item-info">Johannes Helder</p>
             </div>
         </div>
         <div class="gallery-item">
-            <div class="gallery-inner">
-                <a href="/items/arnoudwydeveld/"><div class="gallery-mat"><img src="/foto/arnoud.png" alt="Arnoud Wydeveld" loading="lazy"></div></a>
+            <a href="/items/arnoudwydeveld/" class="gallery-frame">
+                <span class="gallery-mat"><img src="/foto/arnoud.png" alt="Arnoud Wydeveld" loading="lazy"></span>
+            </a>
+            <div class="gallery-label">
                 <p class="item-info">Arnoud Wydeveld</p>
             </div>
         </div>
@@ -376,38 +385,48 @@
     <h2 class="section-title">Eerdere Acquisities</h2>
     <div class="gallery">
         <div class="gallery-item">
-            <div class="gallery-inner">
-                <a href="/items/hectorthys/"><div class="gallery-mat"><img src="/foto/thys1.jpeg" alt="Hector Thys" loading="lazy"></div></a>
+            <a href="/items/hectorthys/" class="gallery-frame">
+                <span class="gallery-mat"><img src="/foto/thys1.jpeg" alt="Hector Thys" loading="lazy"></span>
+            </a>
+            <div class="gallery-label">
                 <p class="item-info">Hector Thys</p>
-            <div class="sold-ribbon">Verkocht</div>
+                <p class="item-status">Verkocht</p>
             </div>
         </div>
         <div class="gallery-item">
-            <div class="gallery-inner">
-                <a href="/items/hendrikhulk/"><div class="gallery-mat"><img src="/foto/HendrikHulk.jpg" alt="Hendrik Hulk" loading="lazy"></div></a>
+            <a href="/items/hendrikhulk/" class="gallery-frame">
+                <span class="gallery-mat"><img src="/foto/HendrikHulk.jpg" alt="Hendrik Hulk" loading="lazy"></span>
+            </a>
+            <div class="gallery-label">
                 <p class="item-info">Hendrik Hulk</p>
-            <div class="sold-ribbon">Verkocht</div>
+                <p class="item-status">Verkocht</p>
             </div>
         </div>
         <div class="gallery-item">
-            <div class="gallery-inner">
-                <a href="/items/hermanusvantankeren/"><div class="gallery-mat"><img src="/foto/hermanusvantankeren.jpg" alt="H. van Tankeren" loading="lazy"></div></a>
+            <a href="/items/hermanusvantankeren/" class="gallery-frame">
+                <span class="gallery-mat"><img src="/foto/hermanusvantankeren.jpg" alt="H. van Tankeren" loading="lazy"></span>
+            </a>
+            <div class="gallery-label">
                 <p class="item-info">H. van Tankeren</p>
-            <div class="sold-ribbon">Verkocht</div>
+                <p class="item-status">Verkocht</p>
             </div>
         </div>
         <div class="gallery-item">
-            <div class="gallery-inner">
-                <a href="/items/hageman/"><div class="gallery-mat"><img src="/foto/Hageman.jpg" alt="Gerard Hageman" loading="lazy"></div></a>
+            <a href="/items/hageman/" class="gallery-frame">
+                <span class="gallery-mat"><img src="/foto/Hageman.jpg" alt="Gerard Hageman" loading="lazy"></span>
+            </a>
+            <div class="gallery-label">
                 <p class="item-info">Gerard Hageman</p>
-            <div class="sold-ribbon">Verkocht</div>
+                <p class="item-status">Verkocht</p>
             </div>
         </div>
         <div class="gallery-item">
-            <div class="gallery-inner">
-                <a href="/items/waltervaes/"><div class="gallery-mat"><img src="/foto/waltervaes.jpg" alt="Walter Vaes" loading="lazy"></div></a>
+            <a href="/items/waltervaes/" class="gallery-frame">
+                <span class="gallery-mat"><img src="/foto/waltervaes.jpg" alt="Walter Vaes" loading="lazy"></span>
+            </a>
+            <div class="gallery-label">
                 <p class="item-info">Walter Vaes</p>
-            <div class="sold-ribbon">Verkocht</div>
+                <p class="item-status">Verkocht</p>
             </div>
         </div>
     </div>
