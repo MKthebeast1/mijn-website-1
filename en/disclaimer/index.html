@@ -4,30 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disclaimer - Koopmans Fine Art</title>
-    <link rel="icon" type="image/png" href="/Koopmansfine.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <meta name="description" content="Disclaimer and terms and conditions of koopmansfineart.com.">
+    <link rel="icon" type="image/png" href="/foto/Koopmansfine.png">
+    <link rel="apple-touch-icon" href="/foto/Koopmansfine.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
-        body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
-        
-        /* 1. DUNNE HEADER */
-        header { padding: 0.5rem 1rem 0.2rem; position: relative; }
-        
-        /* 2. GROOT LOGO */
-        header img { 
-            max-height: 160px; 
-            max-width: 95%; 
-            display: block; 
-            margin: 0 auto; 
-            object-fit: contain; 
-            will-change: opacity; 
-            transition: opacity 0.05s linear; 
+        :root {
+            --blauw: #1f2a35;
+            --goud: #b08d57;
+            --goud-diep: #8a6a3d;
+            --goud-licht: #d4b98a;
+            --creme: #f4f1ea;
+            --papier: #ece6d8;
+            --inkt: #242424;
+            --wit-papier: #fcfbf8;
         }
-        
-        /* DUAL TAALSWITCHER */
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            margin: 0;
+            background-color: var(--creme);
+            color: var(--inkt);
+            text-align: center;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            padding: 1.8rem 1rem 0.3rem;
+            position: relative;
+            border-top: 6px solid var(--blauw);
+        }
+
+        header img#header-logo {
+            max-height: 150px;
+            max-width: 95%;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
+            will-change: opacity;
+            transition: opacity 0.05s linear;
+        }
+
+        .tagline {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--goud-diep);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: -1.4rem 0 0;
+        }
+
         .lang-switch {
             position: absolute;
-            top: 2rem;
+            top: 1.8rem;
             right: 2rem;
             display: flex;
             gap: 12px;
@@ -35,87 +67,273 @@
         .lang-switch a {
             text-decoration: none;
             font-size: 1.3rem;
-            transition: 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
             display: inline-block;
             line-height: 1;
+            opacity: 0.55;
         }
-        .lang-switch a:hover { transform: scale(1.15); }
-        
-        /* 3. MENUBALK */
-        nav { 
-            padding: 0.9rem 0; 
-            margin-bottom: 2.5rem; 
-            background-color: var(--blauw); 
-            overflow-x: auto; 
+        .lang-switch a:hover, .lang-switch a.active { opacity: 1; transform: scale(1.15); }
+
+        /* ============ NAV ============ */
+        nav {
+            padding: 0.9rem 0;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            background-color: var(--blauw);
+            border-top: 1px solid var(--goud);
+            border-bottom: 1px solid var(--goud);
+            overflow-x: auto;
             white-space: nowrap;
-            scrollbar-width: none; 
-            -ms-overflow-style: none; 
-            -webkit-overflow-scrolling: touch; 
-            line-height: 1 !important;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            -webkit-overflow-scrolling: touch;
         }
         nav::-webkit-scrollbar { display: none; }
-        nav ul { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0; 
-            display: flex; 
-            justify-content: center; 
-            gap: 40px; 
-            line-height: 1 !important;
-        }
-        nav a { 
-            text-decoration: none; 
-            color: #dcd0c0; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            font-size: 0.95rem; 
-            transition: 0.3s; 
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; }
+        nav a {
+            text-decoration: none;
+            color: #dcd0c0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
             display: inline-block;
-            line-height: 1 !important;
         }
-        nav a:hover, nav a.active { color: white; }
-        
-        .main-content { max-width: 800px; margin: 0 auto; padding: 0.5rem 2rem 5rem; text-align: left; line-height: 1.8; }
-        
-        h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2.2rem;
-            color: var(--blauw); 
-            border-bottom: 3px solid var(--blauw); 
-            display: inline-block; 
-            padding-bottom: 5px; 
-            margin-top: 0.5rem;
-            margin-bottom: 2rem; 
+        nav a:hover, nav a.active { color: var(--goud-licht); }
+
+        /* ============ FLEURON ============ */
+        .fleuron {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin: 3rem auto;
+            max-width: 400px;
+            color: var(--goud);
+        }
+        .fleuron::before, .fleuron::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: linear-gradient(to var(--dir, right), transparent, var(--goud));
+        }
+        .fleuron::before { --dir: left; }
+        .fleuron span { font-size: 1.3rem; line-height: 1; }
+
+        /* ============ CONTENT ============ */
+        .main-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+            text-align: left;
+            line-height: 1.8;
         }
 
-        h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blauw); margin-top: 2.5rem; margin-bottom: 1rem; scroll-margin-top: 20px; }
-        
-        @media (max-width: 600px) { 
-            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
-            
-            header { padding: 1rem 1rem 0.2rem; }
-            
-            header img { 
-                max-height: 120px; 
-                max-width: 95%; 
-            } 
-            
-            .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
-            .lang-switch a { font-size: 1.1rem; }
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--blauw);
+            text-align: center;
+            margin: 0.5rem 0 2rem;
+            font-weight: 700;
         }
-        
-        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
-        footer a { color: #888; text-decoration: none; }
+        .page-title::after {
+            content: "";
+            display: block;
+            width: 90px;
+            height: 2px;
+            margin: 0.9rem auto 0;
+            background: linear-gradient(to right, transparent, var(--goud), transparent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            color: var(--blauw);
+            text-align: center;
+            margin: 3.5rem 0 1.6rem;
+            font-weight: 700;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 1px;
+            margin: 0.7rem auto 0;
+            background-color: var(--goud);
+        }
+
+        .page-intro {
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        /* ============ KNOPPEN ============ */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.78rem;
+            border-radius: 1px;
+            transition: 0.25s;
+            border: 1px solid var(--goud);
+            cursor: pointer;
+            font-family: 'Libre Baskerville', serif;
+        }
+        .btn-primary { background-color: var(--goud); color: var(--blauw); }
+        .btn-primary:hover { background-color: var(--goud-licht); }
+        .btn-secondary { background-color: transparent; color: var(--goud-licht); }
+        .btn-secondary:hover { background-color: rgba(176,141,87,0.15); color: #fff; }
+
+        /* ============ GOUDEN PANEEL (blauw) ============ */
+        .gold-panel {
+            max-width: 680px;
+            margin: 2.8rem auto;
+            padding: 2.2rem 2rem;
+            text-align: center;
+            background-color: var(--blauw);
+            border: 1px solid var(--goud);
+            position: relative;
+        }
+        .gold-panel::before {
+            content: "";
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(176,141,87,0.4);
+            pointer-events: none;
+        }
+        .panel-eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--goud-licht);
+            margin: 0 0 0.8rem;
+        }
+        .panel-text {
+            font-family: 'Playfair Display', serif;
+            color: #f1ede2;
+            font-size: 1.15rem;
+            margin: 0 0 1rem;
+            line-height: 1.5;
+        }
+        .panel-sub {
+            color: #b9ab95;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0 0 1.6rem;
+        }
+
+        /* ============ LICHT KADER (in hero-stijl) ============ */
+        .light-card {
+            max-width: 780px;
+            margin: 2.2rem auto;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--goud-licht), var(--goud) 40%, var(--goud-diep));
+        }
+        .light-card-inner {
+            background-color: var(--wit-papier);
+            border: 1px solid var(--blauw);
+            padding: 2.1rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .card-corner-tl, .card-corner-br { position: absolute; width: 22px; height: 22px; }
+        .card-corner-tl { top: 8px; left: 8px; border-top: 2px solid var(--goud); border-left: 2px solid var(--goud); }
+        .card-corner-br { bottom: 8px; right: 8px; border-bottom: 2px solid var(--goud); border-right: 2px solid var(--goud); }
+
+        .card-eyebrow {
+            font-size: 0.78rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--goud-diep);
+            font-weight: 700;
+            margin: 0 0 1rem;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--blauw);
+            line-height: 1.25;
+            margin: 0 0 1rem;
+        }
+
+        .card-lead {
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: #444;
+            max-width: 560px;
+            margin: 0 auto 1rem;
+        }
+        .card-lead:last-child { margin-bottom: 0; }
+
+        /* ============ FOOTER ============ */
+        footer {
+            text-align: center;
+            padding: 3.5rem 1rem 2.5rem;
+            background-color: var(--blauw);
+            color: #a89a86;
+            font-size: 0.85rem;
+            border-top: 3px double var(--goud);
+        }
+        footer a { color: var(--goud-licht); text-decoration: none; }
+        footer a:hover { color: #fff; }
+
+        /* ============ MOBIEL ============ */
+        @media (max-width: 700px) {
+            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; }
+            header { padding: 1.2rem 1rem 0.4rem; }
+            header img#header-logo { max-height: 110px; }
+            .tagline { font-size: 0.7rem; letter-spacing: 2px; margin-top: -1rem; }
+            .lang-switch { top: 1rem; right: 1rem; gap: 10px; }
+            .lang-switch a { font-size: 1.1rem; }
+            .main-content { padding: 0 1.2rem 4rem; }
+            .page-title { font-size: 1.6rem; }
+            .light-card-inner { padding: 1.6rem 1.2rem; }
+            .gold-panel { padding: 1.8rem 1.2rem; }
+        }
+
+        .disclaimer-content { max-width: 820px; }
+
+        .disclaimer-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--blauw);
+            margin-top: 2.6rem;
+            margin-bottom: 0.9rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--goud);
+            scroll-margin-top: 20px;
+        }
+
+        .disclaimer-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.02rem;
+            color: var(--goud-diep);
+            margin-top: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .disclaimer-content p { font-size: 0.95rem; }
     </style>
 </head>
 <body>
 
 <header>
     <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
+    <p class="tagline">Old Masters &amp; Fine Art</p>
     <div class="lang-switch">
-        <a href="/disclaimer/">🇳🇱</a>
-        <a href="/en/disclaimer/">🇬🇧</a>
+        <a href="/disclaimer/" class="active" title="Nederlands" aria-label="Nederlands">&#127475;&#127473;</a>
+        <a href="/en/disclaimer/" title="English" aria-label="English">&#127468;&#127463;</a>
     </div>
 </header>
 
@@ -129,49 +347,75 @@
     </ul>
 </nav>
 
-<div class="main-content">
-    
-    <h1>Disclaimer & Terms and Conditions</h1>
+<div class="main-content disclaimer-content">
 
-    <h2>1. Disclaimer & Private Initiative</h2>
-    <p><strong>koopmansfineart.com</strong> is a personal and private initiative, born out of a deep passion for nineteenth-century classical painting, history, and restoration. The works displayed on this website are part of a personal, private collection.</p>
-    <p>Please be kindly advised that <strong>koopmansfineart.com</strong> is not a commercial enterprise or a registered company. The activities are carried out solely on a hobby basis and as a personal passion. Any transfers or sales of objects therefore take place on a private basis (consumer-to-consumer). No commercial rights, business warranties, or corporate liabilities can be derived from the content of this website.</p>
+    <h1 class="page-title">Disclaimer &amp; Terms and Conditions</h1>
 
-    <h2>2. Copyright & Intellectual Property</h2>
-    <p>All intellectual property rights and copyrights regarding this website, including all written texts, unique object descriptions, graphic materials, logos, and custom photographs of artworks and frames, are exclusively owned by <strong>koopmansfineart.com</strong>. It is strictly prohibited to copy, download, distribute, reproduce, or publish any material from this website in any form for commercial or private purposes of third parties without prior written consent.</p>
+    <p class="page-intro" style="font-style: italic; font-size: 0.9rem;">This is a translation provided for convenience. In the event of any discrepancy, the Dutch version of these terms prevails.</p>
+
+    <h2>1. Disclaimer &amp; Private Initiative</h2>
+    <p><strong>koopmansfineart.com</strong> is a personal and private initiative, born out of a deep passion for classical painting, history and restoration. The works displayed on this website form part of a personal, private collection that is maintained and expanded on an incidental, non-structural basis.</p>
+    <p><strong>koopmansfineart.com</strong> is not a registered commercial enterprise. The initiator expressly reserves the right, where the nature, scale or frequency of an intended transaction gives cause to do so, to refrain from that transaction until any statutory obligations (including but not limited to obligations under tax legislation or the Dutch Anti-Money Laundering and Anti-Terrorist Financing Act) have been satisfied. No commercial rights, warranties or business undertakings may be derived from the content of this website.</p>
+
+    <h2>2. Copyright &amp; Intellectual Property</h2>
+    <p>All intellectual property rights and copyrights relating to this website, including all written texts, unique descriptions of works, graphic material, logos and self-produced photographs of paintings and frames, belong exclusively to <strong>koopmansfineart.com</strong>. Material from this website may not be copied, downloaded, distributed, reproduced or published in any other way for the commercial or private purposes of third parties without prior written consent.</p>
 
     <h2>3. Attribution and Authenticity</h2>
-    <p><strong>koopmansfineart.com</strong> strives for the highest possible care when describing and attributing the artworks on this website. All information, including titles, dates, artists' names, and mediums, is based on expertise, visual assessment, and the known provenance data available at the time of publication.</p>
-    <p>Despite these efforts, attributions and assessments may be subject to change due to new insights or expertise. <strong>koopmansfineart.com</strong> provides no warranties, explicit or implied, regarding the absolute authenticity or definitive attribution of the presented objects. Any purchase via <strong>koopmansfineart.com</strong> is made based on the buyer's own assessment and expertise. <strong>koopmansfineart.com</strong> accepts no liability for damages or consequences arising from subsequent advancing insights regarding an artwork or its attribution.</p>
+    <p><strong>koopmansfineart.com</strong> exercises the greatest possible care in describing and attributing the paintings on this website. All information, including titles, dates, artists' names and techniques, is based on personal visual assessment and the provenance data known at the time of publication, and expressly does not constitute a formal expert opinion or certificate of authenticity.</p>
+    <p>Attributions and assessments may be subject to change as a result of new scholarly insight or expertise. <strong>koopmansfineart.com</strong> gives no warranties, express or implied, as to the absolute authenticity or definitive attribution of the works offered. Every purchase via <strong>koopmansfineart.com</strong> is made on the basis of the buyer's own assessment and expertise. <strong>koopmansfineart.com</strong> accepts no liability for damage or consequences arising from subsequent developing insight regarding a work or its attribution, except in the case of intent or gross negligence on the part of <strong>koopmansfineart.com</strong>.</p>
 
     <h2>4. Information on the Website</h2>
-    <p>The content of <strong>koopmansfineart.com</strong> has been compiled with the greatest possible care. Nevertheless, the information on the website may be incomplete or incorrect. <strong>koopmansfineart.com</strong> is not responsible for any typographical errors, incorrect price listings, or technical glitches. The displayed images may deviate slightly from reality due to screen settings or photography parameters.</p>
+    <p>The content of <strong>koopmansfineart.com</strong> has been compiled with the greatest possible care. Nevertheless, the information on the website may be incomplete or incorrect. Obvious slips of the pen, typographical errors or incorrect price statements do not bind <strong>koopmansfineart.com</strong> and may be corrected at any time. The images shown may differ slightly from reality due to screen settings or photography.</p>
 
     <h2>5. No Appraisal Advice</h2>
-    <p>The information on <strong>koopmansfineart.com</strong> is for guidance purposes only and does not constitute a formal appraisal report or investment advice. We advise buyers to always consult an independent expert in case of doubt or for investment purposes.</p>
+    <p>The information on <strong>koopmansfineart.com</strong> is intended for orientation purposes only and does not constitute a formal appraisal report, financial advice or investment advice. Buyers are advised always to consult an independent, recognised expert in case of doubt or for investment purposes.</p>
 
-    <h2>6. Liability</h2>
-    <p><strong>koopmansfineart.com</strong> is in no way liable for indirect damages, consequential damages, or loss of profits resulting from the use of this website or from the purchase of an object via this platform, regardless of the legal basis.</p>
+    <h2 id="terms">6. Terms for Private Acquisition (Offering Art)</h2>
+
+    <h3>6.1 Non-binding nature of the offer</h3>
+    <p>The 'Offer Art' module on this website serves solely as a digital contact form for <strong>koopmansfineart.com</strong>. Submitting a form, including images and specifications, expressly does not constitute a binding offer within the meaning of Article 6:217 of the Dutch Civil Code, but merely an invitation to make an offer. This in no way obliges <strong>koopmansfineart.com</strong> to consider the submission, to respond to it, or to make a bid. The decision whether to act upon a submission rests solely and exclusively with <strong>koopmansfineart.com</strong>.</p>
+
+    <h3>6.2 Formation of the agreement</h3>
+    <p>All communication, including but not limited to price indications, value estimates or (counter)offers provided by digital, written or telephone means, is at all times strictly non-binding and informative in nature and expressly does not qualify as a binding offer. A legally valid and binding private (purchase) agreement can only come about subject to the condition precedent of a physical, personal inspection of the work concerned and express confirmation by both parties, given in writing or orally, following that inspection. Until that moment <strong>koopmansfineart.com</strong> reserves the right to withdraw from further negotiations or from the purchase without stating reasons, without thereby becoming liable for damages towards the offering party.</p>
+
+    <h3>6.3 Warranties as to ownership, provenance and the capacity of the offering party</h3>
+    <p>By offering a work for acquisition via this website (and agreeing to these terms in the submission form), the offering party unconditionally declares and warrants:</p>
+    <p>(a) that they are legally authorised to dispose of the work, that the work is their unencumbered property (or that they hold a valid, demonstrable power of attorney from the owner), and that no third-party rights attach to it;</p>
+    <p>(b) that the work is of entirely lawful provenance and does not originate from, and is not connected with, any criminal offence, including theft, handling stolen goods, embezzlement or historical looted art; and</p>
+    <p>(c) that they are offering the work in a private capacity, and not in the exercise of a profession or business, unless this has been expressly notified in writing to <strong>koopmansfineart.com</strong> prior to submitting the form.</p>
+
+    <h3>6.4 Final transfer, risk and resale</h3>
+    <p>A successful acquisition by <strong>koopmansfineart.com</strong> always constitutes a definitive private purchase, and expressly not consignment or brokerage. Once the acquisition has been completed and the agreed amount has been paid, full ownership passes to <strong>koopmansfineart.com</strong>. From that moment <strong>koopmansfineart.com</strong> bears the full (financial) risk in respect of the work, including but not limited to hidden defects, restoration costs, research costs and the risk of depreciation or of no subsequent sale taking place.</p>
+    <p>In view of this assumed risk and the time, expertise and resources that <strong>koopmansfineart.com</strong> invests in the preservation, research and any restoration of the work, <strong>koopmansfineart.com</strong> is free to resell the work at a later date at its own discretion, at a price that may differ from the initial acquisition price. The offering party declares that they are aware of this, accepts it upon entering into the agreement, and after the definitive transfer can make no further claim to additional payment, profit-sharing or compensation in connection with any later resale.</p>
+
+    <h3>6.5 Good faith and indemnity</h3>
+    <p><strong>koopmansfineart.com</strong> acts in good faith when assessing and any acquiring of works, and relies on the accuracy of the information and warranties provided by the offering party as referred to in article 6.3. If, after the transfer, it emerges that the offering party has breached one or more of these warranties, or if a third party successfully asserts a claim to the work on grounds attributable to, or that could have been known by, the offering party, the offering party shall indemnify <strong>koopmansfineart.com</strong>, to the extent permitted by law, against the damage directly arising therefrom. This indemnity covers in any event restitution of the purchase price paid and reasonably incurred costs of establishing and defending the claim, and does not affect the fact that <strong>koopmansfineart.com</strong> remains responsible for the diligence of its own assessment.</p>
+
+    <h2>7. Liability</h2>
+    <p><strong>koopmansfineart.com</strong> is, to the extent permitted by law, not liable for indirect damage, consequential damage or loss of profit arising from the use of this website or from the purchase of a work via this platform. Nothing in this disclaimer is intended to exclude or limit liability to the extent that this is not permitted under mandatory Dutch law, including liability for intent or wilful recklessness.</p>
+
+    <h2>8. Governing law, disputes and other provisions</h2>
+    <p>Dutch law applies to this disclaimer and to all private agreements concluded via this website. Disputes will preferably be resolved by mutual consultation; failing that, the competent court in the district where <strong>koopmansfineart.com</strong> is domiciled shall have jurisdiction, unless mandatory law provides otherwise.</p>
+    <p>If any provision of this disclaimer proves to be void, voidable or otherwise unenforceable, the remaining provisions shall remain in full force. The parties will replace the void or annulled provision with one that corresponds as closely as possible to the purpose and intent of the original.</p>
+
 </div>
 
 <footer>
-    &copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans | 
+    &copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans |
     <a href="/en/disclaimer/">Disclaimer</a>
 </footer>
 
 <script>
-    // Logo fade effect tijdens scrollen
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('header-logo');
         var scrollPosition = window.scrollY;
-        var maxScroll = 180; 
+        var maxScroll = 180;
         var opacity = 1 - (scrollPosition / maxScroll);
         if (opacity < 0) opacity = 0;
         if (opacity > 1) opacity = 1;
         if (logo) logo.style.opacity = opacity;
-    });
+    }, { passive: true });
 
-    // Zorgt ervoor dat de actieve knop op mobiel netjes in het viewport schuift
     document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             var activeLink = document.querySelector('nav a.active');
