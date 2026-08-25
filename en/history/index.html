@@ -3,31 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History & Passion - Koopmans Fine Art</title>
-    <link rel="icon" type="image/png" href="/Koopmansfine.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>History - Koopmans Fine Art</title>
+    <meta name="description" content="About the passion and provenance behind the Koopmans Fine Art collection.">
+    <link rel="icon" type="image/png" href="/foto/Koopmansfine.png">
+    <link rel="apple-touch-icon" href="/foto/Koopmansfine.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; --papier: #e9e4d9; }
-        body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); text-align: center; border-top: 10px solid var(--blauw); }
-        
-        /* 1. DUNNE HEADER PADDING */
-        header { padding: 0.5rem 1rem 0.2rem; position: relative; }
-        
-        /* 2. GROOT LOGO */
-        header img { 
-            max-height: 160px; 
-            max-width: 95%; 
-            display: block; 
-            margin: 0 auto; 
-            object-fit: contain; 
-            will-change: opacity; 
-            transition: opacity 0.05s linear; 
+        :root {
+            --blauw: #1f2a35;
+            --goud: #b08d57;
+            --goud-diep: #8a6a3d;
+            --goud-licht: #d4b98a;
+            --creme: #f4f1ea;
+            --papier: #ece6d8;
+            --inkt: #242424;
+            --wit-papier: #fcfbf8;
         }
-        
-        /* DUAL TAALSWITCHER RECHTSBOVEN STYLING */
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            margin: 0;
+            background-color: var(--creme);
+            color: var(--inkt);
+            text-align: center;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            padding: 1.8rem 1rem 0.3rem;
+            position: relative;
+            border-top: 6px solid var(--blauw);
+        }
+
+        header img#header-logo {
+            max-height: 150px;
+            max-width: 95%;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
+            will-change: opacity;
+            transition: opacity 0.05s linear;
+        }
+
+        .tagline {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--goud-diep);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: -1.4rem 0 0;
+        }
+
         .lang-switch {
             position: absolute;
-            top: 2rem;
+            top: 1.8rem;
             right: 2rem;
             display: flex;
             gap: 12px;
@@ -35,101 +67,268 @@
         .lang-switch a {
             text-decoration: none;
             font-size: 1.3rem;
-            transition: 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
             display: inline-block;
             line-height: 1;
+            opacity: 0.55;
         }
-        .lang-switch a:hover { transform: scale(1.15); }
-        
-        /* 3. NORMALE, STRAKKE MENUBALK */
-        nav { 
-            padding: 0.9rem 0; 
-            margin-bottom: 2.5rem; 
-            background-color: var(--blauw); 
-            overflow-x: auto; 
+        .lang-switch a:hover, .lang-switch a.active { opacity: 1; transform: scale(1.15); }
+
+        /* ============ NAV ============ */
+        nav {
+            padding: 0.9rem 0;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            background-color: var(--blauw);
+            border-top: 1px solid var(--goud);
+            border-bottom: 1px solid var(--goud);
+            overflow-x: auto;
             white-space: nowrap;
-            scrollbar-width: none; 
-            -ms-overflow-style: none; 
-            -webkit-overflow-scrolling: touch; 
-            line-height: 1 !important;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            -webkit-overflow-scrolling: touch;
         }
         nav::-webkit-scrollbar { display: none; }
-        nav ul { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0; 
-            display: flex; 
-            justify-content: center; 
-            gap: 40px; 
-            line-height: 1 !important;
-        }
-        nav a { 
-            text-decoration: none; 
-            color: #dcd0c0; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            font-size: 0.95rem; 
-            transition: 0.3s; 
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; }
+        nav a {
+            text-decoration: none;
+            color: #dcd0c0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
             display: inline-block;
-            line-height: 1 !important;
         }
-        nav a:hover, nav a.active { color: white; }
-        
-        /* Basis styling voor de tekst/content eronder */
-        .main-content { max-width: 800px; margin: 0 auto; padding: 0.5rem 2rem 5rem; text-align: left; line-height: 1.8; }
-        
-        h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2.2rem;
-            color: var(--blauw); 
-            border-bottom: 3px solid var(--blauw); 
-            display: inline-block; 
-            padding-bottom: 5px; 
-            margin-top: 0.5rem;
-            margin-bottom: 2rem; 
+        nav a:hover, nav a.active { color: var(--goud-licht); }
+
+        /* ============ FLEURON ============ */
+        .fleuron {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin: 3rem auto;
+            max-width: 400px;
+            color: var(--goud);
         }
-        
-        h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--blauw); margin-top: 3rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--blauw); padding-bottom: 8px; }
-        
-        .profile-img { 
-            float: left; 
-            margin: 5px 25px 15px 0; 
-            width: 200px; 
-            border: 4px solid var(--blauw); 
-            outline: 1px solid var(--goud); 
-            outline-offset: -3px; 
-            box-shadow: 10px 10px 20px rgba(0,0,0,0.15); 
-            border-radius: 2px; 
-        }
-        
-        .clearfix::after {
+        .fleuron::before, .fleuron::after {
             content: "";
-            clear: both;
-            display: table;
+            height: 1px;
+            flex: 1;
+            background: linear-gradient(to var(--dir, right), transparent, var(--goud));
         }
-        
-        /* MOBIELE FIX */
-        @media (max-width: 600px) { 
-            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
-            header { padding: 1rem 1rem 0.2rem; }
-            header img { max-height: 120px; max-width: 95%; } 
-            .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
+        .fleuron::before { --dir: left; }
+        .fleuron span { font-size: 1.3rem; line-height: 1; }
+
+        /* ============ CONTENT ============ */
+        .main-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--blauw);
+            text-align: center;
+            margin: 0.5rem 0 2rem;
+            font-weight: 700;
+        }
+        .page-title::after {
+            content: "";
+            display: block;
+            width: 90px;
+            height: 2px;
+            margin: 0.9rem auto 0;
+            background: linear-gradient(to right, transparent, var(--goud), transparent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            color: var(--blauw);
+            text-align: center;
+            margin: 3.5rem 0 1.6rem;
+            font-weight: 700;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 1px;
+            margin: 0.7rem auto 0;
+            background-color: var(--goud);
+        }
+
+        .page-intro {
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        /* ============ KNOPPEN ============ */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.78rem;
+            border-radius: 1px;
+            transition: 0.25s;
+            border: 1px solid var(--goud);
+            cursor: pointer;
+            font-family: 'Libre Baskerville', serif;
+        }
+        .btn-primary { background-color: var(--goud); color: var(--blauw); }
+        .btn-primary:hover { background-color: var(--goud-licht); }
+        .btn-secondary { background-color: transparent; color: var(--goud-licht); }
+        .btn-secondary:hover { background-color: rgba(176,141,87,0.15); color: #fff; }
+
+        /* ============ GOUDEN PANEEL (blauw) ============ */
+        .gold-panel {
+            max-width: 680px;
+            margin: 2.8rem auto;
+            padding: 2.2rem 2rem;
+            text-align: center;
+            background-color: var(--blauw);
+            border: 1px solid var(--goud);
+            position: relative;
+        }
+        .gold-panel::before {
+            content: "";
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(176,141,87,0.4);
+            pointer-events: none;
+        }
+        .panel-eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--goud-licht);
+            margin: 0 0 0.8rem;
+        }
+        .panel-text {
+            font-family: 'Playfair Display', serif;
+            color: #f1ede2;
+            font-size: 1.15rem;
+            margin: 0 0 1rem;
+            line-height: 1.5;
+        }
+        .panel-sub {
+            color: #b9ab95;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0 0 1.6rem;
+        }
+
+        /* ============ LICHT KADER (in hero-stijl) ============ */
+        .light-card {
+            max-width: 780px;
+            margin: 2.2rem auto;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--goud-licht), var(--goud) 40%, var(--goud-diep));
+        }
+        .light-card-inner {
+            background-color: var(--wit-papier);
+            border: 1px solid var(--blauw);
+            padding: 2.1rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .card-corner-tl, .card-corner-br { position: absolute; width: 22px; height: 22px; }
+        .card-corner-tl { top: 8px; left: 8px; border-top: 2px solid var(--goud); border-left: 2px solid var(--goud); }
+        .card-corner-br { bottom: 8px; right: 8px; border-bottom: 2px solid var(--goud); border-right: 2px solid var(--goud); }
+
+        .card-eyebrow {
+            font-size: 0.78rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--goud-diep);
+            font-weight: 700;
+            margin: 0 0 1rem;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--blauw);
+            line-height: 1.25;
+            margin: 0 0 1rem;
+        }
+
+        .card-lead {
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: #444;
+            max-width: 560px;
+            margin: 0 auto 1rem;
+        }
+        .card-lead:last-child { margin-bottom: 0; }
+
+        /* ============ FOOTER ============ */
+        footer {
+            text-align: center;
+            padding: 3.5rem 1rem 2.5rem;
+            background-color: var(--blauw);
+            color: #a89a86;
+            font-size: 0.85rem;
+            border-top: 3px double var(--goud);
+        }
+        footer a { color: var(--goud-licht); text-decoration: none; }
+        footer a:hover { color: #fff; }
+
+        /* ============ MOBIEL ============ */
+        @media (max-width: 700px) {
+            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; }
+            header { padding: 1.2rem 1rem 0.4rem; }
+            header img#header-logo { max-height: 110px; }
+            .tagline { font-size: 0.7rem; letter-spacing: 2px; margin-top: -1rem; }
+            .lang-switch { top: 1rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
-            .profile-img { float: none; display: block; margin: 0 auto 20px auto; width: 85%; max-width: 240px; }
+            .main-content { padding: 0 1.2rem 4rem; }
+            .page-title { font-size: 1.6rem; }
+            .light-card-inner { padding: 1.6rem 1.2rem; }
+            .gold-panel { padding: 1.8rem 1.2rem; }
         }
-        
-        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.85rem; }
-        footer a { color: #888; text-decoration: none; }
+
+        .historie-content { max-width: 800px; }
+
+        .profile-img {
+            float: left;
+            margin: 5px 28px 18px 0;
+            width: 200px;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--goud-licht), var(--goud) 45%, var(--goud-diep));
+            box-shadow: 10px 10px 22px rgba(0,0,0,0.18);
+        }
+        .profile-img img { width: 100%; display: block; border: 3px solid var(--blauw); }
+
+        .clearfix::after { content: ""; clear: both; display: table; }
+
+        @media (max-width: 700px) {
+            .profile-img { float: none; margin: 0 auto 22px; width: 85%; max-width: 240px; }
+        }
     </style>
 </head>
 <body>
 
 <header>
     <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
+    <p class="tagline">Old Masters &amp; Fine Art</p>
     <div class="lang-switch">
-        <a href="/historie/">🇳🇱</a>
-        <a href="/en/history/">🇬🇧</a>
+        <a href="/historie/" class="active" title="Nederlands" aria-label="Nederlands">&#127475;&#127473;</a>
+        <a href="/en/history/" title="English" aria-label="English">&#127468;&#127463;</a>
     </div>
 </header>
 
@@ -142,41 +341,45 @@
         <li><a href="/en/contact/">Contact</a></li>
     </ul>
 </nav>
-<div class="main-content clearfix">
-    <h1>History & Passion</h1>
-    <p>The collection of <strong>koopmansfineart.com</strong> originated from a deep-rooted fascination with classical European painting. What began as a personal journey of discovery through the refined masterpieces of the nineteenth century has grown into a carefully curated private collection. The collection focuses particularly on atmospheric still lifes, interiors, and landscapes that bear witness to exceptional craftsmanship and a striking historical character.</p>
-    
-    <p>We believe that every antique painting is a unique window to the past that must be treated with respect. For this reason, we dedicate a great deal of time to historical provenance research, material analysis, and the careful conservation of both the canvases and their monumental, hand-gilded frames.</p>
 
-    <h2>About Me</h2>
-    
-    <img src="/foto/IMG_4164.JPG" alt="Merijn Koopmans" class="profile-img">
-    
+<div class="main-content historie-content clearfix">
+
+    <h1 class="page-title">History &amp; Passion</h1>
+
+    <p>The collection of <strong>koopmansfineart.com</strong> originated from a deep-rooted fascination with classical European painting. What began as a personal journey of discovery through refined masterpieces has grown into a carefully curated private collection. The focus lies particularly on atmospheric still lifes, interiors and landscapes that bear witness to exceptional craftsmanship and a striking historical character.</p>
+
+    <p>We believe that every antique painting is a unique window onto the past, and that it deserves to be treated with respect. For this reason a great deal of time is devoted to historical provenance research, material analysis and the careful conservation of both the canvases and their monumental, hand-gilded frames.</p>
+
+    <div class="fleuron"><span>&#10086;</span></div>
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="profile-img"><img src="/foto/IMG_4164.JPG" alt="Merijn Koopmans"></div>
+
     <p>My name is <strong>Merijn Koopmans</strong>.</p>
-    
-    <p>The most beautiful aspect of this passion is the journey of discovery: intensively searching regional auction houses, estate sales, and private collections for that one hidden gem. A yellowed, darkened layer of varnish or a subtle, almost illegible signature often conceals the hand of a classical master—such as the highly refined still lifes of Arnoud Wydeveld or the atmospheric maritime views of Hendrik Hulk.</p>
-    
-    <p>Conserving and researching these works is, for me, a form of historical respect. Through <strong>koopmansfineart.com</strong>, I hope to share this passion and the tangible beauty of classical craftsmanship with fellow collectors and enthusiasts.</p>
+
+    <p>The finest aspect of this passion is the journey of discovery: searching regional auction houses, estate sales and private collections for that one hidden gem. Beneath a yellowed, darkened layer of varnish, or behind a subtle and almost illegible signature, the hand of a classical master is often concealed &mdash; such as the highly refined still lifes of Arnoud Wydeveld or the atmospheric river and sea views of Hendrik Hulk.</p>
+
+    <p>Conserving and documenting these works is, to me, a form of historical respect. Through <strong>koopmansfineart.com</strong> I hope to share this passion and the tangible beauty of classical craftsmanship with fellow collectors and enthusiasts.</p>
+
 </div>
 
 <footer>
-    &copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans | 
+    &copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans |
     <a href="/en/disclaimer/">Disclaimer</a>
 </footer>
 
 <script>
-    // Logo fade effect tijdens scrollen
     window.addEventListener('scroll', function() {
         var logo = document.getElementById('header-logo');
         var scrollPosition = window.scrollY;
-        var maxScroll = 180; 
+        var maxScroll = 180;
         var opacity = 1 - (scrollPosition / maxScroll);
         if (opacity < 0) opacity = 0;
         if (opacity > 1) opacity = 1;
         if (logo) logo.style.opacity = opacity;
-    });
+    }, { passive: true });
 
-    // Zorgt ervoor dat de actieve knop op mobiel netjes in het viewport schuift
     document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             var activeLink = document.querySelector('nav a.active');
