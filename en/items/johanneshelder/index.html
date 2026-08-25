@@ -4,29 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Johannes Helder - Koopmans Fine Art</title>
-    <link rel="icon" type="image/png" href="/Koopmansfine.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/foto/Koopmansfine.png">
+    <link rel="apple-touch-icon" href="/foto/Koopmansfine.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        :root { --goud: #b08d57; --blauw: #1f2a35; --donker: #242424; --creme: #f4f1ea; }
-        body { font-family: 'Libre Baskerville', serif; margin: 0; background-color: var(--creme); color: var(--donker); line-height: 1.8; border-top: 10px solid var(--blauw); text-align: center; }
-        
-        /* 1. DUNNE HEADER */
-        header { padding: 0.5rem 1rem 0.2rem; position: relative; }
-        
-        /* 2. GROOT LOGO */
-        header img { 
-            max-height: 160px; 
-            max-width: 95%; 
-            display: block; 
-            margin: 0 auto; 
-            object-fit: contain; 
-            will-change: opacity; 
-            transition: opacity 0.05s linear; 
+        :root {
+            --blauw: #1f2a35;
+            --goud: #b08d57;
+            --goud-diep: #8a6a3d;
+            --goud-licht: #d4b98a;
+            --creme: #f4f1ea;
+            --papier: #ece6d8;
+            --inkt: #242424;
+            --wit-papier: #fcfbf8;
         }
-        
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            margin: 0;
+            background-color: var(--creme);
+            color: var(--inkt);
+            text-align: center;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            padding: 1.8rem 1rem 0.3rem;
+            position: relative;
+            border-top: 6px solid var(--blauw);
+        }
+
+        header img#header-logo {
+            max-height: 150px;
+            max-width: 95%;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
+            will-change: opacity;
+            transition: opacity 0.05s linear;
+        }
+
+        .tagline {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--goud-diep);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: -1.4rem 0 0;
+        }
+
         .lang-switch {
             position: absolute;
-            top: 2rem;
+            top: 1.8rem;
             right: 2rem;
             display: flex;
             gap: 12px;
@@ -34,181 +66,448 @@
         .lang-switch a {
             text-decoration: none;
             font-size: 1.3rem;
-            transition: 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
             display: inline-block;
             line-height: 1;
+            opacity: 0.55;
         }
-        .lang-switch a:hover { 
-            transform: scale(1.15);
-        }
-        
-        /* 3. MENUBALK */
-        nav { 
-            padding: 0.9rem 0; 
-            margin-bottom: 2.5rem; 
-            background-color: var(--blauw); 
-            overflow-x: auto; 
+        .lang-switch a:hover, .lang-switch a.active { opacity: 1; transform: scale(1.15); }
+
+        /* ============ NAV ============ */
+        nav {
+            padding: 0.9rem 0;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            background-color: var(--blauw);
+            border-top: 1px solid var(--goud);
+            border-bottom: 1px solid var(--goud);
+            overflow-x: auto;
             white-space: nowrap;
-            scrollbar-width: none; 
-            -ms-overflow-style: none; 
-            -webkit-overflow-scrolling: touch; 
-            line-height: 1 !important;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            -webkit-overflow-scrolling: touch;
         }
         nav::-webkit-scrollbar { display: none; }
-        nav ul { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0; 
-            display: flex; 
-            justify-content: center; 
-            gap: 40px; 
-            line-height: 1 !important;
-        }
-        nav a { 
-            text-decoration: none; 
-            color: #dcd0c0; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            font-size: 0.95rem; 
-            transition: 0.3s; 
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 40px; }
+        nav a {
+            text-decoration: none;
+            color: #dcd0c0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
             display: inline-block;
-            line-height: 1 !important;
         }
-        nav a:hover, nav a.active { color: white; }
-        
-        .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
-        .back-nav { margin-bottom: 3rem; text-align: left; }
-        .back-link { text-decoration: none; color: var(--blauw); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; border-bottom: 2px solid var(--blauw); transition: 0.3s; }
-        .back-link:hover { color: var(--goud); border-color: var(--goud); }
-        
-        .item-layout { display: flex; gap: 60px; align-items: flex-start; margin-top: 2rem; }
-        .image-side { flex: 1.3; }
-        .text-side { flex: 1; text-align: left; }
-        
-        .frame { padding: 15px; border: 18px solid var(--blauw); outline: 1px solid var(--goud); outline-offset: -10px; box-shadow: 20px 20px 40px rgba(0,0,0,0.3); background-color: white; }
-        .frame img { width: 100%; display: block; cursor: zoom-in; transition: transform 0.3s ease; }
-        .frame img:hover { transform: scale(1.02); }
-        
-        h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 0 0 1.5rem 0; text-transform: uppercase; letter-spacing: 2px; color: var(--blauw); }
-        
-        .info-list { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--blauw); padding-top: 2rem; }
-        .info-list li { margin-bottom: 15px; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; color: var(--blauw); }
-        .info-list li span { font-weight: 400; color: #555; text-transform: none; margin-left: 8px; }
-        
-        .price { margin-top: 2.5rem; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--blauw); font-weight: 700; font-style: italic; }
-        
-        .modal { display: none; position: fixed; z-index: 1000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(31, 42, 53, 0.95); }
-        .modal-content { margin: auto; display: block; max-width: 90%; max-height: 85vh; object-fit: contain; border: 5px solid var(--goud); box-shadow: 0 0 50px rgba(0,0,0,0.8); }
-        .close { position: absolute; top: 15px; right: 35px; color: #f4f1ea; font-size: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .close:hover { color: var(--goud); }
+        nav a:hover, nav a.active { color: var(--goud-licht); }
 
-        @media (max-width: 900px) { 
-            .item-layout { flex-direction: column; gap: 40px; } 
-            .image-side, .text-side { flex: none; width: 100%; } 
+        /* ============ FLEURON ============ */
+        .fleuron {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin: 3rem auto;
+            max-width: 400px;
+            color: var(--goud);
         }
-        @media (max-width: 600px) { 
-            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; } 
-            header { padding: 1rem 1rem 0.2rem; } 
-            header img { max-height: 120px; max-width: 95%; } 
-            h1 { font-size: 2rem; } 
-            .lang-switch { top: 0.9rem; right: 1rem; gap: 10px; }
+        .fleuron::before, .fleuron::after {
+            content: "";
+            height: 1px;
+            flex: 1;
+            background: linear-gradient(to var(--dir, right), transparent, var(--goud));
+        }
+        .fleuron::before { --dir: left; }
+        .fleuron span { font-size: 1.3rem; line-height: 1; }
+
+        /* ============ CONTENT ============ */
+        .main-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--blauw);
+            text-align: center;
+            margin: 0.5rem 0 2rem;
+            font-weight: 700;
+        }
+        .page-title::after {
+            content: "";
+            display: block;
+            width: 90px;
+            height: 2px;
+            margin: 0.9rem auto 0;
+            background: linear-gradient(to right, transparent, var(--goud), transparent);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            color: var(--blauw);
+            text-align: center;
+            margin: 3.5rem 0 1.6rem;
+            font-weight: 700;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 1px;
+            margin: 0.7rem auto 0;
+            background-color: var(--goud);
+        }
+
+        .page-intro {
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        /* ============ KNOPPEN ============ */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.78rem;
+            border-radius: 1px;
+            transition: 0.25s;
+            border: 1px solid var(--goud);
+            cursor: pointer;
+            font-family: 'Libre Baskerville', serif;
+        }
+        .btn-primary { background-color: var(--goud); color: var(--blauw); }
+        .btn-primary:hover { background-color: var(--goud-licht); }
+        .btn-secondary { background-color: transparent; color: var(--goud-licht); }
+        .btn-secondary:hover { background-color: rgba(176,141,87,0.15); color: #fff; }
+
+        /* ============ GOUDEN PANEEL (blauw) ============ */
+        .gold-panel {
+            max-width: 680px;
+            margin: 2.8rem auto;
+            padding: 2.2rem 2rem;
+            text-align: center;
+            background-color: var(--blauw);
+            border: 1px solid var(--goud);
+            position: relative;
+        }
+        .gold-panel::before {
+            content: "";
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(176,141,87,0.4);
+            pointer-events: none;
+        }
+        .panel-eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--goud-licht);
+            margin: 0 0 0.8rem;
+        }
+        .panel-text {
+            font-family: 'Playfair Display', serif;
+            color: #f1ede2;
+            font-size: 1.15rem;
+            margin: 0 0 1rem;
+            line-height: 1.5;
+        }
+        .panel-sub {
+            color: #b9ab95;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0 0 1.6rem;
+        }
+
+        /* ============ LICHT KADER (in hero-stijl) ============ */
+        .light-card {
+            max-width: 780px;
+            margin: 2.2rem auto;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--goud-licht), var(--goud) 40%, var(--goud-diep));
+        }
+        .light-card-inner {
+            background-color: var(--wit-papier);
+            border: 1px solid var(--blauw);
+            padding: 2.1rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .card-corner-tl, .card-corner-br { position: absolute; width: 22px; height: 22px; }
+        .card-corner-tl { top: 8px; left: 8px; border-top: 2px solid var(--goud); border-left: 2px solid var(--goud); }
+        .card-corner-br { bottom: 8px; right: 8px; border-bottom: 2px solid var(--goud); border-right: 2px solid var(--goud); }
+
+        .card-eyebrow {
+            font-size: 0.78rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--goud-diep);
+            font-weight: 700;
+            margin: 0 0 1rem;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--blauw);
+            line-height: 1.25;
+            margin: 0 0 1rem;
+        }
+
+        .card-lead {
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: #444;
+            max-width: 560px;
+            margin: 0 auto 1rem;
+        }
+        .card-lead:last-child { margin-bottom: 0; }
+
+        /* ============ FOOTER ============ */
+        footer {
+            text-align: center;
+            padding: 3.5rem 1rem 2.5rem;
+            background-color: var(--blauw);
+            color: #a89a86;
+            font-size: 0.85rem;
+            border-top: 3px double var(--goud);
+        }
+        footer a { color: var(--goud-licht); text-decoration: none; }
+        footer a:hover { color: #fff; }
+
+        /* ============ MOBIEL ============ */
+        @media (max-width: 700px) {
+            nav ul { justify-content: flex-start; padding: 0 25px; gap: 30px; }
+            header { padding: 1.2rem 1rem 0.4rem; }
+            header img#header-logo { max-height: 110px; }
+            .tagline { font-size: 0.7rem; letter-spacing: 2px; margin-top: -1rem; }
+            .lang-switch { top: 1rem; right: 1rem; gap: 10px; }
             .lang-switch a { font-size: 1.1rem; }
-            .modal-content { border-width: 2px; } 
+            .main-content { padding: 0 1.2rem 4rem; }
+            .page-title { font-size: 1.6rem; }
+            .light-card-inner { padding: 1.6rem 1.2rem; }
+            .gold-panel { padding: 1.8rem 1.2rem; }
         }
-        
-        footer { text-align: center; padding: 4rem 1rem; background-color: var(--donker); color: #888; font-size: 0.8rem; margin-top: 5rem; }
-        footer a { color: #888; text-decoration: none; }
+
+        .item-container { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem 4rem; text-align: left; }
+
+        .back-nav { margin-bottom: 2.5rem; }
+        .back-link {
+            text-decoration: none;
+            color: var(--goud-diep);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+            border-bottom: 1px solid var(--goud);
+            padding-bottom: 3px;
+            transition: 0.3s;
+        }
+        .back-link:hover { color: var(--blauw); border-color: var(--blauw); }
+
+        .item-layout { display: flex; gap: 60px; align-items: flex-start; }
+        .image-side { flex: 1.3; }
+        .text-side { flex: 1; }
+
+        .frame {
+            padding: 6px;
+            background: linear-gradient(135deg, var(--goud-licht), var(--goud) 45%, var(--goud-diep));
+            box-shadow: 18px 18px 38px rgba(0,0,0,0.28);
+        }
+        .frame-inner { background-color: var(--blauw); padding: 14px; }
+        .frame-mat { background-color: #fff; padding: 16px; }
+        .frame-mat img { width: 100%; display: block; cursor: zoom-in; transition: transform 0.3s ease; }
+        .frame-mat img:hover { transform: scale(1.02); }
+
+        .item-eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--goud-diep);
+            font-weight: 700;
+            margin: 0 0 0.7rem;
+        }
+
+        .item-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin: 0 0 1.6rem;
+            letter-spacing: 1px;
+            color: var(--blauw);
+            line-height: 1.2;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 1.6rem 0 0;
+            margin: 0;
+            border-top: 1px solid var(--goud);
+        }
+        .info-list li {
+            margin-bottom: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--goud-diep);
+        }
+        .info-list li span {
+            font-weight: 400;
+            color: #444;
+            text-transform: none;
+            letter-spacing: normal;
+            font-size: 0.95rem;
+            margin-left: 8px;
+        }
+
+        .price {
+            margin-top: 2rem;
+            padding: 0.9rem 1.2rem;
+            background-color: var(--blauw);
+            border: 1px solid var(--goud);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--goud-licht);
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .item-text { margin-top: 2rem; line-height: 1.9; color: #3a3a3a; }
+        .item-text p { margin-top: 0; }
+
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 1000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(31, 42, 53, 0.96); }
+        .modal-content { margin: auto; display: block; max-width: 90%; max-height: 85vh; object-fit: contain; border: 4px solid var(--goud); box-shadow: 0 0 50px rgba(0,0,0,0.8); }
+        .close { position: absolute; top: 15px; right: 35px; color: var(--goud-licht); font-size: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .close:hover { color: #fff; }
+
+        @media (max-width: 900px) {
+            .item-layout { flex-direction: column; gap: 40px; }
+            .image-side, .text-side { flex: none; width: 100%; }
+        }
+        @media (max-width: 700px) {
+            .item-container { padding: 1rem 1.2rem 3rem; }
+            .item-title { font-size: 1.7rem; }
+            .frame-inner { padding: 10px; }
+            .frame-mat { padding: 10px; }
+            .modal-content { border-width: 2px; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
-        <div class="lang-switch">
-            <a href="/items/johanneshelder/">🇳🇱</a>
-            <a href="/en/items/johanneshelder/">🇬🇧</a>
-        </div>
-    </header>
+<header>
+    <img src="/foto/Adobe Express - file.png" alt="Koopmans Fine Art" id="header-logo">
+    <p class="tagline">Old Masters &amp; Fine Art</p>
+    <div class="lang-switch">
+        <a href="/items/johanneshelder/" class="active" title="Nederlands" aria-label="Nederlands">&#127475;&#127473;</a>
+        <a href="/en/items/johanneshelder/" title="English" aria-label="English">&#127468;&#127463;</a>
+    </div>
+</header>
 
-    <nav>
-        <ul>
-            <li><a href="/en/">Home</a></li>
-            <li><a href="/en/collection/" class="active">Collection</a></li>
-            <li><a href="/en/auctions/">Auctions</a></li>
-            <li><a href="/en/history/">History</a></li>
-        </ul>
-    </nav>
-    
-    <div class="container">
-        <div class="back-nav">
-            <a href="/en/collection/" class="back-link">&larr; Back to collection</a>
-        </div>
-        
-        <div class="item-layout">
-            <div class="image-side">
-                <div class="frame">
-                    <img src="/foto/helder2.jpeg" alt="Johannes Helder" onclick="openModal(this.src)">
+<nav>
+    <ul>
+        <li><a href="/en/">Home</a></li>
+        <li><a href="/en/collection/" class="active">Collection</a></li>
+        <li><a href="/en/auctions/">Auctions</a></li>
+        <li><a href="/en/history/">History</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="item-container">
+
+    <div class="back-nav">
+        <a href="/en/collection/" class="back-link">&larr; Back to collection</a>
+    </div>
+
+    <div class="item-layout">
+        <div class="image-side">
+            <div class="frame">
+                <div class="frame-inner">
+                    <div class="frame-mat">
+                        <img src="/foto/helder2.jpeg" alt="Johannes Helder" onclick="openModal(this.src)">
+                    </div>
                 </div>
             </div>
-            
-            <div class="text-side">
-                <h1>Johannes Helder</h1>
-                <ul class="info-list">
+        </div>
+
+        <div class="text-side">
+            <p class="item-eyebrow">Available in the collection</p>
+            <h1 class="item-title">Johannes Helder</h1>
+            <ul class="info-list">
                     <li>Artist: <span>Johannes Helder (1842 &ndash; 1913)</span></li>
                     <li>Medium: <span>Oil on panel</span></li>
                     <li>Year: <span>ca. 1880</span></li>
                     <li>Dimensions: <span>103.5 x 90.5 cm</span></li>
                     <li>Status: <span>Available</span></li>
-                </ul>
-                <div class="price">EUR 1.250.-</div>
-                <p style="margin-top: 2rem;">A quiet work by Johannes Helder (1842-1913). Helder was known for his ability to capture tranquility and light in everyday settings. The painting is housed in a richly decorated, gold-gilded frame.</p>
+            </ul>
+            <div class="price">EUR 1,250</div>
+            <div class="item-text">
+                    <p>A quiet work by Johannes Helder (1842&ndash;1913). Helder was known for his ability to capture tranquillity and light in everyday settings. The painting is housed in a richly decorated, gold-gilded frame.</p>
             </div>
         </div>
     </div>
-    
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="expandedImg" alt="Expanded view">
-    </div>
 
-    <footer>
-        &copy; 2026 <a href="/en/">Koopmans Fine Art</a> | M. Koopmans | 
-        <a href="/en/disclaimer/">Disclaimer</a>
-    </footer>
+</div>
 
-    <script>
-        // Logo fade effect tijdens scrollen
-        window.addEventListener('scroll', function() {
-            var logo = document.getElementById('header-logo');
-            var scrollPosition = window.scrollY;
-            var maxScroll = 180; 
-            var opacity = 1 - (scrollPosition / maxScroll);
-            if (opacity < 0) opacity = 0;
-            if (opacity > 1) opacity = 1;
-            if (logo) logo.style.opacity = opacity;
-        });
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="expandedImg" alt="Large view of Johannes Helder">
+</div>
 
-        // Zorgt ervoor dat de actieve knop op mobiel netjes in het viewport schuift
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(function() {
-                var activeLink = document.querySelector('nav a.active');
-                var nav = document.querySelector('nav');
-                if (activeLink && nav) {
-                    var navRect = nav.getBoundingClientRect();
-                    var linkRect = activeLink.getBoundingClientRect();
-                    nav.scrollLeft = nav.scrollLeft + (linkRect.left - navRect.left) - (navRect.width / 2) + (linkRect.width / 2);
-                }
-            }, 50);
-        });
+<footer>
+    &copy; 2026 <a href="/en/">koopmansfineart.com</a> | M. Koopmans |
+    <a href="/en/disclaimer/">Disclaimer</a>
+</footer>
 
-        function openModal(imgSrc) {
-            document.getElementById("imageModal").style.display = "block";
-            document.getElementById("expandedImg").src = imgSrc;
-        }
-        function closeModal() {
-            document.getElementById("imageModal").style.display = "none";
-        }
-    </script>
+<script>
+    window.addEventListener('scroll', function() {
+        var logo = document.getElementById('header-logo');
+        var scrollPosition = window.scrollY;
+        var maxScroll = 180;
+        var opacity = 1 - (scrollPosition / maxScroll);
+        if (opacity < 0) opacity = 0;
+        if (opacity > 1) opacity = 1;
+        if (logo) logo.style.opacity = opacity;
+    }, { passive: true });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            var activeLink = document.querySelector('nav a.active');
+            var nav = document.querySelector('nav');
+            if (activeLink && nav) {
+                var navRect = nav.getBoundingClientRect();
+                var linkRect = activeLink.getBoundingClientRect();
+                nav.scrollLeft = nav.scrollLeft + (linkRect.left - navRect.left) - (navRect.width / 2) + (linkRect.width / 2);
+            }
+        }, 50);
+    });
+
+    function openModal(imgSrc) {
+        document.getElementById("imageModal").style.display = "block";
+        document.getElementById("expandedImg").src = imgSrc;
+    }
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+    });
+</script>
+
 </body>
 </html>
