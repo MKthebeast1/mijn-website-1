@@ -231,19 +231,51 @@
             margin: 0 0 1.6rem;
         }
 
-        /* ============ LICHT KADER (creme) ============ */
+        /* ============ LICHT KADER (in hero-stijl) ============ */
         .light-card {
-            max-width: 680px;
-            margin: 2rem auto;
+            max-width: 780px;
+            margin: 2.2rem auto;
             padding: 3px;
             background: linear-gradient(135deg, var(--goud-licht), var(--goud) 40%, var(--goud-diep));
         }
         .light-card-inner {
             background-color: var(--wit-papier);
             border: 1px solid var(--blauw);
-            padding: 2.2rem 2rem;
-            text-align: left;
+            padding: 2.1rem 2rem;
+            text-align: center;
+            position: relative;
         }
+
+        .card-corner-tl, .card-corner-br { position: absolute; width: 22px; height: 22px; }
+        .card-corner-tl { top: 8px; left: 8px; border-top: 2px solid var(--goud); border-left: 2px solid var(--goud); }
+        .card-corner-br { bottom: 8px; right: 8px; border-bottom: 2px solid var(--goud); border-right: 2px solid var(--goud); }
+
+        .card-eyebrow {
+            font-size: 0.78rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--goud-diep);
+            font-weight: 700;
+            margin: 0 0 1rem;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--blauw);
+            line-height: 1.25;
+            margin: 0 0 1rem;
+        }
+
+        .card-lead {
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: #444;
+            max-width: 560px;
+            margin: 0 auto 1rem;
+        }
+        .card-lead:last-child { margin-bottom: 0; }
 
         /* ============ FOOTER ============ */
         footer {
@@ -292,7 +324,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--goud-diep);
+            color: var(--blauw);
             margin-bottom: 8px;
         }
 
@@ -335,10 +367,23 @@
             color: var(--inkt);
             margin-bottom: 0;
         }
-        .checkbox-container a { color: var(--goud-diep); font-weight: 700; text-decoration: underline; }
-        .checkbox-container a:hover { color: var(--blauw); }
+        .checkbox-container a { color: var(--blauw); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--goud); padding-bottom: 1px; }
+        .checkbox-container a:hover { color: var(--goud-diep); border-color: var(--goud-diep); }
 
-        .submit-btn { display: block; width: 100%; padding: 14px 30px; margin-top: 10px; }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 14px 30px;
+            margin-top: 10px;
+            background-color: var(--blauw);
+            color: var(--goud-licht);
+            border: 1px solid var(--goud);
+        }
+        .submit-btn:hover {
+            background-color: var(--goud);
+            color: var(--blauw);
+        }
+        .submit-btn:disabled { opacity: 0.6; cursor: default; }
 
         #status { margin-top: 20px; font-size: 0.9rem; text-align: center; font-weight: 700; }
 
@@ -397,7 +442,7 @@
                     <textarea id="message" name="message" required placeholder="Typ hier uw bericht..."></textarea>
                 </div>
 
-                <button type="submit" id="submit-btn" class="btn btn-primary submit-btn">Bericht Verzenden</button>
+                <button type="submit" id="submit-btn" class="btn submit-btn">Bericht Verzenden</button>
                 <div id="status"></div>
             </form>
         </div>
