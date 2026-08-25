@@ -164,9 +164,22 @@
             background-color: var(--papier);
             padding: 34px 0;
             margin: 3rem 0 0;
-            border-top: 3px double var(--goud);
-            border-bottom: 3px double var(--goud);
+            border-top: 4px solid var(--blauw);
+            border-bottom: 4px solid var(--blauw);
+            position: relative;
         }
+        /* Dunne gouden haarlijn binnen het blauwe kader */
+        .ticker-wrap::before, .ticker-wrap::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: var(--goud);
+            z-index: 2;
+        }
+        .ticker-wrap::before { top: 5px; }
+        .ticker-wrap::after { bottom: 5px; }
         .ticker { display: flex; width: fit-content; animation: ticker-scroll 55s linear infinite; }
         .ticker-item {
             flex-shrink: 0;
