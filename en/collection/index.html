@@ -363,6 +363,27 @@
             margin: 0.5rem 0 0;
         }
 
+        /* ============ ARCHIEF: GEDEMPT, SCHERP BIJ HOVER ============ */
+        .gallery--archive .gallery-item {
+            opacity: 0.45;
+            filter: saturate(0.55);
+            transition: opacity 0.45s ease, filter 0.45s ease;
+        }
+        .gallery--archive .gallery-item:hover {
+            opacity: 1;
+            filter: saturate(1);
+        }
+
+        /* Touchscreens kennen geen hover: daar alles gewoon helder tonen */
+        @media (hover: none) {
+            .gallery--archive .gallery-item { opacity: 1; filter: none; }
+        }
+
+        /* Respecteer de systeemvoorkeur voor minder beweging */
+        @media (prefers-reduced-motion: reduce) {
+            .gallery--archive .gallery-item { transition: none; }
+        }
+
         @media (max-width: 700px) {
             .gallery { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 40px 25px; }
         }
@@ -392,6 +413,8 @@
 <div class="main-content">
 
     <h1 class="page-title">Current Collection</h1>
+
+    <h2 class="section-title">Old &amp; Classical Masters</h2>
     <div class="gallery">
         <div class="gallery-item">
             <a href="/en/items/johanneshelder/" class="gallery-frame">
@@ -411,13 +434,14 @@
         </div>
     </div>
 
+    <!-- MODERN &amp; ABSTRACT ART -->
     <div class="fleuron"><span>&#10086;</span></div>
 
     <h2 class="section-title">Modern &amp; Abstract Art</h2>
     <div class="gallery">
         <div class="gallery-item">
             <a href="/en/items/ruisraels/" class="gallery-frame">
-                <span class="gallery-mat"><img src="/foto/Israels helder.jpg" alt="Ru Israëls" loading="lazy"></span>
+                <span class="gallery-mat"><img src="/foto/Israels%20helder.jpg" alt="Ru Isra&euml;ls" loading="lazy"></span>
             </a>
             <div class="gallery-label">
                 <p class="item-info">Ru Isra&euml;ls</p>
@@ -425,10 +449,11 @@
         </div>
     </div>
 
+    <!-- PREVIOUS ACQUISITIONS -->
     <div class="fleuron"><span>&#10086;</span></div>
 
     <h2 class="section-title">Previous Acquisitions</h2>
-    <div class="gallery">
+    <div class="gallery gallery--archive">
         <div class="gallery-item">
             <a href="/en/items/hectorthys/" class="gallery-frame">
                 <span class="gallery-mat"><img src="/foto/thys1.jpeg" alt="Hector Thys" loading="lazy"></span>
